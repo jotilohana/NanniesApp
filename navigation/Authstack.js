@@ -10,9 +10,9 @@ import SignUp from '../src/Screens/SignUp';
 import ForgotPass from '../src/Screens/Forgot_Pass';
 import Verify from '../src/Screens/Verify_Email';
 import ChangePass from '../src/Screens/Change_Pass';
-import { AsyncStorage } from 'react-native';
+import  AsyncStorage  from '@react-native-community/async-storage';
 import FAQ from '../src/Screens/FAQ';
-
+import Service from '../src/Screens/Service';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -84,6 +84,10 @@ let routeName;
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="FAQ" component={FAQ} />
+
+           <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Service" component={Service} />
 
       </Stack.Navigator>
     );

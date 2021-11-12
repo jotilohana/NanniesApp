@@ -39,8 +39,7 @@ const ServiceHeader=({navigation})=>{
       <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
       <View style={{marginLeft:'auto'}}>
       <TouchableOpacity
-        // onPress={() =>navigation.navigate('FAQ')}
-
+        onPress={(navigation) =>navigation.navigate('Service')}
         style={{
          backgroundColor: "#03204c",
          padding:5,
@@ -65,7 +64,7 @@ const HomeScreen = ({navigation}) => {
       <View style={styles.swiper}>
         <Home_swiper />
       </View>
-      <ServiceHeader />
+      <ServiceHeader navigation/>
       <FlatList
         keyExtractor={item => item.name}
         data={DATA}
@@ -76,13 +75,24 @@ const HomeScreen = ({navigation}) => {
       <AboutUs />
       <FAQ />
       </View>
+      <TouchableOpacity
+        onPress={() =>navigation.navigate('Service')}
+        style={{
+         backgroundColor: "#03204c",
+         padding:5,
+         borderRadius:25,
+         margin:10,
+          }}
+        >
+        <Text style={{color:'white'}}>View All</Text>
+      </TouchableOpacity>
     </ScrollView>
   );
 };
 
-export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
   },
 });
+export default HomeScreen;
