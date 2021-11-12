@@ -1,0 +1,91 @@
+
+import  React,{useEffect} from 'react';
+import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {NavigationContainer} from '@react-navigation/native';
+import {createStackNavigator} from '@react-navigation/stack';
+import OnBoardingScreen from '../src/Screens/OnboardingScreen';
+import HomeScreen from '../src/Screens/HomeScreen';
+import Login from '../src/Screens/Login';
+import SignUp from '../src/Screens/SignUp';
+import ForgotPass from '../src/Screens/Forgot_Pass';
+import Verify from '../src/Screens/Verify_Email';
+import ChangePass from '../src/Screens/Change_Pass';
+import { AsyncStorage } from 'react-native';
+import FAQ from '../src/Screens/FAQ';
+
+
+const Stack = createStackNavigator();
+const AuthStack =()=> {
+
+  const [isFirstLaunched, setIsFirstLaunched] =React.useState(null);
+let routeName;
+  useEffect(()=>{
+    AsyncStorage.getItem('alreadylaunched').then(value=>{
+      if(value==null){
+        AsyncStorage.setItem('alreadyLaunched', "true");
+        setIsFirstLaunched(true)
+      }
+      else{
+        setIsFirstLaunched(false)}
+    });
+  },[]);
+
+  if(setIsFirstLaunched === null){
+      return null;
+  }
+  else if(setIsFirstLaunched === true){
+      routeName='Onboarding'}
+      else{
+          routeName ='Login';      
+        }
+    return(
+      <Stack.Navigator 
+      initialRouteName={routeName}
+      >
+        <Stack.Screen
+          options={navData => {
+            return {
+              headerShadowVisible: false,
+              headerRight: () => (
+                <TouchableOpacity
+                  onPress={() => navData.navigation.navigate('Home')}
+                  style={{backgroundColor:'#03204c',marginRight:10, padding:7, borderRadius:15}}
+                  >
+                  <Text style={{color: '#fff'}}> Skip </Text>
+                </TouchableOpacity>
+              ),
+            };
+          }}
+          name=" "
+          component={OnBoardingScreen}
+        />
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Login" component={Login} />
+
+          <Stack.Screen name="Home" component={HomeScreen} />
+
+        <Stack.Screen
+        options={{headerTitleAlign:'center'}} 
+          name="SignUp" component={SignUp} />
+
+          <Stack.Screen
+        options={{headerTitleAlign:'center'}} 
+          name="Forgot Password" component={ForgotPass} />
+          
+          <Stack.Screen
+        options={{headerTitleAlign:'center'}} 
+          name="Verify" component={Verify} />
+
+          <Stack.Screen
+        options={{headerTitleAlign:'center'}} 
+          name="Change Password" component={ChangePass} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="FAQ" component={FAQ} />
+
+      </Stack.Navigator>
+    );
+  };
+export default AuthStack;
