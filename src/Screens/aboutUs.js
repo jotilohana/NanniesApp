@@ -1,14 +1,10 @@
 import React from 'react';
 import {View, Text, StyleSheet,ImageBackground} from 'react-native';
 import VideoPlayer from 'react-native-video-player';
-import Review from './review';
 
 const AboutUs=()=>{
     return(
-        <View style={{height:500,borderRadius:25, margin:10,padding:10}}>
-        <ImageBackground source={require('../Assets/aboutUs.png')} 
-        style={styles.img}
-         >        
+        <View style={{height:500,backgroundColor:"#03204c",borderRadius:25, margin:10,padding:10}}>    
         <VideoPlayer 
         video={{uri:'http://d23dyxeqlo5psv.cloudfront.net/big_buck_bunny.mp4'}}
         defaultMuted={true}
@@ -22,7 +18,8 @@ const AboutUs=()=>{
             <Text>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
                  generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
             </View>
-            </ImageBackground>
+            <View>
+            </View>
         </View>
     )
 }

@@ -3,7 +3,7 @@ import React from 'react';
 import {Text, View, ScrollView, FlatList, StyleSheet,TouchableOpacity} from 'react-native';
 import Home_swiper from './Home_swiper';
 import Home_card from './Home_card';
-import FAQ from './FAQ';
+import TestimonialSection from './testimonialSection';
 import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
@@ -33,30 +33,30 @@ const DATA = [
   },
 ];
 
-const ServiceHeader=({navigation})=>{
-  return(
-    <View style={{flexDirection:'row',}}>
-      <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
-      <View style={{marginLeft:'auto'}}>
-      <TouchableOpacity
-        onPress={(navigation) =>navigation.navigate('Service')}
-        style={{
-         backgroundColor: "#03204c",
-         padding:5,
-         borderRadius:25,
-         margin:10,
-          }}
-        >
-        <Text style={{color:'white'}}>View All</Text>
-      </TouchableOpacity>
-      </View>
-     </View>
-  )
-}
 
 const HomeScreen = ({navigation}) => {
+  const ServiceHeader=()=>{
+    return(
+      <View style={{flexDirection:'row',}}>
+        <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
+        <View style={{marginLeft:'auto'}}>
+        <TouchableOpacity
+          onPress={() =>navigation.navigate('TestimonialSection')}
+          style={{
+           backgroundColor: "#03204c",
+           padding:5,
+           borderRadius:25,
+           margin:10,
+            }}
+          >
+          <Text style={{color:'white'}}>View All</Text>
+        </TouchableOpacity>
+        </View>
+       </View>
+    )
+  }
   const renderItem = ({item}) => {
-    return <Home_card imageUri={item.image} name={item.name} />;
+    return <Home_card imageUri={item.image} name={item.name} />
   };
 
   return (
@@ -64,7 +64,7 @@ const HomeScreen = ({navigation}) => {
       <View style={styles.swiper}>
         <Home_swiper />
       </View>
-      <ServiceHeader navigation/>
+      <ServiceHeader />
       <FlatList
         keyExtractor={item => item.name}
         data={DATA}
@@ -73,19 +73,10 @@ const HomeScreen = ({navigation}) => {
       />
       <View>
       <AboutUs />
-      <FAQ />
       </View>
-      <TouchableOpacity
-        onPress={() =>navigation.navigate('Service')}
-        style={{
-         backgroundColor: "#03204c",
-         padding:5,
-         borderRadius:25,
-         margin:10,
-          }}
-        >
-        <Text style={{color:'white'}}>View All</Text>
-      </TouchableOpacity>
+      <View>
+      <TestimonialSection />
+      </View>
     </ScrollView>
   );
 };

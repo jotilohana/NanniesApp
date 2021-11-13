@@ -5,6 +5,7 @@ const Service=()=>{
         <View style={{height:100}}>
         <View>
         <Text style={{color:'black'}}>Services</Text>
+        
         </View>
         </View>
     )

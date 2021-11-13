@@ -13,6 +13,7 @@ import ChangePass from '../src/Screens/Change_Pass';
 import  AsyncStorage  from '@react-native-community/async-storage';
 import FAQ from '../src/Screens/FAQ';
 import Service from '../src/Screens/Service';
+import TestimonialSection from '../src/Screens/testimonialSection';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -88,6 +89,10 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Service" component={Service} />
+
+           <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="TestimonialSection" component={TestimonialSection} />
 
       </Stack.Navigator>
     );

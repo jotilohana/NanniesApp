@@ -24,16 +24,6 @@ const DATA = [
     id:4,
     image: require('../Assets/plus.png'),
   },
-  {
-     text: 'How to use it',
-    id:5,
-    image: require('../Assets/plus.png'),
-  },
-  {
-     text: 'How to use it',
-    id:6,
-    image: require('../Assets/plus.png'),
-  },
 ];
 
 const Item = ({ text, image }) => (
