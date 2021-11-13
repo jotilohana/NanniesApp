@@ -41,7 +41,7 @@ const HomeScreen = ({navigation}) => {
         <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
         <View style={{marginLeft:'auto'}}>
         <TouchableOpacity
-          onPress={() =>navigation.navigate('TestimonialSection')}
+          onPress={() =>navigation.navigate('Service')}
           style={{
            backgroundColor: "#03204c",
            padding:5,

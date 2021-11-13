@@ -14,57 +14,58 @@ const styles = StyleSheet.create({
   },
   slide1: {
     flex: 1,
-    backgroundColor:'#fff',
-
   },
   slide2: {
     flex: 1,
-    backgroundColor:'#fff',
   },
   slide3: {
     flex: 1,
-    backgroundColor:'#fff',
   },
   imageView:{
       backgroundColor:'#03204c',
-      height:80,
-      width:80,
-      borderRadius:50,
       alignSelf:'center',
-      marginTop:10
+      width:100,
+      height:100,
+      position:'absolute',
+    //   bottom:250,
+    //  padding:5,
+        // zIndex:1,
+        // elevation: 3
   },
   Image:{
-    width:'60%',
-    height:'60%',
+    width:"90%",
+    height:"90%",
     borderRadius:50,
+    borderWidth:4,
+    borderColor:'#03204c',
     alignSelf:'center',
-    marginTop:13
-    
+      
   },
   headerText:{
-    color:"black",
+    color:"white",
     textAlign:'center',
     fontWeight:'bold',
     fontSize: 18,
+    marginTop:60
     
   },
   apos:{
-      justifyContent:'flex-start',
-      margin:2,
       marginLeft:20,
+      fontSize:30,
+      color:'white',
   },
   text: {
-    color: 'black',
+    color: 'white',
     fontSize: 13,
-    padding:15
+    padding:15,
+    paddingTop:0
+
   },
   aposRight:{
     marginLeft:'auto',
-    margin:20,
-    marginTop:0,
-    justifyContent:'flex-end',
-
-
+    marginRight:20,
+    fontSize:30,
+    color:'white',
   },
 })
 const TestimonialSection=()=> {
@@ -72,8 +73,7 @@ const TestimonialSection=()=> {
     return (
     <View style={styles.mainView}>
     <Text style={styles.mainText}>Testimonial</Text>
-    <View style={{backgroundColor:"#03204c",margin:10,borderRadius:25,padding:10}}>
-    <View style={{width:'80%', backgroundColor:'white',height:300,alignSelf:'center', borderRadius:5, overflow:'hidden',margin:10 }}>
+    <View style={{width:'90%',backgroundColor:'#03204c',height:300,alignSelf:'center', borderRadius:25 }}>
       <Swiper style={styles.wrapper} 
       showsButtons={false}
       loop={false}
@@ -86,10 +86,11 @@ const TestimonialSection=()=> {
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
          <Text style={styles.headerText}>Hello World</Text>
-         <Image style={styles.apos} source={require("../Assets/Apos.png")} />
+         {/* <Image style={styles.apos} source={require("../Assets/Apos.png")} /> */}
+         <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-         <Image style={styles.aposRight} source={require("../Assets/Apos.png")} />
+        <Text style={styles.aposRight}>❝</Text>
         </View>
 
 
@@ -99,10 +100,10 @@ const TestimonialSection=()=> {
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
          <Text style={styles.headerText}>Hello World2</Text>
-         <Image style={styles.apos} source={require("../Assets/Apos.png")} />
+        <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-         <Image style={styles.aposRight} source={require("../Assets/Apos.png")} />
+          <Text style={styles.aposRight}>❝</Text>
         </View>
 
         <View style={styles.slide3}>
@@ -110,13 +111,12 @@ const TestimonialSection=()=> {
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
          <Text style={styles.headerText}>Hello World3</Text>
-         <Image style={styles.apos} source={require("../Assets/Apos.png")} />
+         <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-         <Image style={styles.aposRight} source={require("../Assets/Apos.png")} />
+        <Text style={styles.aposRight}>❝</Text>
         </View>
       </Swiper>
-      </View>
       </View>
       </View>
     )
