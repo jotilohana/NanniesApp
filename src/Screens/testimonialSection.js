@@ -27,10 +27,8 @@ const styles = StyleSheet.create({
       width:100,
       height:100,
       position:'absolute',
-    //   bottom:250,
-    //  padding:5,
-        // zIndex:1,
-        // elevation: 3
+      zIndex:999,
+      elevation:999
   },
   Image:{
     width:"90%",
@@ -39,7 +37,6 @@ const styles = StyleSheet.create({
     borderWidth:4,
     borderColor:'#03204c',
     alignSelf:'center',
-      
   },
   headerText:{
     color:"white",

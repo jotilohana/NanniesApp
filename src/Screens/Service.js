@@ -1,32 +1,41 @@
 import React from 'react';
-import {View, Text,StyleSheet, FlatList} from 'react-native';
+import {View, Text,StyleSheet, FlatList, Image} from 'react-native';
 import Search from './Search';
 
 const DATA = [
   {
      text: 'How to use it',
      id:1,
+    image: require('../Assets/profile.jpg'),
   },
   {
      text: 'How to use it',
      id:2,
+    image: require('../Assets/profile.jpg'),
 
   },
   {
      text: 'How to use it',
     id:3,
+    image: require('../Assets/profile.jpg'),
+  },
+  {
+     text: 'How to use it',
+    id:4,
+    image: require('../Assets/profile.jpg'),
   },
 ];
 
 
-const ServicePortion=({text})=>{
+const ServicePortion=({text,image})=>{
     return(
         <View style={styles.MainView}>
                 <View>
-                <Text></Text>
-                </View>
-                {/* <Text style={styles.smallText}>SuperApp</Text>     */}
                 <Text style={styles.Maintext}>{text}</Text>    
+                </View>
+                <View style={styles.imageView}>
+            <Image style={styles.image} source={image} />
+            </View>
             </View>
         )
     }
@@ -36,18 +45,16 @@ const Service=()=>{
   );
 
     return(
-        <View style={{flex:1,height:500,backgroundColor:"white"}}>
+        <View style={{flex:1,height:550,backgroundColor:"white"}}>
             <View style={styles.headerText}>
             <Text style={styles.headerText}>Services</Text>
             </View>
-            <View> 
             <FlatList
             data={DATA}
             renderItem={renderItem}
             keyExtractor={item => item.id}
             Vertical
       />
-        </View>
         </View>
     )
 }
@@ -63,22 +70,27 @@ const styles = StyleSheet.create({
         backgroundColor:'#03204c',
         height:150,
         margin:20,
-        borderRadius:25
-    },
-    smallText:{
-        fontSize:15,
-        color:'white',
-        padding:20,
-        position:'relative',
-        top:'30%',
+        borderRadius:25,
+        flexDirection:'row'
     },
     Maintext:{
         fontSize:20,
         color:'white',
         position:'relative',
-        top:'30%',
+        top:'50%',
         padding:20,
-        fontWeight:'bold'                                                          
+        fontWeight:'bold',
+    },
+    imageView:{
+        marginRight:'auto',
+        alignSelf:'center',
+        marginLeft:20
+    },
+    image:{
+        width:100,
+        height:100,
+        marginTop:10,
+        marginRight:'auto'
     },
 
 })
