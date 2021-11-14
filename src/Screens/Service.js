@@ -1,28 +1,28 @@
 import React from 'react';
-import {View, Text,StyleSheet, FlatList, Image} from 'react-native';
+import {View, Text,StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
 import Search from './Search';
 
 const DATA = [
   {
      text: 'How to use it',
      id:1,
-    image: require('../Assets/profile.jpg'),
+    image: require('../Assets/Background_Images.jpg'),
   },
   {
      text: 'How to use it',
      id:2,
-    image: require('../Assets/profile.jpg'),
+    image: require('../Assets/Background_Images.jpg'),
 
   },
   {
      text: 'How to use it',
     id:3,
-    image: require('../Assets/profile.jpg'),
+    image: require('../Assets/Background_Images.jpg'),
   },
   {
      text: 'How to use it',
     id:4,
-    image: require('../Assets/profile.jpg'),
+    image: require('../Assets/Background_Images.jpg'),
   },
 ];
 
@@ -30,12 +30,9 @@ const DATA = [
 const ServicePortion=({text,image})=>{
     return(
         <View style={styles.MainView}>
-                <View>
+        <ImageBackground source={image}  style={styles.image}>
                 <Text style={styles.Maintext}>{text}</Text>    
-                </View>
-                <View style={styles.imageView}>
-            <Image style={styles.image} source={image} />
-            </View>
+        </ImageBackground>
             </View>
         )
     }
@@ -45,7 +42,7 @@ const Service=()=>{
   );
 
     return(
-        <View style={{flex:1,height:550,backgroundColor:"white"}}>
+        <View style={{flex:1,height:"100%",backgroundColor:"white"}}>
             <View style={styles.headerText}>
             <Text style={styles.headerText}>Services</Text>
             </View>
@@ -67,30 +64,20 @@ const styles = StyleSheet.create({
         paddingLeft:10
     },
     MainView:{
-        backgroundColor:'#03204c',
-        height:150,
+        height:200,
         margin:20,
         borderRadius:25,
-        flexDirection:'row'
+        overflow:'hidden'
     },
     Maintext:{
         fontSize:20,
-        color:'white',
-        position:'relative',
-        top:'50%',
-        padding:20,
+        color:'black',
         fontWeight:'bold',
-    },
-    imageView:{
-        marginRight:'auto',
-        alignSelf:'center',
-        marginLeft:20
+        paddingTop:"30%",
+        margin:20
     },
     image:{
-        width:100,
-        height:100,
-        marginTop:10,
-        marginRight:'auto'
+        height:200,
     },
 
 })
