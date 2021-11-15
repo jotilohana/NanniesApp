@@ -4,7 +4,8 @@ import { StyleSheet, Text, View, Image } from 'react-native'
 import Swiper from 'react-native-swiper';
  
 const styles = StyleSheet.create({
-  wrapper: {},
+  wrapper: {
+  },
   mainText:{
       color:'black',
       textAlign:'center',
@@ -26,10 +27,10 @@ const styles = StyleSheet.create({
       alignSelf:'center',
       width:100,
       height:100,
-      position:'absolute',
-      bottom:250,
-      zIndex:999,
-      elevation:999
+      // position:'absolute',
+      // bottom:250,
+      // zIndex:999,
+      // elevation:999,
   },
   Image:{
     width:"90%",
@@ -44,7 +45,6 @@ const styles = StyleSheet.create({
     textAlign:'center',
     fontWeight:'bold',
     fontSize: 18,
-    marginTop:60
     
   },
   apos:{

@@ -23,14 +23,14 @@ const Review=()=>{
         style={styles.barButton}
         onPress={()=>navigation.navigate('ServiceDetailsAbout')}
       >
-        <Text style={styles.barText}>About</Text>
+        <Text style={styles.AboutText}>About</Text>
       </TouchableOpacity>
        <TouchableOpacity
         style={styles.barButton}
          onPress={()=>navigation.navigate('ServiceDetailsReview')}
 
       >
-        <Text style={styles.barText}>Review</Text>
+        <Text style={styles.ReviewText}>Review</Text>
       </TouchableOpacity>
         </View>
         <Review />
@@ -57,18 +57,23 @@ const styles=StyleSheet.create({
         elevation:0.3,
         borderRadius:5,
         position:'absolute',
-        top:"42%",
+        top:"40%",
         backgroundColor:'#fff'
     },
     barButton:{
         margin:15,
         marginLeft:30,
-        marginRight:30
+        marginRight:30,
     },
-    barText:{
-        color:"#03204c",
+    AboutText:{
         fontWeight:'bold',
-        fontSize:16
+        fontSize:16,
+        color:'#03204c'
+    },
+    ReviewText:{
+        fontWeight:'bold',
+        fontSize:16,
+        color:'grey'
     },
     textView:{
         marginTop:70,
@@ -78,7 +83,7 @@ const styles=StyleSheet.create({
     
     //REVIEW
     ReviewView:{
-        margin:10
+        marginTop:30
     },
     mainText:{
         color:'#fff'

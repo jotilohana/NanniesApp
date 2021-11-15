@@ -24,14 +24,14 @@ const About=()=>{
         style={styles.barButton}
         onPress={()=>navigation.navigate("ServiceDetailsAbout")}
       >
-        <Text style={styles.barText}>About</Text>
+        <Text style={styles.AboutText}>About</Text>
       </TouchableOpacity>
        <TouchableOpacity
         style={styles.barButton}
          onPress={()=>navigation.navigate("ServiceDetailsReview")}
 
       >
-        <Text style={styles.barText}>Review</Text>
+        <Text style={styles.ReviewText}>Review</Text>
       </TouchableOpacity>
         </View>
         <About />
@@ -66,10 +66,15 @@ const styles=StyleSheet.create({
         marginLeft:30,
         marginRight:30
     },
-    barText:{
-        color:"#03204c",
+    AboutText:{
         fontWeight:'bold',
-        fontSize:16
+        fontSize:16,
+        color:'grey'
+    },
+    ReviewText:{
+        fontWeight:'bold',
+        fontSize:16,
+        color:'#03204c'
     },
     textView:{
         marginTop:70,
