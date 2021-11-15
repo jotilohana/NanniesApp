@@ -14,6 +14,9 @@ import  AsyncStorage  from '@react-native-community/async-storage';
 import FAQ from '../src/Screens/FAQ';
 import Service from '../src/Screens/Service';
 import TestimonialSection from '../src/Screens/testimonialSection';
+import ServiceDetails from '../src/Screens/ServiceDetails';
+import ServiceDetailsAbout from '../src/Screens/ServiceDetailsAbout';
+import ServiceDetailsReview from '../src/Screens/ServiceDetailsReview';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -93,6 +96,18 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="TestimonialSection" component={TestimonialSection} />
+
+           <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Service Details" component={ServiceDetails} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="ServiceDetailsAbout" component={ServiceDetailsAbout} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="ServiceDetailsReview" component={ServiceDetailsReview} />
 
       </Stack.Navigator>
     );

@@ -74,7 +74,8 @@ const HomeScreen = ({navigation}) => {
       <View>
       <AboutUs />
       </View>
-      <View>
+      <View style={styles.mainView}>
+      <Text style={styles.mainText}>Testimonial</Text>
       <TestimonialSection />
       </View>
     </ScrollView>
@@ -84,6 +85,13 @@ const HomeScreen = ({navigation}) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  mainText:{
+      color:'black',
+      textAlign:'center',
+      fontSize:25,
+      fontWeight:'bold',
+      margin:10
   },
 });
 export default HomeScreen;

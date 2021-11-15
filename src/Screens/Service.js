@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, Text,StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
+import {View, Text, TouchableOpacity, StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
 import Search from './Search';
+import ServiceDetails from './ServiceDetails';
 
 const DATA = [
   {
@@ -27,16 +28,21 @@ const DATA = [
 ];
 
 
+const Service=({navigation})=>{
 const ServicePortion=({text,image})=>{
     return(
         <View style={styles.MainView}>
+        <TouchableOpacity
+        style={styles.button}
+        onPress={()=>navigation.navigate("Service Details")}
+      >
         <ImageBackground source={image}  style={styles.image}>
                 <Text style={styles.Maintext}>{text}</Text>    
         </ImageBackground>
+      </TouchableOpacity>
             </View>
         )
     }
-const Service=()=>{
    const renderItem = ({ item }) => (
     <ServicePortion text={item.text}  image={item.image}/>
   );

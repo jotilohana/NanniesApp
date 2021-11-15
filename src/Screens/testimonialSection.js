@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
  
-import Swiper from 'react-native-swiper'
+import Swiper from 'react-native-swiper';
  
 const styles = StyleSheet.create({
   wrapper: {},
@@ -27,6 +27,7 @@ const styles = StyleSheet.create({
       width:100,
       height:100,
       position:'absolute',
+      bottom:250,
       zIndex:999,
       elevation:999
   },
@@ -68,8 +69,7 @@ const styles = StyleSheet.create({
 const TestimonialSection=()=> {
   
     return (
-    <View style={styles.mainView}>
-    <Text style={styles.mainText}>Testimonial</Text>
+    <View>
     <View style={{width:'90%',backgroundColor:'#03204c',height:300,alignSelf:'center', borderRadius:25 }}>
       <Swiper style={styles.wrapper} 
       showsButtons={false}
