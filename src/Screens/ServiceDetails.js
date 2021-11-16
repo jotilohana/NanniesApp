@@ -1,14 +1,27 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
-import ServiceDetailsAbout from './ServiceDetailsAbout';
+import TestimonialSection from './testimonialSection';
 
 const ServiceDetails=({navigation})=>{
-    const About=()=>{
+    const [showAbout,setShowAbout]=useState(false);
+    const [showReview,setShowReview]=useState(false);
+    const [pressedAbout, setPressedAbout]=useState(false);
+    const [pressedReview, setPressedReview]=useState(false);
+    const renderAbout=()=>{
             return(
-            <View style={{backgroundColor:'black',margin:10}}>
-                <Text style={{color:'white'}}>hello</Text>
+             <View style={styles.textView}>
+                <Text style={{color:'black'}}>Filler text is text that shares some characteristics
+                 of a real written text, but is random or otherwise generated. It may be used to display a sample 
+                 of fonts, enerate text for testing, or to spoof an e-mail spam filter. </Text>
             </View>
-            )
+            );
+    };
+    const renderReview=()=>{
+        return(
+            <View style={styles.ReviewView}>
+            <TestimonialSection />
+            </View>
+        )
     }
     return(
         <View style={styles.Main_view}>
@@ -21,18 +34,19 @@ const ServiceDetails=({navigation})=>{
         <View style={styles.barView}>
              <TouchableOpacity
         style={styles.barButton}
-        // onPress={()=>navigation.navigate('ServiceDetailsAbout')}
-        onPress={About}
+        onPress={()=>{setShowAbout(!showAbout); setShowReview(false); setPressedAbout(true); setPressedReview(false)}}
       >
-        <Text style={styles.barText}>About</Text>
+        <Text style={pressedAbout ? styles.barTextOnclick : styles.barText}>About</Text>
       </TouchableOpacity>
        <TouchableOpacity
         style={styles.barButton}
-        //  onPress={()=>navigation.navigate('ServiceDetailsReview')}
+        onPress={()=>{setShowReview(!showReview); setShowAbout(false); setPressedReview(true); setPressedAbout(false)}}
       >
-        <Text style={styles.barText}>Review</Text>
+        <Text style={pressedReview ? styles.barTextOnclick : styles.barText}>Review</Text>
       </TouchableOpacity>
         </View>
+        {showAbout? renderAbout():null}
+        {showReview? renderReview(): null}
         </View>
     )
 }
@@ -68,6 +82,19 @@ const styles=StyleSheet.create({
         color:"#03204c",
         fontWeight:'bold',
         fontSize:16
+    },
+    barTextOnclick:{
+        color:"grey",
+        fontWeight:'bold',
+        fontSize:16
+    },
+    textView:{
+        marginTop:70,
+        margin:30,
+        fontSize:15
+    },
+    ReviewView:{
+        marginTop:40
     },
 
 })
