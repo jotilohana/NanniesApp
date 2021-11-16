@@ -56,7 +56,7 @@ const styles=StyleSheet.create({
         flex:1,
     },
     headerView:{
-        height:'50%'
+        height:'45%'
     },
     HeaderImage:{
         height:'100%',
@@ -70,7 +70,7 @@ const styles=StyleSheet.create({
         elevation:0.3,
         borderRadius:5,
         position:'absolute',
-        top:"42%",
+        top:"37%",
         backgroundColor:'#fff'
     },
     barButton:{

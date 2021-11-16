@@ -74,9 +74,8 @@ const TestimonialSection=()=> {
       <Swiper style={styles.wrapper} 
       showsButtons={false}
       loop={false}
-      dotColor={{color:'#fff'}}
-      activeDotColor={{color:'#fff'}}
-
+      dotStyle={{width:15,height:4, backgroundColor:'grey', borderRadius:25}}
+      activeDotStyle={{width:15,height:4,backgroundColor:'white'}}
       >
         <View style={styles.slide1}>
         <View style={styles.imageView}>
