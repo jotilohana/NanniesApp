@@ -67,7 +67,6 @@ const styles = StyleSheet.create({
   },
 })
 const TestimonialSection=()=> {
-  
     return (
     <View>
     <View style={{width:'90%',backgroundColor:'#03204c',height:300,alignSelf:'center', borderRadius:25 }}>
