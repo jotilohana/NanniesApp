@@ -2,11 +2,13 @@ import React,{useState} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import TestimonialSection from './testimonialSection';
 
+
 const ServiceDetails=({navigation})=>{
     const [showAbout,setShowAbout]=useState(false);
     const [showReview,setShowReview]=useState(false);
     const [pressedAbout, setPressedAbout]=useState(false);
     const [pressedReview, setPressedReview]=useState(false);
+
     const renderAbout=()=>{
             return(
              <View style={styles.textView}>
@@ -47,6 +49,13 @@ const ServiceDetails=({navigation})=>{
         </View>
         {showAbout? renderAbout():null}
         {showReview? renderReview(): null}
+        <View style={styles.BottomView}>
+        <TouchableOpacity
+        style={styles.button}
+      >
+        <Text style={styles.buttonText}>Book Service</Text>
+      </TouchableOpacity>
+        </View>
         </View>
     )
 }
@@ -56,7 +65,7 @@ const styles=StyleSheet.create({
         flex:1,
     },
     headerView:{
-        height:'45%'
+        height:'35%'
     },
     HeaderImage:{
         height:'100%',
@@ -67,10 +76,10 @@ const styles=StyleSheet.create({
         margin:20,
         alignSelf:"center",
         justifyContent:"center",
-        elevation:0.3,
+        elevation:0.5,
         borderRadius:5,
         position:'absolute',
-        top:"37%",
+        top:"28%",
         backgroundColor:'#fff'
     },
     barButton:{
@@ -91,11 +100,31 @@ const styles=StyleSheet.create({
     textView:{
         marginTop:70,
         margin:30,
-        fontSize:15
+        fontSize:15,
+        height:'40%'
     },
     ReviewView:{
-        marginTop:40
+        marginTop:50,
     },
+    BottomView:{
+        backgroundColor:'#03204c',
+        height:50,
+        marginTop:'auto'
+    },
+    button:{
+        width:120,
+        backgroundColor:"#fffff",
+        borderRadius:10,
+        margin:10,
+        marginLeft:'auto',
+        // height:30
+    },
+    buttonText:{
+        color:'#03204c',
+        textAlign:'center',
+        padding:5,
+        fontWeight:'bold'
+    }
 
 })
 
