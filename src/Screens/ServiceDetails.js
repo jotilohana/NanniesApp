@@ -3,7 +3,7 @@ import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import TestimonialSection from './testimonialSection';
 
 
-const ServiceDetails=({navigation})=>{
+const ServiceDetails=({navigation},props)=>{
     const [showAbout,setShowAbout]=useState(false);
     const [showReview,setShowReview]=useState(false);
     const [pressedAbout, setPressedAbout]=useState(false);
@@ -52,6 +52,7 @@ const ServiceDetails=({navigation})=>{
         <View style={styles.BottomView}>
         <TouchableOpacity
         style={styles.button}
+        onPress={(props)=>navigation.navigate("BookingForm")}
       >
         <Text style={styles.buttonText}>Book Service</Text>
       </TouchableOpacity>
@@ -104,7 +105,8 @@ const styles=StyleSheet.create({
         height:'40%'
     },
     ReviewView:{
-        marginTop:50,
+        marginTop:25,
+        margin:25,
     },
     BottomView:{
         backgroundColor:'#03204c',
@@ -113,17 +115,17 @@ const styles=StyleSheet.create({
     },
     button:{
         width:120,
-        backgroundColor:"#fffff",
+        backgroundColor:"#fff",
         borderRadius:10,
         margin:10,
         marginLeft:'auto',
-        // height:30
     },
     buttonText:{
         color:'#03204c',
         textAlign:'center',
         padding:5,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        borderRadius:10,
     }
 
 })

@@ -5,28 +5,27 @@ import ServiceDetails from './ServiceDetails';
 
 const DATA = [
   {
-     text: 'How to use it',
+     text: 'How to use it1',
      id:1,
     image: require('../Assets/Background_Images.jpg'),
   },
   {
-     text: 'How to use it',
+     text: 'How to use it2',
      id:2,
     image: require('../Assets/Background_Images.jpg'),
 
   },
   {
-     text: 'How to use it',
+     text: 'How to use it3',
     id:3,
     image: require('../Assets/Background_Images.jpg'),
   },
   {
-     text: 'How to use it',
+     text: 'How to use it4',
     id:4,
     image: require('../Assets/Background_Images.jpg'),
   },
 ];
-
 
 const Service=({navigation})=>{
 const ServicePortion=({text,image})=>{
@@ -34,7 +33,7 @@ const ServicePortion=({text,image})=>{
         <View style={styles.MainView}>
         <TouchableOpacity
         style={styles.button}
-        onPress={()=>navigation.navigate("Service Details")}
+        onPress={(props)=>navigation.navigate("Service Details")}
       >
         <ImageBackground source={image}  style={styles.image}>
                 <Text style={styles.Maintext}>{text}</Text>    

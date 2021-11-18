@@ -15,7 +15,7 @@ const AboutUs=()=>{
         />
         <View style={styles.textView}>
             <Text style={styles.text}>About Us</Text>
-            <Text>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
+            <Text style={styles.Subtext}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
                  generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
             </View>
             <View>
@@ -36,6 +36,9 @@ const styles=StyleSheet.create({
         color:'white',
         fontSize:30,
     },
+    Subtext:{
+        color:"#fff"
+    }
 
 })
 export default AboutUs;

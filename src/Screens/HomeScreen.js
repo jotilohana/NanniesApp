@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
       textAlign:'center',
       fontSize:25,
       fontWeight:'bold',
-      margin:10
+      marginTop:20
   },
 });
 export default HomeScreen;

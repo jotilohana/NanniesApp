@@ -15,37 +15,41 @@ const styles = StyleSheet.create({
   },
   slide1: {
     flex: 1,
+    marginTop:53,
+    backgroundColor:'#03204c',
+    borderRadius:25,
   },
   slide2: {
     flex: 1,
+     marginTop:50,
+    backgroundColor:'#03204c',
+    borderRadius:25,
   },
   slide3: {
     flex: 1,
+     marginTop:50,
+    backgroundColor:'#03204c',
+    borderRadius:25,
   },
   imageView:{
-      backgroundColor:'#03204c',
       alignSelf:'center',
-      width:100,
-      height:100,
-      // position:'absolute',
-      // bottom:250,
-      // zIndex:999,
-      // elevation:999,
+      position:'absolute',
+      bottom:230,
+      borderRadius:47,
+      marginTop:5,
   },
   Image:{
-    width:"90%",
-    height:"90%",
+    width:80,
+    height:80,
     borderRadius:50,
-    borderWidth:4,
     borderColor:'#03204c',
-    alignSelf:'center',
+    alignSelf:'center',    
   },
   headerText:{
     color:"white",
     textAlign:'center',
     fontWeight:'bold',
     fontSize: 18,
-    
   },
   apos:{
       marginLeft:20,
@@ -68,51 +72,56 @@ const styles = StyleSheet.create({
 })
 const TestimonialSection=()=> {
     return (
-    <View>
-    <View style={{width:'90%',backgroundColor:'#03204c',height:300,alignSelf:'center', borderRadius:25 }}>
-      <Swiper style={styles.wrapper} 
+    <View style={{padding:8,height:350,borderRadius:25}}>
+      <Swiper
       showsButtons={false}
       loop={false}
+      paginationStyle={{
+      margin:'3%'
+      }}
       dotStyle={{width:15,height:4, backgroundColor:'grey', borderRadius:25}}
       activeDotStyle={{width:15,height:4,backgroundColor:'white'}}
       >
-        <View style={styles.slide1}>
+     <View style={styles.slide1}>
         <View style={styles.imageView}>
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
+        <View style={{marginTop:50}}>
          <Text style={styles.headerText}>Hello World</Text>
-         {/* <Image style={styles.apos} source={require("../Assets/Apos.png")} /> */}
          <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
         <Text style={styles.aposRight}>❝</Text>
         </View>
-
+        </View>
 
 
         <View style={styles.slide2}>
          <View style={styles.imageView}>
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
+        <View style={{marginTop:50}}>
          <Text style={styles.headerText}>Hello World2</Text>
         <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
           <Text style={styles.aposRight}>❝</Text>
         </View>
+        </View>
 
         <View style={styles.slide3}>
          <View style={styles.imageView}>
          <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
         </View>
+        <View style={{marginTop:50}}>
          <Text style={styles.headerText}>Hello World3</Text>
          <Text style={styles.apos}>❝</Text>
          <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
           generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
         <Text style={styles.aposRight}>❝</Text>
         </View>
+        </View>
       </Swiper>
-      </View>
       </View>
     )
   

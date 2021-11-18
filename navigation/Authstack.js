@@ -1,4 +1,3 @@
-
 import  React,{useEffect} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
@@ -15,6 +14,8 @@ import FAQ from '../src/Screens/FAQ';
 import Service from '../src/Screens/Service';
 import TestimonialSection from '../src/Screens/testimonialSection';
 import ServiceDetails from '../src/Screens/ServiceDetails';
+import BookingForm from '../src/Screens/bookingform';
+import Time from '../src/Screens/Time';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -98,6 +99,14 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Service Details" component={ServiceDetails} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="BookingForm" component={BookingForm} />
+
+           <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Time" component={Time} />
 
       </Stack.Navigator>
     );
