@@ -9,7 +9,7 @@ import SignUp from '../src/Screens/SignUp';
 import ForgotPass from '../src/Screens/Forgot_Pass';
 import Verify from '../src/Screens/Verify_Email';
 import ChangePass from '../src/Screens/Change_Pass';
-import  AsyncStorage  from '@react-native-community/async-storage';
+import AsyncStorage  from '@react-native-community/async-storage';
 import FAQ from '../src/Screens/FAQ';
 import Service from '../src/Screens/Service';
 import TestimonialSection from '../src/Screens/testimonialSection';
@@ -17,6 +17,7 @@ import ServiceDetails from '../src/Screens/ServiceDetails';
 import BookingForm from '../src/Screens/bookingform';
 import Time from '../src/Screens/Time';
 import DropDown from '../src/Screens/DropDown';
+import SelectedService from '../src/Screens/SelectedService';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -112,6 +113,10 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="DropDown" component={DropDown} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="SelectedService" component={SelectedService} />
 
       </Stack.Navigator>
     );

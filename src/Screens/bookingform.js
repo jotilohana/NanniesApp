@@ -1,11 +1,9 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
-// import Time from './Time';
 import DropDown from './DropDown';
 
-
-const BookingForm=(props)=>{
+const BookingForm=({navigation})=>{
     const [text, onChangeText] = useState();
 
     return(
@@ -75,6 +73,7 @@ const BookingForm=(props)=>{
             </View>
             </ProgressStep>
             <ProgressStep label="Third Step"
+             onSubmit={()=>navigation.navigate("SelectedService")}
              nextBtnStyle={styles.buttonstylenext}
              nextBtnTextStyle={styles.buttonTextStyle}
              previousBtnTextStyle={styles.buttonTextStyle}
