@@ -1,44 +1,48 @@
-import React, { useState } from "react";
-import { Button, View, TextInput, StyleSheet } from "react-native";
-import DateTimePickerModal from "react-native-modal-datetime-picker";
+import React, { useState } from 'react';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import TimePicker from 'react-native-simple-time-picker';
 
 const Time = () => {
-  const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-  const [text, onChangeText] = useState();
-  const showDatePicker = () => {
-    setDatePickerVisibility(true);
-  };
+  const [selectedHours, setSelectedHours] = useState(0);
+  const [selectedMinutes, setSelectedMinutes] = useState(0);
 
-  const hideDatePicker = () => {
-    setDatePickerVisibility(false);
-  };
-
-  const handleConfirm = (date) => {
-    console.warn("A date has been picked: ", date);
-    hideDatePicker();
-    this.props.sendData({date})
-  };
   return (
-    <View>
-      <Button title="Show Date Picker" onPress={showDatePicker} />
-      <DateTimePickerModal
-        isVisible={isDatePickerVisible}
-        mode="date"
-        onConfirm={handleConfirm}
-        onCancel={hideDatePicker}
-      />
-    </View>
+    <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
+        <Text style={styles.title}>
+          React Native Time Picker – To Pick the Time using Native Time Picker
+        </Text>
+        <Text>
+          Selected Time: {selectedHours}:{selectedMinutes}
+        </Text>
+        <TimePicker
+          selectedHours={selectedHours}
+          //initial Hourse value
+          selectedMinutes={selectedMinutes}
+          //initial Minutes value
+          onChange={(hours, minutes) => {
+            setSelectedHours(hours);
+            setSelectedMinutes(minutes);
+          }}
+        />
+      </View>
+    </SafeAreaView>
   );
 };
 
+export default Time;
+
 const styles = StyleSheet.create({
-  input: {
-    height: 40,
-    margin: 12,
-    borderWidth: 1,
+  container: {
+    flex: 1,
     padding: 10,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  title: {
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: 'bold',
+    padding: 20,
   },
 });
-
-
-export default Time;

@@ -1,10 +1,13 @@
 import React, {useState} from 'react';
 import {View, Text, StyleSheet, TextInput} from 'react-native';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
-import Time from './Time';
+// import Time from './Time';
+import DropDown from './DropDown';
+
 
 const BookingForm=(props)=>{
     const [text, onChangeText] = useState();
+
     return(
         <View style={styles.Main_view}>
             <View>
@@ -25,11 +28,16 @@ const BookingForm=(props)=>{
              previousBtnTextStyle={styles.buttonTextStyle}>
              
             <View style={styles.formView}>
-            <Text style={styles.formHeaderText}>Nannies service</Text>
+            <DropDown />
             <TextInput
             style={styles.input}
             onChangeText={onChangeText}
             value="First Name"
+            />
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value="Last Name"
             />
             <TextInput
             style={styles.input}
@@ -47,7 +55,7 @@ const BookingForm=(props)=>{
             >
              
             <View style={styles.formView}>
-            <Text style={styles.formHeaderText}>Nannies service</Text>
+            <DropDown />
             <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -62,13 +70,8 @@ const BookingForm=(props)=>{
             style={styles.input}
             onChangeText={onChangeText}
             value="Email"
-            />
-             <TextInput
-            style={styles.input}
-            onChangeText={onChangeText}
-            value="Telephone"
-            />
-            
+            /> 
+                       
             </View>
             </ProgressStep>
             <ProgressStep label="Third Step"
@@ -79,7 +82,12 @@ const BookingForm=(props)=>{
              >
              
             <View style={styles.formView}>
-            <Text style={styles.formHeaderText}>Nannies service</Text>
+            <DropDown />
+             <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value="Telephone"
+            />
             <TextInput
             style={styles.input}
             onChangeText={onChangeText}
@@ -88,10 +96,9 @@ const BookingForm=(props)=>{
             <TextInput
             style={styles.input}
             onChangeText={onChangeText}
+            value="Working Time"
             />
-            <Time />
-            
-            
+
             </View>
             </ProgressStep>
         </ProgressSteps>
@@ -108,7 +115,7 @@ const styles=StyleSheet.create({
     HeaderText:{
         color:"black",
         textAlign:"center",
-        fontSize:20,
+        fontSize:25,
         margin:5,
         fontWeight:'bold'
     },
@@ -118,6 +125,13 @@ const styles=StyleSheet.create({
     },
     formView:{
         marginTop:30,
+        backgroundColor:"white",
+        padding:20,
+        width:'90%',
+        alignSelf:'center',
+        borderRadius:25,
+        height:350,
+
     },
     formHeaderText:{
         fontSize:28,
@@ -131,25 +145,27 @@ const styles=StyleSheet.create({
     },
     buttonstylenext:{
         backgroundColor:"#03204c",
-        borderRadius:25,
+        borderRadius:20,
         padding:5,
-        width:80
+        width:100,
+        marginBottom:80,
     },
     buttonstyleprev:{
         backgroundColor:"#03204c",
-        borderRadius:25,
+        borderRadius:20,
         padding:5,
+        marginBottom:80,
+        width:100,
     },
-
-
     input:{
-        width:250,
-        height: 40,
+        width:"100%",
+        height: 50,
         margin: 5,
         borderWidth: 1,
         padding: 10,
         paddingLeft:20,
-        alignSelf:'center'
+        alignSelf:'center',
+        borderRadius:5
     },
     })
 

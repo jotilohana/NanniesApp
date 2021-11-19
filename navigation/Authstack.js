@@ -16,6 +16,7 @@ import TestimonialSection from '../src/Screens/testimonialSection';
 import ServiceDetails from '../src/Screens/ServiceDetails';
 import BookingForm from '../src/Screens/bookingform';
 import Time from '../src/Screens/Time';
+import DropDown from '../src/Screens/DropDown';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -107,6 +108,10 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Time" component={Time} />
+
+           <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="DropDown" component={DropDown} />
 
       </Stack.Navigator>
     );
