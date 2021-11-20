@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
 
 
-const SelectedService =()=>{
+const SelectedService =({navigation})=>{
     return(
         <View style={{ alignItems: 'center', flex:1}}>
             <View style={{marginTop:50, flexDirection:'row',alignItems: 'center',alignSelf:"center" }}>
@@ -36,7 +36,13 @@ const SelectedService =()=>{
             </View>
 
             {/* Card View */}
-            <View style={styles.CardView}>
+            
+        
+        <TouchableOpacity
+                // style={styles.button}
+                onPress={()=>navigation.navigate("Details")}
+        >
+        <View style={styles.CardView}>
                 <View>
                     <Image
                     style={styles.CardImage}
@@ -58,7 +64,8 @@ const SelectedService =()=>{
                     </View>
                 </View>
             </View>   
-            </View> 
+            </TouchableOpacity>
+        </View> 
         );
 };
 const styles= StyleSheet.create({

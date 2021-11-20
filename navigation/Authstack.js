@@ -18,6 +18,7 @@ import BookingForm from '../src/Screens/bookingform';
 import Time from '../src/Screens/Time';
 import DropDown from '../src/Screens/DropDown';
 import SelectedService from '../src/Screens/SelectedService';
+import Details from '../src/Screens/particularScreenDetails';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -117,6 +118,10 @@ let routeName;
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="SelectedService" component={SelectedService} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Details" component={Details} />
 
       </Stack.Navigator>
     );
