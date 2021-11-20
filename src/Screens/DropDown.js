@@ -21,7 +21,6 @@ const DropDown=()=> {
       width:'100%',
       alignSelf:'center',
       margin:5
-
 }}
     />
   );

@@ -3,6 +3,7 @@ import {View, Text, TouchableOpacity, StyleSheet, FlatList,ImageBackground, Imag
 import Search from './Search';
 import ServiceDetails from './ServiceDetails';
 
+
 const DATA = [
   {
      text: 'How to use it1',
