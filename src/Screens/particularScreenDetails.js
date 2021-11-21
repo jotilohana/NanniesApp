@@ -1,18 +1,17 @@
 import React from 'react';
-import {View, StyleSheet, Image, Text} from 'react-native';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 
 const Details=()=>{
     return(
         <View style={{flex:1}}>
 
             <View style={styles.firstCardView}>
-                <View>
+                <View style={{borderRadius:10, paddingLeft:10}}>
                     <View style={styles.headerView}>
                     <Text style={styles.cardText}>Service Name</Text>
                     </View>
                     <View style={{marginTop:20, flexDirection:'row'}}>
                     <Image
-                    // style={styles.CardImage}
                     source={require('../Assets/Location.png')}
                     />
                     <Text style={{margin:10}}>Filler text is text that</Text>
@@ -46,6 +45,53 @@ const Details=()=>{
                     />
             </View>
             </View>
+
+            <View style={styles.EndCard}>
+                <View style={styles.EndheaderView}>
+                    <Text style={styles.cardText,{color:"black",fontWeight:'bold', fontSize:20}}>Service Name</Text>
+                    <Image
+                    style={styles.Dots}
+                    source={require('../Assets/Dots.png')}
+                     />
+                </View>
+                <View style={styles.EndheaderView}>
+                    <Text style={styles.EndcardText}>Status</Text>
+                    <TouchableOpacity
+                        style={styles.EndCardButton}
+                        // onPress={onPress}
+                         >
+                        <Text style={{color:'white'}}>Done</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.EndheaderView}>
+                    <Text style={styles.EndcardText}>Payment Status</Text>
+                    <TouchableOpacity
+                        style={styles.EndCardButton}
+                        // onPress={onPress}
+                         >
+                        <Text style={{color:'white'}}>Done</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.EndheaderView}>
+                    <Text style={styles.EndcardText}>Payment Method</Text>
+                    <TouchableOpacity
+                        style={styles.EndCardButton}
+                        // onPress={onPress}
+                         >
+                        <Text style={{color:'white'}}>Done</Text>
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.EndheaderView}>
+                    <Text style={styles.EndcardText}>Hint</Text>
+                    <TouchableOpacity
+                        style={styles.EndCardButton}
+                        // onPress={onPress}
+                         >
+                        <Text style={{color:'white'}}>Done</Text>
+                    </TouchableOpacity>
+                </View>
+            </View>
+
              </View>
     )
 }
@@ -56,7 +102,7 @@ const styles=StyleSheet.create({
         height:120,
         backgroundColor:"white",
         width:'85%',
-        borderRadius:25,
+        borderRadius:10,
         marginTop:20,
         alignSelf:'center',
         elevation:5
@@ -73,10 +119,10 @@ const styles=StyleSheet.create({
         backgroundColor:"white",
         height:50,
         width:200,
-        padding:10
+        padding:10,
       },
     cardText:{
-        fontSize:22,
+        fontSize:25,
         color:'#03204c',
         fontWeight:'bold'
     },
@@ -87,7 +133,8 @@ const styles=StyleSheet.create({
         alignSelf:'center',
         padding:10,
         borderRadius:10,
-        flexDirection:'row'
+        flexDirection:'row',
+        marginBottom:20
     },
     midCardText:{
         fontSize:18,
@@ -99,7 +146,42 @@ const styles=StyleSheet.create({
         textAlign:'center'
     },
     icons:{
-        margin:5
+        margin:5,
+        backgroundColor:"#CCD1D1",
+        borderRadius:10,
+        padding:15
+    },
+    EndCard:{
+        backgroundColor:"#FFFFFF",
+        width:"85%",
+        alignSelf:"center",
+        borderRadius:25
+
+    },
+    EndheaderView:{
+        elevation: 5,
+        flexDirection:"row",
+        backgroundColor:"white",
+        height:50,
+        padding:10,
+        paddingLeft:20,
+        paddingRight:20,
+      },
+      EndcardText:{
+        fontSize:14,
+        marginRight:20,
+        color:'#03204c',
+    },
+    Dots:{
+        height:20,
+        width:20,
+        marginLeft:'auto',
+    },
+    EndCardButton:{
+        marginLeft:'auto',
+        backgroundColor:'#03204c',
+        borderRadius:10,
+        padding:4
     }
 
 })
