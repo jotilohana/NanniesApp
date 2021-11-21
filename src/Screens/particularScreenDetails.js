@@ -134,10 +134,8 @@ const styles=StyleSheet.create({
         marginTop:40,
         width:'85%',
         alignSelf:'center',
-        // padding:10,
         borderRadius:10,
         flexDirection:'row',
-        // marginBottom:40
     },
     midCardText:{
         fontSize:18,
@@ -166,9 +164,6 @@ const styles=StyleSheet.create({
         flexDirection:"row",
         backgroundColor:"white",
         height:40,
-        // padding:10,
-        // paddingLeft:20,
-        // paddingRight:20,
         borderRadius:25,
         borderBottomWidth:1,
         borderColor:"#F4ECF7",
