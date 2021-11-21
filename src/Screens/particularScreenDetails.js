@@ -3,10 +3,10 @@ import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 
 const Details=()=>{
     return(
-        <View style={{flex:1}}>
-
+        <View style={{flex:1, backgroundColor:'#ffffff',}}>
+            <View style={{backgroundColor:"#ffff"}}>
             <View style={styles.firstCardView}>
-                <View style={{borderRadius:10, paddingLeft:10}}>
+                <View>
                     <View style={styles.headerView}>
                     <Text style={styles.cardText}>Service Name</Text>
                     </View>
@@ -89,13 +89,13 @@ const Details=()=>{
                     </TouchableOpacity>
                 </View>
             </View>
+                </View>
                     <TouchableOpacity
                         style={styles.Button}
                         // onPress={onPress}
                          >
                         <Text style={styles.ButtonText}>Review</Text>
                     </TouchableOpacity>
-
              </View>
     )
 }
@@ -107,9 +107,8 @@ const styles=StyleSheet.create({
         backgroundColor:"white",
         width:'85%',
         borderRadius:10,
-        marginTop:20,
+        marginTop:10,
         alignSelf:'center',
-        elevation:5
     },
     CardImage:{
         width:100,
@@ -135,10 +134,10 @@ const styles=StyleSheet.create({
         marginTop:40,
         width:'85%',
         alignSelf:'center',
-        padding:10,
+        // padding:10,
         borderRadius:10,
         flexDirection:'row',
-        marginBottom:40
+        // marginBottom:40
     },
     midCardText:{
         fontSize:18,
@@ -152,7 +151,7 @@ const styles=StyleSheet.create({
     icons:{
         margin:5,
         borderRadius:10,
-        padding:15
+        padding:10
     },
 
     //End portion
@@ -161,18 +160,19 @@ const styles=StyleSheet.create({
         width:"85%",
         alignSelf:"center",
         borderRadius:25,
+        marginTop:20
     },
     EndheaderView:{
         flexDirection:"row",
         backgroundColor:"white",
-        height:50,
-        padding:10,
-        paddingLeft:20,
-        paddingRight:20,
+        height:40,
+        // padding:10,
+        // paddingLeft:20,
+        // paddingRight:20,
         borderRadius:25,
         borderBottomWidth:1,
         borderColor:"#F4ECF7",
-        marginTop:5
+        marginTop:20
       },
       EndcardText:{
         fontSize:14,
@@ -185,14 +185,15 @@ const styles=StyleSheet.create({
         marginTop:5,
         color:"#03204c",
         fontWeight:'bold'
-
     },
+
     EndCardButton:{
         marginLeft:'auto',
         backgroundColor:'#03204c',
         borderRadius:10,
         padding:4,
-        width:60
+        width:60,
+        height:30
     },
 
     //End Button
