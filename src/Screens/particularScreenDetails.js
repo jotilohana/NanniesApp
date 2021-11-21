@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
+import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 
 const Details=()=>{
     return(
@@ -10,7 +11,7 @@ const Details=()=>{
                     <View style={styles.headerView}>
                     <Text style={styles.cardText}>Service Name</Text>
                     </View>
-                    <View style={{marginTop:20, flexDirection:'row'}}>
+                    <View style={{marginTop:20, flexDirection:'row', marginLeft:20}}>
                     <Image
                     source={require('../Assets/Location.png')}
                     />
@@ -45,6 +46,53 @@ const Details=()=>{
                     />
             </View>
             </View>
+        <View style={{flexDirection:"row", borderBottomWidth:2, borderColor:"#F4ECF7",}}>
+             <View style={{flex:1,height:5, backgroundColor:"#03204c",marginTop:55}}>
+             </View>
+        <View style={{flex:2,height:80,marginBottom:20,marginTop:10}}>
+            <ProgressSteps
+            completedProgressBarColor='#03204c'
+            activeStepIconBorderColor="#03204c"
+            completedProgressBarColor="#03204c"
+            completedStepIconColor="#03204c"
+            activeLabelColor="#03204c"
+            >
+                <ProgressStep label="First"
+                nextBtnTextStyle={{color:'white'}}
+                previousBtnTextStyle={{color:'white'}}
+                nextBtnStyle={{marginBottom:18}}
+                previousBtnStyle={{marginBottom:18}}
+
+                >
+                 <View style={{ alignItems: 'center' }}>
+                 </View>
+                </ProgressStep>
+                <ProgressStep label="Second" 
+                nextBtnTextStyle={{color:'white'}}
+                previousBtnTextStyle={{color:'white'}}
+                nextBtnStyle={{marginBottom:18}}
+                previousBtnStyle={{marginBottom:18}}
+                >
+                    <View style={{ alignItems: 'center' }}>
+                        <Text>This is the content within step 2!</Text>
+                    </View>
+                </ProgressStep>
+                <ProgressStep label="Third"
+                nextBtnTextStyle={{color:'white'}}
+                previousBtnTextStyle={{color:'white'}}
+                nextBtnStyle={{marginBottom:18}}
+                previousBtnStyle={{marginBottom:18}}
+                >
+                    <View style={{ alignItems: 'center' }}>
+                        <Text>This is the content within step 3!</Text>
+                    </View>
+                </ProgressStep>
+            </ProgressSteps>
+        </View>
+        <View  style={{flex:1,width:20,height:5, backgroundColor:"#03204c",marginTop:55, marginRight:0}}>
+        </View>
+        </View>
+            {/* <View style={{width:'2', backgroundColor:""}}></View> */}
 
             <View style={styles.EndCard}>
                 <View style={styles.EndheaderView}>
@@ -79,15 +127,6 @@ const Details=()=>{
                         <Text style={{color:'white', textAlign:"center"}}>Cash</Text>
                     </TouchableOpacity>
                 </View>
-                <View style={styles.EndheaderView}>
-                    <Text style={styles.EndcardText}>Hint</Text>
-                    <TouchableOpacity
-                        style={styles.EndCardButton}
-                        // onPress={onPress}
-                         >
-                        <Text style={{color:'white', textAlign:"center"}}>Done</Text>
-                    </TouchableOpacity>
-                </View>
             </View>
                 </View>
                     <TouchableOpacity
@@ -105,17 +144,19 @@ const styles=StyleSheet.create({
         flexDirection:'row',
         height:120,
         backgroundColor:"white",
-        width:'85%',
+        width:'100%',
         borderRadius:10,
         marginTop:10,
         alignSelf:'center',
+        borderBottomWidth:2, 
+        borderColor:"#F4ECF7",
     },
     CardImage:{
         width:100,
         height:120,
         borderRadius:10,
         marginRight:'auto',
-
+        
     },
     headerView:{
         flexDirection:"row",
@@ -123,19 +164,25 @@ const styles=StyleSheet.create({
         height:50,
         width:200,
         padding:10,
+        marginLeft:20
       },
     cardText:{
         fontSize:25,
         color:'#03204c',
-        fontWeight:'bold'
+        fontWeight:'bold',
     },
     midCard:{
         backgroundColor:'white',
-        marginTop:40,
-        width:'85%',
+        marginTop:30,
+        width:'100%',
         alignSelf:'center',
         borderRadius:10,
         flexDirection:'row',
+        borderBottomWidth:2,
+        borderColor:"#F4ECF7",
+        paddingLeft:25,
+        paddingRight:25,
+        paddingBottom:10
     },
     midCardText:{
         fontSize:18,
@@ -158,7 +205,6 @@ const styles=StyleSheet.create({
         width:"85%",
         alignSelf:"center",
         borderRadius:25,
-        marginTop:20
     },
     EndheaderView:{
         flexDirection:"row",
