@@ -12,7 +12,7 @@ const BookingForm=({navigation})=>{
                 <Text style={styles.HeaderText}>Book Services</Text>
                 <Text style={styles.subText}>Fill all form field to move on next step</Text>
             </View>
-            <View style={{flex: 1}}>
+            <View style={{height:540}}>
             <ProgressSteps 
             completedProgressBarColor='#03204c'
             activeStepIconBorderColor="#03204c"
@@ -69,6 +69,11 @@ const BookingForm=({navigation})=>{
             onChangeText={onChangeText}
             value="Email"
             /> 
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value="Telephone"
+            /> 
                        
             </View>
             </ProgressStep>
@@ -97,7 +102,11 @@ const BookingForm=({navigation})=>{
             onChangeText={onChangeText}
             value="Working Time"
             />
-
+            <TextInput
+            style={styles.input}
+            onChangeText={onChangeText}
+            value="Booking Note"
+            /> 
             </View>
             </ProgressStep>
         </ProgressSteps>
@@ -129,7 +138,7 @@ const styles=StyleSheet.create({
         width:'90%',
         alignSelf:'center',
         borderRadius:25,
-        height:350,
+        height:400,
 
     },
     formHeaderText:{
@@ -147,13 +156,13 @@ const styles=StyleSheet.create({
         borderRadius:20,
         padding:5,
         width:100,
-        marginBottom:80,
+        // marginBottom:150
     },
     buttonstyleprev:{
         backgroundColor:"#03204c",
         borderRadius:20,
         padding:5,
-        marginBottom:80,
+        // marginBottom:150,
         width:100,
     },
     input:{

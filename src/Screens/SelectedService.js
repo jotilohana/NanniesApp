@@ -1,143 +1,124 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import {View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image} from 'react-native';
 
 
-const SelectedService =({navigation})=>{
-    return(
-        <View style={{ alignItems: 'center', flex:1}}>
-            <View style={{marginTop:50, flexDirection:'row',alignItems: 'center',alignSelf:"center" }}>
-                <View>
-                <TouchableOpacity
-                style={styles.button}
-                // onPress={onPress}
+const SelectedService =()=>{
+return(
+    <View style={styles.mainView}>
+    
+        <View style={styles.cardView}>
+            <View style={styles.ImgView}>
+            <ImageBackground source={require("../Assets/Background_Images.jpg")} style={styles.image}>
+             {/* <TouchableOpacity
+                    style={styles.button}
+                    // onPress={onPress}
                 >
-                <Text style={styles.buttonText}>InProgress</Text>
-                </TouchableOpacity>
-                </View>
-
-                <View>
-                    <TouchableOpacity
-                style={styles.button}
-                // onPress={onPress}
-                >
-                <Text style={styles.buttonText}>Finished</Text>
-                 </TouchableOpacity>
-                </View>
-
-                <View>
-                <TouchableOpacity
-                style={styles.button}
-                // onPress={onPress}
-                 >
-                <Text style={styles.buttonText}>Canceled</Text>
-                </TouchableOpacity>
-                </View>
-
+                <Text style={styles.buttonText}>Press Here</Text>
+                </TouchableOpacity> */}
+            </ImageBackground>
             </View>
 
-            {/* Card View */}
-            
-        
-        <TouchableOpacity
-                // style={styles.button}
-                onPress={()=>navigation.navigate("Details")}
-        >
-        <View style={styles.CardView}>
-                <View>
-                    <Image
-                    style={styles.CardImage}
-                    source={require('../Assets/Background_Images.jpg')}
-                     />
-                </View>
-                <View>
-                    <View style={styles.headerView}>
-                    <Text style={styles.cardText}>Service Name</Text>
-                    <Image
-                    style={styles.Dots}
-                    source={require('../Assets/Dots.png')}
-                     />
-                    </View>
-                    <View style={styles.bottom}>
-                    <Text style={styles.bottomTextTime}><Text style={{color:'#F69153',fontSize:22,fontWeight:"bold"}}>10:00</Text>PM to <Text style={{color:'#F69153',fontSize:22,fontWeight:"bold"}}>12:00</Text>PM</Text>
-                    <View style={{alignSelf:"center",width:'80%', backgroundColor:'#fff', height:1}}></View>
-                    <Text style={styles.bottomTextDate}><Text style={{color:'#F69153',fontSize:22,fontWeight:"bold"}}>20</Text>-Nov-2021 to <Text style={{color:'#F69153',fontSize:22,fontWeight:"bold"}}>22</Text>-Nov-21</Text>
-                    </View>
-                </View>
-            </View>   
-            </TouchableOpacity>
-        </View> 
-        );
+            <View style={styles.secondView}>
+            <View style={{flexDirection:'row', borderBottomWidth:2, borderColor:"#F4ECF7"}}>
+            <Text style={styles.Text}>Service Name</Text>
+            <Image
+            style={styles.Dots}
+            source={require('../Assets/Dots.png')}
+            />
+            </View>
+            <View style={{paddingBottom:5, marginTop:15, borderBottomWidth:2, borderColor:"#F4ECF7"}}>
+            <View style={{flexDirection:'row'}}>
+            <Image
+            style={styles.TimeIcon}
+            source={require('../Assets/Time.png')}
+            />
+            <Text style={{fontSize:15,marginRight:4}}>Service Time </Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>12:00AM</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>12:00PM</Text>
+            </View>
+            </View>
+
+            <View style={{marginTop:10}}>
+            <View style={{flexDirection:'row'}}>
+            <Image
+            style={styles.TimeIcon}
+            source={require('../Assets/date.png')}
+            />
+            <Text style={{fontSize:15,marginRight:4}}>Service Date</Text>
+            </View>
+            <View style={{flexDirection:'row'}}>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>22-Nov-21</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>29-Nov-21</Text>
+            </View>
+            </View>
+            </View>
+        </View>
+    
+    </View>
+)
 };
-const styles= StyleSheet.create({
+
+const styles=StyleSheet.create({
+    mainView:{
+        flex:1
+    },
+    cardView:{
+        backgroundColor:'white',
+        height:185,
+        borderRadius:20,
+        margin:10,
+        flexDirection:'row',
+        padding:10,
+        elevation:5
+    },
+    ImgView:{
+        width:'38%',
+        height:155,
+        borderRadius:20,
+        margin:5,
+        overflow:'hidden',
+    },
+    image:{
+        height:155,
+        borderRadius:20,
+        width:'100%',
+    },
     button:{
-        backgroundColor:"#03204c",
-        margin:15,
-        padding:5,
-        borderRadius:10,
-        width:90,
-        height:35,
-        alignSelf:'center'
+        backgroundColor:'#03204c',
+        width:50,
+        position:"absolute",
+        
     },
     buttonText:{
-        color:"#FFFFFF",
-        textAlign:"center"
+        color:'white'
     },
-    //Card
-
-    CardView:{
-        flexDirection:'row',
-        borderwidth:4,
-        height:200,
-        backgroundColor:"white",
-        width:'90%',
-        borderRadius:25,
-        marginTop:25,
+    //Second Portion
+    secondView:{
+        padding:5
     },
-    CardImage:{
-        width:100,
-        height:200,
-        borderTopLeftRadius:25,
-        borderBottomLeftRadius:25
-    },
-    headerView:{
-        elevation: 5,
-        flexDirection:"row",
-        backgroundColor:"white",
-        height:50,
-        width:225,
-        borderTopRightRadius:10,
-        padding:10
-      },
-    cardText:{
-        fontSize:25,
-        marginRight:20,
-        color:'#03204c'
+    Text:{
+        fontSize:20,
+        fontWeight:"bold",
+        color:'#03204c',
+        paddingBottom:5,
     },
     Dots:{
-        height:20,
-        width:20,
+        marginLeft:'auto',
+        marginTop:5
+    },
+    TimeIcon:{
+        marginRight:3
+    },
+    SubText:{
+        marginRight:10
+    },
+    subTextheader:{
         marginTop:10
-    },
-    bottom:{
-        backgroundColor:"#03204c",
-        padding:5,
-        borderBottomRightRadius:20,
-        height:150,
-    },
-    bottomTextTime:{
-        color:"#FFFFFF",
-        fontSize:16,
-        marginTop:70,
-        font:'Roboto',
-        textAlign:'center'
-    },
-    bottomTextDate:{
-        color:"#FFFFFF",
-        fontSize:16,
-        font:'Roboto',
-        textAlign:'center',
     }
-});
 
+})
 export default SelectedService;
-
