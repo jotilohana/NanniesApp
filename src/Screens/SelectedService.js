@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet, ImageBackground, TouchableOpacity, Image} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
 
 
-const SelectedService =()=>{
+const SelectedService =({navigation})=>{
 return(
     <View style={styles.mainView}>
-    
+    <TouchableOpacity
+        onPress={()=>navigation.navigate("Details")}
+      >
         <View style={styles.cardView}>
             <View style={styles.ImgView}>
             <View style={{marginRight:10}}>
@@ -20,8 +22,6 @@ return(
                 >
                 <Text style={styles.buttonText}>Rejected</Text>
                 </TouchableOpacity>
-            {/* <ImageBackground source={require("../Assets/Background_Images.jpg")} style={styles.image}>
-            </ImageBackground> */}
             </View>
 
             <View style={styles.secondView}>
@@ -63,7 +63,7 @@ return(
             </View>
             </View>
         </View>
-    
+    </TouchableOpacity>
     </View>
 )
 };
