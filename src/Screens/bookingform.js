@@ -4,7 +4,16 @@ import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import DropDown from './DropDown';
 
 const BookingForm=({navigation})=>{
-    const [text, onChangeText] = useState();
+    const [textFN, onChangeTextFN] = useState();
+    const [textLN, onChangeTextLN] = useState();
+    const [textG, onChangeTextG] = useState();
+    const [textA, onChangeTextA] = useState();
+    const [textC, onChangeTextC] = useState();
+    const [textE, onChangeTextE] = useState();
+    const [textT, onChangeTextT] = useState();
+    const [textWD, onChangeTextWD] = useState();
+    const [textWT, onChangeTextWT] = useState();
+    const [textBooking, onChangeTextBooking] = useState();
 
     return(
         <View style={styles.Main_view}>
@@ -12,7 +21,7 @@ const BookingForm=({navigation})=>{
                 <Text style={styles.HeaderText}>Book Services</Text>
                 <Text style={styles.subText}>Fill all form field to move on next step</Text>
             </View>
-            <View style={{height:540}}>
+            <View style={{height:630, borderRadius:25}}>
             <ProgressSteps 
             completedProgressBarColor='#03204c'
             activeStepIconBorderColor="#03204c"
@@ -29,18 +38,21 @@ const BookingForm=({navigation})=>{
             <DropDown />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="First Name"
+            onChangeText={onChangeTextFN}
+            value={textFN}
+            placeholder="First Name"
             />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Last Name"
+            onChangeText={onChangeTextLN}
+            value={textLN}
+            placeholder="Last Name"
             />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Gender"
+            onChangeText={onChangeTextG}
+            value={textG}
+            placeholder="Gender"
             />
             
             </View>
@@ -56,23 +68,27 @@ const BookingForm=({navigation})=>{
             <DropDown />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Address"
+            onChangeText={onChangeTextA}
+            value={textA}
+            placeholder="Address"
             />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="City"
+            onChangeText={onChangeTextC}
+            value={textC}
+            placeholder="City"
             />
              <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Email"
+            onChangeText={onChangeTextE}
+            value={textE}
+            placeholder="Email"
             /> 
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Telephone"
+            onChangeText={onChangeTextT}
+            value={textT}
+            placeholder="Telephone"
             /> 
                        
             </View>
@@ -87,25 +103,23 @@ const BookingForm=({navigation})=>{
              
             <View style={styles.formView}>
             <DropDown />
-             <TextInput
+            <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Telephone"
+            onChangeText={onChangeTextWD}
+            value={textWD}
+            placeholder="Working Days"
             />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Working days"
+            onChangeText={onChangeTextWT}
+            value={textWT}
+            placeholder="Working Time"
             />
             <TextInput
             style={styles.input}
-            onChangeText={onChangeText}
-            value="Working Time"
-            />
-            <TextInput
-            style={styles.input}
-            onChangeText={onChangeText}
-            value="Booking Note"
+            onChangeText={onChangeTextBooking}
+            value={textBooking}
+            placeholder="Booking Note"
             /> 
             </View>
             </ProgressStep>
@@ -139,30 +153,29 @@ const styles=StyleSheet.create({
         alignSelf:'center',
         borderRadius:25,
         height:400,
-
     },
     formHeaderText:{
         fontSize:28,
         color:"#03204c",
         marginBottom:25
-
     },
     buttonTextStyle:{
         color:"#fff",
         textAlign:'center'
     },
+
     buttonstylenext:{
         backgroundColor:"#03204c",
         borderRadius:20,
         padding:5,
         width:100,
-        // marginBottom:150
+        marginBottom:80
     },
     buttonstyleprev:{
         backgroundColor:"#03204c",
         borderRadius:20,
         padding:5,
-        // marginBottom:150,
+        marginBottom:80,
         width:100,
     },
     input:{

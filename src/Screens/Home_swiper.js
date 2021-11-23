@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   Main_view:{
-   height:320,
+   height:250,
    marginBottom:30,
   },
   image:{
@@ -88,12 +88,12 @@ const Home_swiper=()=>{
       <Swiper style={styles.wrapper} 
       loop={false}
       showsButtons={false}
-      paginationStyle={{
-      // justifyContent:'flex-end',
-      // margin:'13%'
-}}
       dotStyle={{width:20,height:4, backgroundColor:'white'}}
       activeDotStyle={{width:20,height:4,backgroundColor:'#03204c'}}
+      paginationStyle={{
+        justifyContent:"flex-start",
+        marginLeft:'3%'
+        }}
       >
         <View style={styles.slide1}>
         <View style={styles.container}>
@@ -108,21 +108,6 @@ const Home_swiper=()=>{
       />
       <Text style={styles.headerText}>Home Services1</Text>
       </TouchableOpacity>
-      <View style={styles.home_body}>
-      <Text style={styles.Home_text}>Fix the Broken Stuff by Asking for the Technicians</Text>
-      </View>
-      {/* <View style={{backgroundColor:'#03204c', height:60,marginTop:50,margin:20,padding:8, flexDirection:'row'}}>
-        <View style={styles.imageView}>
-        <Image
-        style={styles.profile}
-        source={require('../Assets/profile.jpg')}
-        />
-      </View>
-        <View style={styles.profileTextView}>
-        <Text style={styles.profileText}>Certified Babysitter</Text>
-        <Text style={styles.profileText}>Filler text is text some</Text>
-        </View>
-        </View> */}
     </ImageBackground>
         </View>
         </View>
@@ -139,21 +124,6 @@ const Home_swiper=()=>{
       />
       <Text style={styles.headerText}>Home Services2</Text>
       </TouchableOpacity>
-      <View style={styles.home_body}>
-      <Text style={styles.Home_text}>Fix the Broken Stuff by Asking for the Technicians</Text>
-      </View>
-      {/* <View style={{backgroundColor:'#03204c', marginTop:50,margin:20,height:60,margin:20,padding:8, flexDirection:'row'}}>
-        <View style={styles.imageView}>
-        <Image
-        style={styles.profile}
-        source={require('../Assets/profile.jpg')}
-        />
-      </View>
-        <View style={styles.profileTextView}>
-        <Text style={styles.profileText}>Certified Babysitter</Text>
-        <Text style={styles.profileText}>Filler text is text some</Text>
-        </View>
-        </View> */}
     </ImageBackground>
         </View>
         </View>
@@ -170,21 +140,6 @@ const Home_swiper=()=>{
       />
       <Text style={styles.headerText}>Home Services3</Text>
       </TouchableOpacity>
-      <View style={styles.home_body}>
-      <Text style={styles.Home_text}>Fix the Broken Stuff by Asking for the Technicians</Text>
-      </View>
-      {/* <View style={{backgroundColor:'#03204c',marginTop:50,margin:20, height:60,margin:20,padding:8, flexDirection:'row'}}>
-        <View style={styles.imageView}>
-        <Image
-        style={styles.profile}
-        source={require('../Assets/profile.jpg')}
-        />
-      </View>
-        <View style={styles.profileTextView}>
-        <Text style={styles.profileText}>Certified Babysitter</Text>
-        <Text style={styles.profileText}>Filler text is text some</Text>
-        </View>
-        </View> */}
     </ImageBackground>
         </View>
         </View>
