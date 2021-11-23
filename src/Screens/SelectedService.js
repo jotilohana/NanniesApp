@@ -8,14 +8,20 @@ return(
     
         <View style={styles.cardView}>
             <View style={styles.ImgView}>
-            <ImageBackground source={require("../Assets/Background_Images.jpg")} style={styles.image}>
-             {/* <TouchableOpacity
+            <View style={{marginRight:10}}>
+            <Image
+            style={styles.image}
+            source={require('../Assets/Background_Images.jpg')}
+            />
+            </View>
+             <TouchableOpacity
                     style={styles.button}
                     // onPress={onPress}
                 >
-                <Text style={styles.buttonText}>Press Here</Text>
-                </TouchableOpacity> */}
-            </ImageBackground>
+                <Text style={styles.buttonText}>Rejected</Text>
+                </TouchableOpacity>
+            {/* <ImageBackground source={require("../Assets/Background_Images.jpg")} style={styles.image}>
+            </ImageBackground> */}
             </View>
 
             <View style={styles.secondView}>
@@ -73,28 +79,34 @@ const styles=StyleSheet.create({
         margin:10,
         flexDirection:'row',
         padding:10,
-        elevation:5
+        elevation:5,
     },
     ImgView:{
-        width:'38%',
+        width:'40%',
         height:155,
         borderRadius:20,
         margin:5,
-        overflow:'hidden',
+        marginRight:0
     },
     image:{
         height:155,
         borderRadius:20,
-        width:'100%',
+        width:'100%',   
     },
     button:{
         backgroundColor:'#03204c',
-        width:50,
         position:"absolute",
-        
+        right:85,
+        height:20,
+        top:10,
+        borderRadius:10,
+        padding:3,
+        height:23
     },
     buttonText:{
-        color:'white'
+        color:'white',
+        textAlign:'center',
+        fontSize:12
     },
     //Second Portion
     secondView:{
