@@ -27,7 +27,9 @@ const [currentState,setCurrentState]=useState(0)
       stepIndicatorLabelUnFinishedColor: '#aaaaaa',
       labelColor: '#999999',
       labelSize: 11,
-      currentStepLabelColor: '#03204c'
+      currentStepLabelColor: '#03204c',
+      stepCount:4
+
     }
      
 return (
@@ -36,6 +38,8 @@ return (
          currentPosition={currentState}
          labels={labels}
          direction="vertical"
+         stepCount='4'
+
          />
          )
          
