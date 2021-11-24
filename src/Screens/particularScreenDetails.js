@@ -35,59 +35,57 @@ const ParticularScreenDetails=()=>{
              <View style={{flexDirection:'row'}}>
                 <View style={{backgroundColor:'#03204c', borderRadius:5, height:340,width:"80%",marginLeft:"auto", paddingLeft:20, paddingTop:20}}>
                     <Text style={{color:'white',marginBottom:5, fontSize:20, fontWeight:'bold'}}>Employee Name</Text>
-                    <View style={{flexDirection:'row'}}>
-                    <Image
-                    style={styles.locationIcon}
-                    source={require('../Assets/Location.png')}
-                    />
-                    <Text style={{color:'white'}}>Filler text is text that shares </Text>
-                    </View>
-                    <View style={{borderRadius:5,margin:5, marginRight:20, marginTop:20,padding:5}}>
+                    <View style={{borderRadius:5,margin:5, marginRight:20, padding:5}}>
                         <View style={styles.BookingView}>
-                        <Text style={styles.ViewHeaderText}>Booking Details</Text>
-                        <Text style={styles.bookingHeaderSubText}>#105</Text>
+                        <Text style={styles.ViewText}>Service Name</Text>
+                         <View style={{flexDirection:'row'}}>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>Nannies</Text>
                         </View>
-                        <View style={styles.BookingView}>
-                        <Text style={styles.ViewText}>Working Days</Text>
-                       <TouchableOpacity
-                            style={styles.button}
-                        >
-                        <Text style={styles.buttonText}>Done</Text>
-                         {/* <View style={{flexDirection:'row'}}>
-                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>12:00AM</Text>
-                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
-                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>12:00PM</Text>
-                        </View> */}
-                        </TouchableOpacity>
                         </View>
                         <View style={styles.BookingView}>
                         <Text style={styles.ViewText}>Working Time</Text>
-                        <TouchableOpacity
-                            style={styles.button}
-                        >
-                        <Text style={styles.buttonText}>Paid</Text>
-                        </TouchableOpacity>
+                         <View style={{flexDirection:'row'}}>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>12:00AM</Text>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>To</Text>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white"}}>12:00PM</Text>
+                        </View>
                         </View>
                         <View style={styles.BookingView}>
-                        <Text style={styles.ViewText}> Payment Method</Text>
+                        <Text style={styles.ViewText}>Working Days</Text>
+                        <View style={{flexDirection:'row'}}>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>22-Nov-21</Text>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>To</Text>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white"}}>29-Nov-21</Text>
+                        </View>
+                        </View>
+                        <View style={styles.BookingView}>
+                        <View style={{flexDirection:'row'}}>
+                        <Text style={styles.ViewText}>Address</Text>
                         <TouchableOpacity
-                            style={styles.button}
+                            style={{marginTop:3, marginLeft:5}}
                         >
-                        <Text style={styles.buttonText}>Cash</Text>
+                        <Image 
+                        source={require('../Assets/Location.png')}
+                        />
                         </TouchableOpacity>
                         </View>
-                    </View>
-                    <TouchableOpacity
+                        <View>
+                        <Text style={{fontSize:14,fontWeight:"bold", color:"white", marginRight:10}}>115, Filler text is text that shares some characteristic</Text>
+                        
+                        </View>
+                        </View>
+                        </View>
+                        <TouchableOpacity
                             style={styles.Reviewbutton}
                         >
                         <Text style={styles.reviewText}>Review</Text>
                         </TouchableOpacity>
 
-                </View>
-                 <Image
-                    style={styles.profile2}
-                    source={require('../Assets/profile2.jpg')}
-                    />
+                        </View>
+                        <Image
+                         style={styles.profile2}
+                        source={require('../Assets/profile2.jpg')}
+                        />
                 </View>
              </View>
     )
@@ -112,13 +110,12 @@ const styles=StyleSheet.create({
         marginTop:4
     },
     BookingView:{
-        flexDirection:'row', 
-        padding:10,
-        // borderBottomColor:"#03204c",
-        // borderBottomWidth:1,        
+        borderBottomColor:"grey",
+        borderBottomWidth:1,  
+        marginTop:10      
     },
     ViewHeaderText:{
-         color:'white',
+        color:'white',
         fontWeight:'bold',
         fontSize:18
     },
@@ -128,7 +125,7 @@ const styles=StyleSheet.create({
         fontWeight:'bold',
     },
     ViewText:{
-        color:'white',
+        color:'silver',
     },
     button:{
         backgroundColor:'#03204c',
