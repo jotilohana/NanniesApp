@@ -1,17 +1,159 @@
 import React from 'react';
 import VerticalIndicator from './VerticalIndicator';
-import {View} from 'react-native';
+import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 
 const ParticularScreenDetails=()=>{
     return(
-        <View>
-        <View>
-        <View style={{height:300,margin:20}}>
-            <VerticalIndicator />
-         </View>
-         </View>
-         </View>
+        <View style={{margin:2, flex:1, backgroundColor:'#fffff'}}>
+            <View style={{flexDirection:'row', height:300}}>
+                <View style={{height:280,margin:20}}>
+                    <VerticalIndicator />
+                </View>
+                <View style={{height:300}}>
+                    <View style={{backgroundColor:"#03204c",borderRadius:50,height:100, width:100,marginTop:130,marginLeft:40}}>
+                    <Image
+                    style={styles.profile}
+                    source={require('../Assets/profile2.jpg')}
+                    />
+                    <View style={{flexDirection:'row', alignSelf:'center', margin:10}}>
+                    <Image
+                    style={{margin:3}}
+                    source={require('../Assets/track.png')}
+                    />
+                    <Image
+                    style={{margin:3}}
+                    source={require('../Assets/Call.png')}
+                    />
+                    <Image
+                    style={{margin:3}}
+                    source={require('../Assets/msg.png')}
+                    />
+                    </View>
+                    </View>
+                </View>
+             </View>
+             <View style={{flexDirection:'row'}}>
+                <View style={{backgroundColor:'#03204c', borderRadius:5, height:340,width:"80%",marginLeft:"auto", paddingLeft:20, paddingTop:20}}>
+                    <Text style={{color:'white',marginBottom:5, fontSize:20, fontWeight:'bold'}}>Employee Name</Text>
+                    <View style={{flexDirection:'row'}}>
+                    <Image
+                    style={styles.locationIcon}
+                    source={require('../Assets/Location.png')}
+                    />
+                    <Text style={{color:'white'}}>Filler text is text that shares </Text>
+                    </View>
+                    <View style={{borderRadius:5,margin:5, marginRight:20, marginTop:20,padding:5}}>
+                        <View style={styles.BookingView}>
+                        <Text style={styles.ViewHeaderText}>Booking Details</Text>
+                        <Text style={styles.bookingHeaderSubText}>#105</Text>
+                        </View>
+                        <View style={styles.BookingView}>
+                        <Text style={styles.ViewText}>Working Days</Text>
+                       <TouchableOpacity
+                            style={styles.button}
+                        >
+                        <Text style={styles.buttonText}>Done</Text>
+                         {/* <View style={{flexDirection:'row'}}>
+                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>12:00AM</Text>
+                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
+                        <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>12:00PM</Text>
+                        </View> */}
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.BookingView}>
+                        <Text style={styles.ViewText}>Working Time</Text>
+                        <TouchableOpacity
+                            style={styles.button}
+                        >
+                        <Text style={styles.buttonText}>Paid</Text>
+                        </TouchableOpacity>
+                        </View>
+                        <View style={styles.BookingView}>
+                        <Text style={styles.ViewText}> Payment Method</Text>
+                        <TouchableOpacity
+                            style={styles.button}
+                        >
+                        <Text style={styles.buttonText}>Cash</Text>
+                        </TouchableOpacity>
+                        </View>
+                    </View>
+                    <TouchableOpacity
+                            style={styles.Reviewbutton}
+                        >
+                        <Text style={styles.reviewText}>Review</Text>
+                        </TouchableOpacity>
+
+                </View>
+                 <Image
+                    style={styles.profile2}
+                    source={require('../Assets/profile2.jpg')}
+                    />
+                </View>
+             </View>
     )
-}
+};
+
+const styles=StyleSheet.create({
+    profile:{
+        width:100,
+        height:100,
+        borderRadius:50,
+        alignSelf:'center'
+    },
+     profile2:{
+        width:80,
+        height:80,
+        alignSelf:'center',
+        position:'absolute',
+        top:20,
+        borderRadius:10
+    },
+    locationIcon:{
+        marginTop:4
+    },
+    BookingView:{
+        flexDirection:'row', 
+        padding:10,
+        // borderBottomColor:"#03204c",
+        // borderBottomWidth:1,        
+    },
+    ViewHeaderText:{
+         color:'white',
+        fontWeight:'bold',
+        fontSize:18
+    },
+    bookingHeaderSubText:{
+        marginLeft:'auto',
+        color:'white',
+        fontWeight:'bold',
+    },
+    ViewText:{
+        color:'white',
+    },
+    button:{
+        backgroundColor:'#03204c',
+        marginLeft:'auto',
+        padding:3,
+        borderRadius:10,
+        width:50
+    },
+    buttonText:{
+        color:'white',
+        textAlign:"center"
+    },
+    Reviewbutton:{
+        backgroundColor:'white',
+        marginTop:'auto',
+        margin:10,
+        padding:5,
+        borderRadius:10,
+        width:230
+    },
+    reviewText:{
+        fontWeight:'bold',
+        color:"#03204c",
+        textAlign:'center'
+    }
+})
 
 export default ParticularScreenDetails;

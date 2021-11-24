@@ -8,25 +8,25 @@ const VerticalIndicator=()=>{
 const [currentState,setCurrentState]=useState(0)
     const customStyles={
       stepIndicatorSize: 25,
-      currentStepIndicatorSize:30,
+      currentStepIndicatorSize:25,
       separatorStrokeWidth: 4,
-      currentStepStrokeWidth: 3,
+      currentStepStrokeWidth: 2,
       stepStrokeCurrentColor: '#03204c',
-      stepStrokeWidth: 3,
+      stepStrokeWidth: 2,
       stepStrokeFinishedColor: '#03204c',
-      stepStrokeUnFinishedColor: '#aaaaaa',
+      stepStrokeUnFinishedColor: '#03204c',
       separatorFinishedColor: '#03204c',
       separatorUnFinishedColor: '#aaaaaa',
       stepIndicatorFinishedColor: '#03204c',
       stepIndicatorUnFinishedColor: '#ffffff',
-      stepIndicatorCurrentColor: '#ffffff',
+      stepIndicatorCurrentColor: '#03204c',
       stepIndicatorLabelFontSize: 13,
       currentStepIndicatorLabelFontSize: 13,
-      stepIndicatorLabelCurrentColor: '#03204c',
+      stepIndicatorLabelCurrentColor: '#ffffff',
       stepIndicatorLabelFinishedColor: '#ffffff',
       stepIndicatorLabelUnFinishedColor: '#aaaaaa',
       labelColor: '#999999',
-      labelSize: 11,
+      labelSize: 13,
       currentStepLabelColor: '#03204c',
       stepCount:4
 
@@ -39,7 +39,6 @@ return (
          labels={labels}
          direction="vertical"
          stepCount='4'
-
          />
          )
          
