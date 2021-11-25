@@ -10,24 +10,42 @@ const ParticularScreenDetails=()=>{
                     <VerticalIndicator />
                 </View>
                 <View style={{height:300}}>
-                    <View style={{backgroundColor:"#03204c",borderRadius:50,height:100, width:100,marginTop:130,marginLeft:40}}>
+                    <View style={{backgroundColor:"#03204c",borderRadius:50,height:100, width:100,marginTop:100,marginLeft:40}}>
                     <Image
                     style={styles.profile}
                     source={require('../Assets/profile2.jpg')}
                     />
                     <View style={{flexDirection:'row', alignSelf:'center', margin:10}}>
-                    <Image
-                    style={{margin:3}}
+                    <Text style={{margin:5}}>Track</Text>
+                    <Text style={{margin:5}}>Call</Text>
+                    <Text style={{margin:5}}>Msg</Text>                   
+                    </View>
+                    <View style={{flexDirection:'row', alignSelf:'center', margin:10, marginTop:0}}>
+                    <TouchableOpacity
+                            // style={{marginTop:3, marginLeft:5}}
+                        >
+                       <Image
+                    style={{margin:3, marginTop:0}}
                     source={require('../Assets/track.png')}
                     />
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                            // style={{marginTop:3, marginLeft:5}}
+                        >
                     <Image
-                    style={{margin:3}}
+                    style={{margin:3,marginTop:0}}
                     source={require('../Assets/Call.png')}
                     />
-                    <Image
-                    style={{margin:3}}
+                    </TouchableOpacity>
+                    <TouchableOpacity
+                            // style={{marginTop:3, marginLeft:5}}
+                        >
+                     <Image
+                    style={{margin:3, marginTop:0}}
                     source={require('../Assets/msg.png')}
                     />
+                    </TouchableOpacity>
+                    
                     </View>
                     </View>
                 </View>
