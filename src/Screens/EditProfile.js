@@ -19,6 +19,7 @@ const EditProfile=()=>{
                 <TouchableOpacity
                  style={styles.editIcon}
                 >
+
                 <Image
                 style={styles.edit}
                 source={require('../Assets/Edit.png')}
@@ -26,6 +27,7 @@ const EditProfile=()=>{
                 </TouchableOpacity>
                 </View>
             </View>
+
 
             <View style={styles.mainView}>
             <ScrollView>
@@ -42,8 +44,7 @@ const EditProfile=()=>{
                     value={textN}
                     placeholder="Jklohana"
                     placeholderTextColor ="grey"
-                />      
-                            
+                />           
                 </View>
                 </View>
 
