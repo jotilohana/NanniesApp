@@ -148,7 +148,7 @@ const styles=StyleSheet.create({
         backgroundColor:'#03204c',
         marginLeft:'auto',
         padding:3,
-        borderRadius:10,
+        borderRadius:20,
         width:50
     },
     buttonText:{
@@ -160,7 +160,7 @@ const styles=StyleSheet.create({
         marginTop:'auto',
         margin:10,
         padding:5,
-        borderRadius:10,
+        borderRadius:20,
         width:230
     },
     reviewText:{

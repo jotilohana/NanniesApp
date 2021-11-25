@@ -19,6 +19,8 @@ import Time from '../src/Screens/Time';
 import DropDown from '../src/Screens/DropDown';
 import SelectedService from '../src/Screens/SelectedService';
 import Details from '../src/Screens/particularScreenDetails';
+import Profile from '../src/Screens/Profile';
+import EditProfile from '../src/Screens/EditProfile';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -122,6 +124,14 @@ let routeName;
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Details" component={Details} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Profile" component={Profile} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Edit Profile" component={EditProfile} />
 
       </Stack.Navigator>
     );

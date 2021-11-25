@@ -1,8 +1,7 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text, TextInput, TouchableOpacity} from 'react-native';
 
-const Profile=({navigation})=>{
-    const [text, onChangeText] = React.useState();
+const EditProfile=()=>{
     return(
         <View style={{flex:1}}>
             <View style={styles.header}>
@@ -90,7 +89,6 @@ const Profile=({navigation})=>{
             
                 <TouchableOpacity
                             style={styles.EditButton}
-                            onPress={()=>navigation.navigate("Edit Profile")}
                         >
                         <Text style={styles.EditText}>Edit Profile</Text>
                         </TouchableOpacity>
@@ -174,4 +172,4 @@ const styles= StyleSheet.create({
         fontWeight:'bold'
     }
 })
-export default Profile;
+export default EditProfile;
