@@ -45,7 +45,6 @@ const ParticularScreenDetails=()=>{
                     source={require('../Assets/msg.png')}
                     />
                     </TouchableOpacity>
-                    
                     </View>
                     </View>
                 </View>
