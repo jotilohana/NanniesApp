@@ -33,7 +33,7 @@ const Profile=({navigation})=>{
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
-                source={require('../Assets/password.png')}
+                source={require('../Assets/Email.png')}
                 />
                 <View style={styles.inputTextView}>
                 <Text style={styles.inputText}>Email</Text>
@@ -44,7 +44,7 @@ const Profile=({navigation})=>{
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
-                source={require('../Assets/password.png')}
+                source={require('../Assets/Call.png')}
                 />
                 <View style={styles.inputTextView}>
                 <Text style={styles.inputText}>Phone Number</Text>
@@ -55,7 +55,7 @@ const Profile=({navigation})=>{
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
-                source={require('../Assets/password.png')}
+                source={require('../Assets/Address.png')}
                 />
                 <View style={styles.inputTextView}>
                 <Text style={styles.inputText}>Address</Text>
@@ -66,7 +66,7 @@ const Profile=({navigation})=>{
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
-                source={require('../Assets/password.png')}
+                source={require('../Assets/City.png')}
                 />
                 <View style={styles.inputTextView}>
                 <Text style={styles.inputText}>City</Text>
@@ -77,7 +77,7 @@ const Profile=({navigation})=>{
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
-                source={require('../Assets/password.png')}
+                source={require('../Assets/Gender.png')}
                 />
                 <View style={styles.inputTextView}>
                 <Text style={styles.inputText}>Gender</Text>

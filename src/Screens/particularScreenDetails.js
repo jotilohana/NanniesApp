@@ -22,7 +22,6 @@ const ParticularScreenDetails=()=>{
                     </View>
                     <View style={{flexDirection:'row', alignSelf:'center', margin:10, marginTop:0}}>
                     <TouchableOpacity
-                            // style={{marginTop:3, marginLeft:5}}
                         >
                        <Image
                     style={{margin:3, marginTop:0}}
@@ -30,7 +29,6 @@ const ParticularScreenDetails=()=>{
                     />
                     </TouchableOpacity>
                     <TouchableOpacity
-                            // style={{marginTop:3, marginLeft:5}}
                         >
                     <Image
                     style={{margin:3,marginTop:0}}
@@ -38,7 +36,6 @@ const ParticularScreenDetails=()=>{
                     />
                     </TouchableOpacity>
                     <TouchableOpacity
-                            // style={{marginTop:3, marginLeft:5}}
                         >
                      <Image
                     style={{margin:3, marginTop:0}}
