@@ -163,15 +163,10 @@ const EditProfile=()=>{
                 <Text style={styles.EditText}>Save Changes</Text>
                 </TouchableOpacity>
                 </View>
-                
+
         </View>
     )
 };
-
-
-
-
-
 const styles= StyleSheet.create({
     header:{
         backgroundColor:"#b4cce4",
