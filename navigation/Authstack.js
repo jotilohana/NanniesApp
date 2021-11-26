@@ -22,6 +22,9 @@ import Details from '../src/Screens/particularScreenDetails';
 import Profile from '../src/Screens/Profile';
 import EditProfile from '../src/Screens/EditProfile';
 import UpdatePass from '../src/Screens/UpdatePass';
+import Chat from '../src/Screens/Chat';
+import MessagesScreen from '../src/Screens/Messages';
+import HeaderImage from '../src/Screens/HeaderImage';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -137,6 +140,16 @@ let routeName;
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Update Password" component={UpdatePass} />
+
+        <Stack.Screen 
+        options={({route})=>({
+          title:<HeaderImage />,
+        })} 
+          name="ChatScreen" component={Chat} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Chat" component={MessagesScreen} />
 
       </Stack.Navigator>
     );
