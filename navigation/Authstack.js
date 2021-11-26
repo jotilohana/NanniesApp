@@ -21,6 +21,7 @@ import SelectedService from '../src/Screens/SelectedService';
 import Details from '../src/Screens/particularScreenDetails';
 import Profile from '../src/Screens/Profile';
 import EditProfile from '../src/Screens/EditProfile';
+import UpdatePass from '../src/Screens/UpdatePass';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -132,6 +133,10 @@ let routeName;
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Edit Profile" component={EditProfile} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Update Password" component={UpdatePass} />
 
       </Stack.Navigator>
     );

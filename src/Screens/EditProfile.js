@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {View, ScrollView, StyleSheet, Image, Text, TextInput, TouchableOpacity} from 'react-native';
 
-const EditProfile=()=>{
+const EditProfile=({navigation})=>{
     const [textN, onChangeTextN] = useState();
     const [textG, onChangeTextG] = useState();
     const [textA, onChangeTextA] = useState();
@@ -82,6 +82,7 @@ const EditProfile=()=>{
                 </View>
                 <TouchableOpacity
                  style={styles.changepass}
+                 onPress={()=>navigation.navigate("Update Password")}
                 >
                 <Text style={styles.Change}>Change</Text>
                 </TouchableOpacity>
@@ -156,14 +157,11 @@ const EditProfile=()=>{
                 </View>
                 </ScrollView>
                  </View>
-                 <View style={{marginTop:'auto', height:200}}>
                 <TouchableOpacity
                  style={styles.EditButton}
                 >
                 <Text style={styles.EditText}>Save Changes</Text>
                 </TouchableOpacity>
-                </View>
-
         </View>
     )
 };
@@ -248,7 +246,6 @@ const styles= StyleSheet.create({
         alignSelf:'center',
         marginTop:'auto',
         margin:10,
-        padding:3,
         borderRadius:20,
         width:"80%"
     },
