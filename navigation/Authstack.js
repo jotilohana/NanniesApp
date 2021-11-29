@@ -25,6 +25,8 @@ import UpdatePass from '../src/Screens/UpdatePass';
 import Chat from '../src/Screens/Chat';
 import MessagesScreen from '../src/Screens/Messages';
 import HeaderImage from '../src/Screens/HeaderImage';
+import DropdownChat from '../src/Screens/dropdownChat';
+import Attachment from '../src/Screens/Attachment';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -144,12 +146,23 @@ let routeName;
         <Stack.Screen 
         options={({route})=>({
           title:<HeaderImage />,
+          headerRight: () => (
+              <DropdownChat />
+              ),
         })} 
           name="ChatScreen" component={Chat} />
 
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Chat" component={MessagesScreen} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="DropdownChat" component={DropdownChat} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Attachment" component={Attachment} />
 
       </Stack.Navigator>
     );

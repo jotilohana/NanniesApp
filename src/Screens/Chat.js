@@ -1,5 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet, Text, Image,FlatList, ScrollView, TouchableOpacity, TextInput} from 'react-native';
+import DropdownChat from './dropdownChat';
+import Attachment from './Attachment';
 
 const Messages = [
   {
@@ -22,14 +24,46 @@ const Messages = [
     messageText:
       'Hey there, this is my test for a post of my social app in React Native.',
   },
+  {
+    id: '4',
+    userName: 'Ken',
+    userImg: require('../Assets/profile2.jpg'),
+    messageTime: '1 hours ago',
+    messageText:
+      'Hey there, this is my test for a post of my social app in React Native.',
+  },
+  {
+    id: '5',
+    userName: 'Ken',
+    userImg: require('../Assets/profile2.jpg'),
+    messageTime: '1 hours ago',
+    messageText:
+      'Hey there, this is my test for a post of my social app in React Native.',
+  },
+  {
+    id: '6',
+    userName: 'Ken',
+    userImg: require('../Assets/profile2.jpg'),
+    messageTime: '1 hours ago',
+    messageText:
+      'Hey there, this is my test for a post of my social app in React Native.',
+  },
 ];
 
-const Chat=()=>{
-    const [text, onChangeText] = React.useState();
+const Chat=({navigation})=>{
+    const [text, onChangeText] = useState();
+    const [clickedBtn, setClickedBtn] = useState(false);
+
+    const AttachmentContent=()=>{
+      return(
+        <View>
+        <Attachment />
+        </View>
+      )
+    }
     return(
         <View style={styles.mainView}>
-
-        <View style={{marginBottom:80, marginTop:30}}>
+        <View style={{marginBottom:80, marginTop:45}}>
         <ScrollView>
            <FlatList
             data={Messages}
@@ -60,16 +94,14 @@ const Chat=()=>{
         </View>
         </ScrollView>
         </View>
-
+        {clickedBtn? <Attachment />: null }
+        {/* <Attachment /> */}
         <View style={styles.inputView}>
-
-
             <TouchableOpacity
             style={styles.attachment}
-            // onPress={()=>navigation.navigate("Edit Profile")}
+            onPress={()=>{setClickedBtn(!clickedBtn)}}
             >
              <Image
-            // style={styles.profilePicture}
             source={require('../Assets/attachment.png')}
             />
             </TouchableOpacity>
@@ -86,7 +118,6 @@ const Chat=()=>{
             // onPress={()=>navigation.navigate("Edit Profile")}
             >
              <Image
-            // style={styles.profilePicture}
             source={require('../Assets/send.png')}
             />
             </TouchableOpacity>
