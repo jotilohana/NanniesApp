@@ -1,6 +1,6 @@
 import React from 'react';
 import {Text,Image, TouchableOpacity,ScrollView, View, StyleSheet, TextInput, Button} from 'react-native';
-const Login = ({navigation}) => {
+const Thankyou = ({navigation}) => {
   return (
     <View style={{backgroundColor:'#FAF6F5', flex:1}}>
     <ScrollView showsVerticalScrollIndicator={false} >
@@ -20,13 +20,6 @@ const Login = ({navigation}) => {
         placeholderTextColor="black"
 
       />
-      <TextInput
-        secureTextEntry={true}
-        style={styles.input}
-        placeholder="Password"
-        keyboardType={'password'}
-        placeholderTextColor="black"
-      />
       <Text style={styles.forgotPass}>
         <TouchableOpacity 
         onPress={() => navigation.navigate('Forgot Password')}
@@ -34,7 +27,7 @@ const Login = ({navigation}) => {
         <Text style={{color:'black'}}>Forgot Password?</Text>
       </TouchableOpacity></Text>
       <TouchableOpacity 
-        onPress={() => navigation.navigate('Thankyou')}
+        onPress={() => navigation.navigate('Chat')}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Log In</Text>
@@ -175,4 +168,4 @@ const styles = StyleSheet.create({
   },
   
 });
-export default Login;
+export default Thankyou;

@@ -1,5 +1,5 @@
-import React from 'react';
-import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
+import React, {useState} from 'react';
+import { StyleSheet,TextInput,  Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import Search from './Search';
 const Messages = [
   {
@@ -47,10 +47,31 @@ const Messages = [
 
 
 const MessagesScreen = ({navigation}) => {
+    const [text,setText]=useState('');
+    // const [filtered,setFiltered] = useState(Messages);
+
+    const TextChange=(TextToChange)=>{
+            console.log(TextToChange)
+    };
+    
     return (
         <View style={styles.mainView}>
-            <View style={{width:'100%', padding:20}}>
-            <Search />
+            <View style={{width:'100%', borderRadius:5, elevation:5, paddingLeft:20, marginBottom:15, backgroundColor:'#FBF9FC', flexDirection:'row'}}>
+             <Image
+                style={{marginTop:15}}
+                source={require('../Assets/Search.png')}
+                />
+             <TextInput
+            style={{marginLeft:25}}     
+             onChangeText={(Text)=>{
+          TextChange(Text);
+        }}
+        // value={number}
+        placeholder="Search"
+      />
+
+
+
             </View>
             <View>
             <FlatList
