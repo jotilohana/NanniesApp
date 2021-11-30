@@ -27,6 +27,7 @@ import MessagesScreen from '../src/Screens/Messages';
 import HeaderImage from '../src/Screens/HeaderImage';
 import DropdownChat from '../src/Screens/dropdownChat';
 import Attachment from '../src/Screens/Attachment';
+import Search from '../src/Screens/Search';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -163,6 +164,10 @@ let routeName;
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Attachment" component={Attachment} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Search" component={Search} />
 
       </Stack.Navigator>
     );

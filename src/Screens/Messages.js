@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
-
+import Search from './Search';
 const Messages = [
   {
     id: '1',
@@ -49,7 +49,9 @@ const Messages = [
 const MessagesScreen = ({navigation}) => {
     return (
         <View style={styles.mainView}>
-            
+            <View style={{width:'100%', padding:20}}>
+            <Search />
+            </View>
             <View>
             <FlatList
             data={Messages}
