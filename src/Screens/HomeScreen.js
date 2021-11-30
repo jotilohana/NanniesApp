@@ -1,15 +1,10 @@
 import AboutUs from './aboutUs';
 import React from 'react';
-import {Text, View, ScrollView, FlatList, StyleSheet,TouchableOpacity} from 'react-native';
+import {Text, Image, View, ScrollView, FlatList, StyleSheet,TouchableOpacity} from 'react-native';
 import Home_swiper from './Home_swiper';
 import Home_card from './Home_card';
 import TestimonialSection from './testimonialSection';
-import {
-  widthPercentageToDP as wp,
-  heightPercentageToDP as hp,
-} from 'react-native-responsive-screen';
-
-
+import Maps from './Map';
 const DATA = [
   {
     image: require('../Assets/Background_Images.jpg'),
@@ -78,6 +73,15 @@ const HomeScreen = ({navigation}) => {
       <Text style={styles.mainText}>Testimonial</Text>
       <TestimonialSection />
       </View>
+
+      <TouchableOpacity
+      onPress={()=>navigation.navigate("Map")}
+                        >
+                       <Image
+                    style={{margin:3, marginTop:0}}
+                    source={require('../Assets/track.png')}
+                    />
+                    </TouchableOpacity>
     </ScrollView>
   );
 };

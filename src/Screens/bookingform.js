@@ -94,7 +94,7 @@ const BookingForm=({navigation})=>{
             </View>
             </ProgressStep>
             <ProgressStep label="Third Step"
-             onSubmit={()=>navigation.navigate("SelectedService")}
+             onSubmit={()=>navigation.navigate("Thankyou")}
              nextBtnStyle={styles.buttonstylenext}
              nextBtnTextStyle={styles.buttonTextStyle}
              previousBtnTextStyle={styles.buttonTextStyle}

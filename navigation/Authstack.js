@@ -28,6 +28,8 @@ import HeaderImage from '../src/Screens/HeaderImage';
 import DropdownChat from '../src/Screens/dropdownChat';
 import Attachment from '../src/Screens/Attachment';
 import Search from '../src/Screens/Search';
+import Thankyou from '../src/Screens/thankyou';
+import Map from '../src/Screens/Map';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -51,7 +53,7 @@ let routeName;
   else if(setIsFirstLaunched === true){
       routeName='Onboarding'}
       else{
-          routeName ='Login';      
+          routeName ='Home';      
         }
     return(
       <Stack.Navigator 
@@ -78,7 +80,9 @@ let routeName;
         options={{headerTitleAlign:'center'}} 
           name="Login" component={Login} />
 
-          <Stack.Screen name="Home" component={HomeScreen} />
+          <Stack.Screen name="Home" component={HomeScreen} 
+          options={{headerTitleAlign:'center'}} 
+          />
 
         <Stack.Screen
         options={{headerTitleAlign:'center'}} 
@@ -114,7 +118,7 @@ let routeName;
 
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
-          name="BookingForm" component={BookingForm} />
+          name="Booking Form" component={BookingForm} />
 
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
@@ -126,7 +130,7 @@ let routeName;
 
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
-          name="SelectedService" component={SelectedService} />
+          name="Orders" component={SelectedService} />
 
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
@@ -168,6 +172,14 @@ let routeName;
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Search" component={Search} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="Thankyou" component={Thankyou} />
+
+        <Stack.Screen
+        options={{headerTitleAlign:'center'}} 
+        name="Map" component={Map} />
 
       </Stack.Navigator>
     );

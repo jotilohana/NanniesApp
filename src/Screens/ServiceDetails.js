@@ -52,7 +52,7 @@ const ServiceDetails=({navigation},props)=>{
         <View style={styles.BottomView}>
         <TouchableOpacity
         style={styles.button}
-        onPress={(props)=>navigation.navigate("BookingForm")}
+        onPress={(props)=>navigation.navigate("Booking Form")}
       >
         <Text style={styles.buttonText}>Book Service</Text>
       </TouchableOpacity>
