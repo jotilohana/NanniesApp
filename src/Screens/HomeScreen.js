@@ -1,3 +1,4 @@
+
 import AboutUs from './aboutUs';
 import React from 'react';
 import {Text, Image, View, ScrollView, FlatList, StyleSheet,TouchableOpacity} from 'react-native';
@@ -5,6 +6,8 @@ import Home_swiper from './Home_swiper';
 import Home_card from './Home_card';
 import TestimonialSection from './testimonialSection';
 import Maps from './Map';
+import { useRoute } from '@react-navigation/native';
+
 const DATA = [
   {
     image: require('../Assets/Background_Images.jpg'),
@@ -29,8 +32,9 @@ const DATA = [
 ];
 
 
-const HomeScreen = ({navigation}) => {
-  const ServiceHeader=()=>{
+const HomeScreen = ({navigation, route}) => {
+// const {userName} =route.params;
+  const ServiceHeader=()=>{    
     return(
       <View style={{flexDirection:'row',}}>
         <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
@@ -77,11 +81,16 @@ const HomeScreen = ({navigation}) => {
       <TouchableOpacity
       onPress={()=>navigation.navigate("Map")}
                         >
-                       <Image
-                    style={{margin:3, marginTop:0}}
-                    source={require('../Assets/track.png')}
-                    />
-                    </TouchableOpacity>
+      <Image
+       style={{margin:3, marginTop:0}}
+       source={require('../Assets/track.png')}
+      />
+       </TouchableOpacity>
+       
+       <TouchableOpacity
+      onPress={()=>navigation.navigate("Chat")}                        >
+      <Text>hello</Text>
+       </TouchableOpacity>
     </ScrollView>
   );
 };

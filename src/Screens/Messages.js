@@ -47,38 +47,30 @@ const Messages = [
 
 
 const MessagesScreen = ({navigation}) => {
-    const [text,setText]=useState('');
-    // const [filtered,setFiltered] = useState(Messages);
+   const [filterData, setFilterData] = useState(Messages);
+  const [search, setSearch] = useState('');
 
-    const TextChange=(TextToChange)=>{
-            console.log(TextToChange)
-    };
-    
+  const searchedResult = text => {
+    if (text) {
+      const newData = filterData.filter(item => {
+        const itemData = item.userName
+          ? item.userName.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilterData(newData);
+      setSearch(text);
+    } else {
+      setFilterData(Messages);
+      setSearch(text);
+    }
+  };
+
+  const ChatList = ({item}) => {
     return (
-        <View style={styles.mainView}>
-            <View style={{width:'100%', borderRadius:5, elevation:5, paddingLeft:20, marginBottom:15, backgroundColor:'#FBF9FC', flexDirection:'row'}}>
-             <Image
-                style={{marginTop:15}}
-                source={require('../Assets/Search.png')}
-                />
-             <TextInput
-            style={{marginLeft:25}}     
-             onChangeText={(Text)=>{
-          TextChange(Text);
-        }}
-        // value={number}
-        placeholder="Search"
-      />
-
-
-
-            </View>
-            <View>
-            <FlatList
-            data={Messages}
-            keyExtractor={item=>item.id}
-            renderItem={({item}) => (
-            <TouchableOpacity style={styles.subView}
+        <View>
+        <TouchableOpacity style={styles.subView}
             onPress={()=>navigation.navigate("ChatScreen", {userName:item.userName})}
             >
             <View style={styles.UserInfo}>
@@ -92,19 +84,46 @@ const MessagesScreen = ({navigation}) => {
                 <View style={styles.textSection}>
 
                 <View style={styles.textView}>
-                <Text style={styles.text}>{item.userName}</Text>
+                <Text style={styles.text}>{item.userName.toUpperCase()}</Text>
                 <Text style={styles.timeText}>{item.messageTime}</Text>
                 </View>
 
                 <Text style={styles.messageText}>{item.messageText}</Text>
                 </View>
             </View>
-            
-            
             </TouchableOpacity>
-          )}
+            </View>
+
+
+    );
+  };
+
+
+
+
+    
+    return (
+        <View style={styles.mainView}>
+            <View style={{width:'100%', borderRadius:5, paddingLeft:20, marginBottom:15, backgroundColor:'white', flexDirection:'row'}}>
+             <Image
+              style={{marginTop:15, marginLeft:20}}
+              source={require('../Assets/Search.png')}
+              />
+            <TextInput
+            style={{marginLeft:20}}
+                placeholder="Search User!"
+                value={search}
+                onChangeText={text => searchedResult(text)}
             />
-            
+            </View>
+
+            <FlatList
+                data={filterData}
+                keyExtractor={item => item.id}
+                renderItem={ChatList}
+            />
+           
+            <View>           
             
         </View>
         </View>
@@ -115,13 +134,14 @@ const MessagesScreen = ({navigation}) => {
 const styles = StyleSheet.create({
     mainView:{
         flex: 1,
-        paddingLeft: 20,
-        paddingRight: 20,
         alignItems: 'center',
         backgroundColor: '#ffffff',
+        paddingRight:20
+
     },
     subView:{
-        width: '100%'
+        width: '100%',
+
     },
     UserInfo:{
         flexDirection: 'row',
@@ -135,6 +155,7 @@ const styles = StyleSheet.create({
         width: 50,
         height: 50,
         borderRadius: 25,
+        marginLeft:20
     },
     textSection:{
         flexDirection: 'column',
@@ -165,9 +186,26 @@ const styles = StyleSheet.create({
     messageText:{
         fonSize: 14,
         color: '#333333',
-    }
-
-
+    },
+    container: {
+    // backgroundColor: '#F5FCFF',
+  },
+  search: {
+    marginTop: 30,
+    width: '50%',
+    // paddingLeft: 10,
+    borderWidth: 1,
+    borderRadius: 10,
+  },
+  list: {
+    borderRadius: 10,
+    backgroundColor: '#32CD32',
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginVertical: 30,
+    // padding: 10,
+    width: '100%',
+  },
 })
 
 export default MessagesScreen;
