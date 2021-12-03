@@ -140,7 +140,9 @@ let routeName;
           name="PastSelectedService" component={PastSelectedService} />
 
         <Stack.Screen 
-        options={{headerTitleAlign:'center'}} 
+        options={{headerTitleAlign:'center',  headerShadowVisible: false,}} 
+           
+        
           name="MainService" component={mainScreenSS} />
 
           <Stack.Screen 

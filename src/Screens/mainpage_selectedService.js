@@ -36,21 +36,27 @@ const MainPageSS=()=>{
 const styles= StyleSheet.create({
     buttonView:{
         flexDirection:'row',
-        justifyContent:'space-between',
-        marginRight:40,
-        marginLeft:40,
         marginTop:20,
-        paddingBottom:10
+        paddingBottom:10,
+        backgroundColor:"white",
+        width:"99%",
+        justifyContent:'center',
     },
     buttonClicked:{
         padding:8,
         borderRadius:20,
         borderBottomWidth:1,
-        borderBottomColor:'grey'
+        borderBottomColor:'grey',
+        marginLeft:40,
+        marginRight:40,
     },
     button:{
         padding:8,
         borderRadius:20,
+        marginLeft:40,
+        marginRight:40,
+
+
     },
     buttonText:{
         textAlign:'center',
