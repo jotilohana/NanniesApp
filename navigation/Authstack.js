@@ -17,7 +17,6 @@ import ServiceDetails from '../src/Screens/ServiceDetails';
 import BookingForm from '../src/Screens/bookingform';
 import Time from '../src/Screens/Time';
 import DropDown from '../src/Screens/DropDown';
-import SelectedService from '../src/Screens/SelectedService';
 import Details from '../src/Screens/particularScreenDetails';
 import Profile from '../src/Screens/Profile';
 import EditProfile from '../src/Screens/EditProfile';
@@ -27,9 +26,11 @@ import MessagesScreen from '../src/Screens/Messages';
 import HeaderImage from '../src/Screens/HeaderImage';
 import DropdownChat from '../src/Screens/dropdownChat';
 import Attachment from '../src/Screens/Attachment';
-import Search from '../src/Screens/Search';
 import Thankyou from '../src/Screens/thankyou';
 import Map from '../src/Screens/Map';
+import mainScreenSS from '../src/Screens/mainpage_selectedService';
+// import CurrentSelectedService from '../src/Screens/CurrentSelectedServices';
+import {CurrentSelectedService, PastSelectedService} from '../src/Screens/SelectedServices';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -76,6 +77,8 @@ let routeName;
           name=" "
           component={OnBoardingScreen}
         />
+
+
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Login" component={Login} />
@@ -130,7 +133,15 @@ let routeName;
 
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
-          name="Orders" component={SelectedService} />
+          name="CurrentSelectedService" component={CurrentSelectedService} />
+
+          <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="PastSelectedService" component={PastSelectedService} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="MainService" component={mainScreenSS} />
 
           <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
@@ -168,10 +179,6 @@ let routeName;
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="Attachment" component={Attachment} />
-
-        <Stack.Screen 
-        options={{headerTitleAlign:'center'}} 
-          name="Search" component={Search} />
 
         <Stack.Screen 
         options={{headerTitleAlign:'center'}} 

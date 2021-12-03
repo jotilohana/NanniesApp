@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
-import Search from './Search';
 import ServiceDetails from './ServiceDetails';
 
 

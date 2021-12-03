@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import { StyleSheet,TextInput,  Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
-import Search from './Search';
 const Messages = [
   {
     id: '1',

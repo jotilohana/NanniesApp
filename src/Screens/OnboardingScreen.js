@@ -20,22 +20,16 @@ const styles = StyleSheet.create({
   },
     
   //Body
-  home_body:{
-    marginTop:'30%',
-    marginLeft:'5%',
+
+  container:{
+    height:300,
+    justifySelf:'center',
+    marginTop:"35%",
+    backgroundColor:'black'
   },
-  lighttext:{
-        color:'black',
-        fontSize:30,
-        fontWeight:'bold',
-    },
-   subtext:{
-        fontSize:16,
-        color:'black',
-    },
   logo:{
-        width:300,
-        height:250,  
+        width:320,
+        height:300,  
         alignSelf:'center' ,
         marginTop:'10%'       
     },
@@ -78,53 +72,35 @@ const OnBoardingScreen=({navigation})=>{
       showsButtons={true}
       nextButton={<Text style={styles.nextbutton}>Next</Text>}
       prevButton={<Text style={styles.buttonText}></Text>}
-    
+  //     onDone={<Text style={styles.donebutton}>Donw</Text>
+  //      <TouchableOpacity
+  //       style={styles.barButton}
+  //       onPress={()=>{navigation.navigate("Home")}}
+  //     >
+  //     <Text style={styles.nextbutton}>Done</Text>
+  //     </TouchableOpacity>
+  //  }
       >
         <View style={styles.slide1}>
         <View style={styles.container}>  
-
-      <View style={styles.home_body}>
-      <Text style={styles.lighttext}>How it works</Text>
-      <Text style={styles.subtext}>Guardian will receive SMS alerts with GEO location</Text>
-      </View>
-
       <Image style={styles.logo}
        source={require('../Assets/image1.jpg')} />
         </View>
-        </View>
-
-        <View style={styles.slide1}>
-        <View style={styles.container}>
-                        
-      <View style={styles.home_body}>
-      <Image style={styles.logo}
-       source={require('../Assets/image1.jpg')} />
-      <Text style={styles.lighttext}>How it works</Text>
-      <Text style={styles.subtext}>Guardian will receive SMS alerts with GEO location</Text>
-    </View>
-      </View>
         </View>
 
         <View style={styles.slide1}>
         <View style={styles.container}>  
+        <Image style={styles.logo}
+       source={require('../Assets/image1.jpg')} />
+        </View>
+        </View>
 
-      <View style={styles.home_body}>
-      <Text style={styles.lighttext}>How it works</Text>
-      <Text style={styles.subtext}>Guardian will receive SMS alerts with GEO location</Text>
-      </View>
-
+      <View style={styles.slide1}>
+      <View style={styles.container}>  
       <Image style={styles.logo}
        source={require('../Assets/image1.jpg')} />
         </View>
-        <TouchableOpacity
-        style={styles.donebutton}
-        onPress={()=>navigation.navigate('Login')}
-        >
-         <Image
-       source={require('../Assets/done.png')} />
-      </TouchableOpacity>
         </View>
-
       </Swiper>
       </View>
     )

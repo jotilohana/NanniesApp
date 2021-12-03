@@ -1,12 +1,56 @@
 import React from 'react';
-import {View, Text, StyleSheet, TouchableOpacity, Image} from 'react-native';
+import {View, Text, StyleSheet, TouchableOpacity, Image, FlatList} from 'react-native';
 
+  const Messages = [
+  {
+    id: '1',
+    status:'Rejected',
+    serviceName: 'Service Name',
+    initailTime: '12:00Am',
+    finalTime: '12:00Pm',
+    initailDate:"22-Nov-21",
+    finalDate:"29-Nov-21",
 
-const SelectedService =({navigation})=>{
-return(
-    <View style={styles.mainView}>
-    <TouchableOpacity
-        onPress={()=>navigation.navigate("Details")}
+  },
+  {
+    id: '2',
+    status:'Rejected',
+    serviceName: 'Service Name',
+    initailTime: '12:00Am',
+    finalTime: '12:00Pm',
+    initailDate:"22-Nov-21",
+    finalDate:"29-Nov-21",
+
+  },
+];
+
+ const PastMessages = [
+  {
+    id: '1',
+    status:'Completed',
+    serviceName: 'Service Name',
+    initailTime: '12:00Am',
+    finalTime: '12:00Pm',
+    initailDate:"22-Nov-21",
+    finalDate:"29-Nov-21",
+
+  },
+  {
+    id: '2',
+    status:'Completed',
+    serviceName: 'Service Name',
+    initailTime: '12:00Am',
+    finalTime: '12:00Pm',
+    initailDate:"22-Nov-21",
+    finalDate:"29-Nov-21",
+
+  },
+];
+
+const Data=({item})=>{
+    return(
+         <View style={styles.mainView}>
+        <TouchableOpacity
       >
         <View style={styles.cardView}>
             <View style={styles.ImgView}>
@@ -18,15 +62,14 @@ return(
             </View>
              <TouchableOpacity
                     style={styles.button}
-                    // onPress={onPress}
                 >
-                <Text style={styles.buttonText}>Rejected</Text>
+                <Text style={styles.buttonText}>{item.status}</Text>
                 </TouchableOpacity>
             </View>
 
             <View style={styles.secondView}>
             <View style={{flexDirection:'row', borderBottomWidth:2, borderColor:"#F4ECF7"}}>
-            <Text style={styles.Text}>Service Name</Text>
+            <Text style={styles.Text}>{item.serviceName}</Text>
             <Image
             style={styles.Dots}
             source={require('../Assets/Dots.png')}
@@ -41,9 +84,9 @@ return(
             <Text style={{fontSize:15,marginRight:4}}>Service Time </Text>
             </View>
             <View style={{flexDirection:'row'}}>
-            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>12:00AM</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>{item.initailTime}</Text>
             <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
-            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>12:00PM</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>{item.finalTime}</Text>
             </View>
             </View>
 
@@ -56,15 +99,40 @@ return(
             <Text style={{fontSize:15,marginRight:4}}>Service Date</Text>
             </View>
             <View style={{flexDirection:'row'}}>
-            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>22-Nov-21</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>{item.initailDate}</Text>
             <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c", marginRight:10}}>To</Text>
-            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>29-Nov-21</Text>
+            <Text style={{fontSize:15,fontWeight:"bold", color:"#03204c"}}>{item.finalDate}</Text>
             </View>
             </View>
             </View>
         </View>
     </TouchableOpacity>
     </View>
+    )
+};
+
+const PastSelectedService =({navigation})=>{
+return(
+   <View style={{marginBottom:"40%"}}>
+   <FlatList
+    data={PastMessages}
+    keyExtractor={item => item.id}
+    renderItem={Data}
+    />
+   </View>
+)
+};
+
+
+const CurrentSelectedService =({navigation})=>{
+return(
+   <View style={{marginBottom:"40%"}}>
+   <FlatList
+    data={Messages}
+    keyExtractor={item => item.id}
+    renderItem={Data}
+    />
+   </View>
 )
 };
 
@@ -96,12 +164,13 @@ const styles=StyleSheet.create({
     button:{
         backgroundColor:'#03204c',
         position:"absolute",
-        right:85,
+        right:80,
         height:20,
         top:10,
         borderRadius:10,
         padding:3,
-        height:23
+        height:23,
+        width:70
     },
     buttonText:{
         color:'white',
@@ -133,4 +202,5 @@ const styles=StyleSheet.create({
     }
 
 })
-export default SelectedService;
+export  {CurrentSelectedService, PastSelectedService};
+ 
