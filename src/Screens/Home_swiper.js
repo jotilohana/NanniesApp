@@ -1,6 +1,14 @@
 import React from 'react';
 import {Text,Image, View, StyleSheet, ImageBackground, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
+import { NavigationContainer, DrawerActions } from '@react-navigation/native';
+import {
+  createDrawerNavigator,
+  DrawerContentScrollView,
+  DrawerItemList,
+  DrawerItem,
+} from '@react-navigation/drawer';
+
 
 const styles = StyleSheet.create({
   wrapper: {},
@@ -38,7 +46,8 @@ const styles = StyleSheet.create({
   
 });
 
-const Home_swiper=()=>{
+const Home_swiper=({navigation})=>{
+
     return(
          <View style={styles.Main_view}>
       <Swiper style={styles.wrapper} 
@@ -54,15 +63,18 @@ const Home_swiper=()=>{
         <View style={styles.slide1}>
         <View style={styles.container}>
     <ImageBackground source={require('../Assets/homeslider/Image1.jpg')}  
-    style={styles.image}>                     
+    style={styles.image}> 
+
       <TouchableOpacity
       style={styles.Nav}
+      onPress={() => navigation.toddleDrawer()}
       >
         <Image
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
       </TouchableOpacity>
+
     </ImageBackground>
         </View>
         </View>
