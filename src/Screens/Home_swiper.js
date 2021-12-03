@@ -8,78 +8,34 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   slide2: {
-    justifyContent: 'center',
+  flex: 1,
   },
   slide3: {
-    justifyContent: 'center',
+    flex: 1,
   },
-  text: {
-    color: '#fff',
-    fontSize: 30,
-    fontWeight: 'bold',
+  container:{
+    flex:1,
   },
   Main_view:{
    height:250,
    marginBottom:30,
+   backgroundColor:'red'
   },
   image:{
-    width:'100%',
-    height:320
+      flex:1,
+      // width:'100%',
+      // height:'100%',
+      resizeMode:"stretch"
   },
   //header
   Nav:{
     margin:'5%',
-    flexDirection: 'row',
-     flexWrap: 'wrap',
-     textAlign:'center'
   },
   tinyLogo:{
     width:'8%',
     height:20,
-    marginTop:'2%',
   },
-  headerText:{
-    color:'#03204c',
-    fontSize:20,
-    marginLeft:'auto',
-    marginRight:'auto',
-    fontWeight:'bold'
-  },
-  //Body
-  home_body:{
-    marginTop:'15%',
-    width:'60%',
-    marginLeft:'5%',
-  },
-  Home_text:{
-    fontSize:20,
-    color:'black',
-    marginBottom:20
-  },
-  // ProfileSection
-  imageView:{
-    width:50,
-    height:50,
-    marginBottom:20,
-    paddingBottom:400,
-  },
-  profile:{
-    width:80,
-    height:80,
-    borderRadius:50,
-    borderWidth:4,
-    borderColor:'#03204c',
-    position:'relative',
-    bottom:26,
-    marginLeft:10
-  },
-  profileTextView:{
-    marginLeft:40,
-    marginRight:10
-  },
-  profileText:{
-    color:'white',
-  },
+  
 });
 
 const Home_swiper=()=>{
@@ -88,7 +44,7 @@ const Home_swiper=()=>{
       <Swiper style={styles.wrapper} 
       loop={false}
       showsButtons={false}
-      dotStyle={{width:20,height:4, backgroundColor:'white'}}
+      dotStyle={{width:20,height:4, backgroundColor:'grey'}}
       activeDotStyle={{width:20,height:4,backgroundColor:'#03204c'}}
       paginationStyle={{
         justifyContent:"flex-start",
@@ -97,7 +53,7 @@ const Home_swiper=()=>{
       >
         <View style={styles.slide1}>
         <View style={styles.container}>
-    <ImageBackground source={require('../Assets/Background_Images.jpg')}  
+    <ImageBackground source={require('../Assets/homeslider/Image1.jpg')}  
     style={styles.image}>                     
       <TouchableOpacity
       style={styles.Nav}
@@ -106,14 +62,14 @@ const Home_swiper=()=>{
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      <Text style={styles.headerText}>Home Services1</Text>
       </TouchableOpacity>
     </ImageBackground>
         </View>
         </View>
+
         <View style={styles.slide1}>
         <View style={styles.container}>
-    <ImageBackground source={require('../Assets/Background_Images.jpg')}  
+    <ImageBackground source={require('../Assets/homeslider/Image2.jpg')}  
     style={styles.image}>                     
       <TouchableOpacity
       style={styles.Nav}
@@ -122,14 +78,14 @@ const Home_swiper=()=>{
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      <Text style={styles.headerText}>Home Services2</Text>
       </TouchableOpacity>
     </ImageBackground>
         </View>
         </View>
-        <View style={styles.slide1}>
-        <View style={styles.container}>
-    <ImageBackground source={require('../Assets/Background_Images.jpg')}  
+
+      <View style={styles.slide1}>
+      <View style={styles.container}>
+    <ImageBackground source={require('../Assets/homeslider/Image3.jpg')}  
     style={styles.image}>                     
       <TouchableOpacity
       style={styles.Nav}
@@ -138,7 +94,6 @@ const Home_swiper=()=>{
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      <Text style={styles.headerText}>Home Services3</Text>
       </TouchableOpacity>
     </ImageBackground>
         </View>

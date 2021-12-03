@@ -6,41 +6,44 @@ import Home_swiper from './Home_swiper';
 import Home_card from './Home_card';
 import TestimonialSection from './testimonialSection';
 import Maps from './Map';
-import { useRoute } from '@react-navigation/native';
 
 const DATA = [
   {
-    image: require('../Assets/Background_Images.jpg'),
+    id:1,
+    image: require('../Assets/Services/Eldercare.png'),
     name: 'Wedding photos',
   },
   {
-    image: require('../Assets/Background_Images.jpg'),
+    id:2,
+    image: require('../Assets/Services/Meal.png'),
     name: 'Party photos',
   },
   {
-    image: require('../Assets/Background_Images.jpg'),
+    id:3,
+    image: require('../Assets/Services/support.png'),
     name: 'Picnic photos',
   },
   {
-    image: require('../Assets/Background_Images.jpg'),
+    id:4,
+    image: require('../Assets/Services/Maintenance.png'),
     name: 'School photos',
   },
   {
-    image: require('../Assets/Background_Images.jpg'),
+    id:5,
+    image: require('../Assets/Services/housekeeper.png'),
     name: 'Uni photos',
   },
 ];
 
 
 const HomeScreen = ({navigation, route}) => {
-// const {userName} =route.params;
-  const ServiceHeader=()=>{    
+  const ServiceHeader=({item})=>{    
     return(
       <View style={{flexDirection:'row',}}>
         <Text style={{color:'black',fontWeight:'bold',fontSize:25,margin:10}}>Services</Text>
         <View style={{marginLeft:'auto'}}>
         <TouchableOpacity
-          onPress={() =>navigation.navigate('Service')}
+          onPress={() =>navigation.navigate('Service') }
           style={{
            backgroundColor: "#03204c",
            padding:5,
@@ -64,12 +67,14 @@ const HomeScreen = ({navigation, route}) => {
         <Home_swiper />
       </View>
       <ServiceHeader />
+      <View>
       <FlatList
-        keyExtractor={item => item.name}
+        keyExtractor={item => item.id}
         data={DATA}
         renderItem={renderItem}
         horizontal
       />
+      </View>
       <View>
       <AboutUs />
       </View>

@@ -29,8 +29,8 @@ import Attachment from '../src/Screens/Attachment';
 import Thankyou from '../src/Screens/thankyou';
 import Map from '../src/Screens/Map';
 import mainScreenSS from '../src/Screens/mainpage_selectedService';
-// import CurrentSelectedService from '../src/Screens/CurrentSelectedServices';
 import {CurrentSelectedService, PastSelectedService} from '../src/Screens/SelectedServices';
+import MyDrawer from '../src/Screens/sideNav';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -141,8 +141,6 @@ let routeName;
 
         <Stack.Screen 
         options={{headerTitleAlign:'center',  headerShadowVisible: false,}} 
-           
-        
           name="MainService" component={mainScreenSS} />
 
           <Stack.Screen 
@@ -189,6 +187,10 @@ let routeName;
         <Stack.Screen
         options={{headerTitleAlign:'center'}} 
         name="Map" component={Map} />
+
+        <Stack.Screen 
+        options={{headerTitleAlign:'center'}} 
+          name="MyDrawer" component={MyDrawer} />
 
       </Stack.Navigator>
     );

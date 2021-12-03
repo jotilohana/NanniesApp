@@ -36,11 +36,11 @@ const MainPageSS=()=>{
 const styles= StyleSheet.create({
     buttonView:{
         flexDirection:'row',
-        marginTop:20,
         paddingBottom:10,
         backgroundColor:"white",
         width:"99%",
         justifyContent:'center',
+        paddingTop:20
     },
     buttonClicked:{
         padding:8,

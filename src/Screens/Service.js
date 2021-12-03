@@ -2,29 +2,35 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
 import ServiceDetails from './ServiceDetails';
 
-
 const DATA = [
   {
      text: 'How to use it1',
      id:1,
-    image: require('../Assets/Background_Images.jpg'),
+     image: require('../Assets/Services/Eldercare.png'),
   },
   {
      text: 'How to use it2',
      id:2,
-    image: require('../Assets/Background_Images.jpg'),
+    image: require('../Assets/Services/Meal.png'),
 
   },
   {
-     text: 'How to use it3',
+    text: 'How to use it3',
     id:3,
-    image: require('../Assets/Background_Images.jpg'),
+    image: require('../Assets/Services/support.png'),
   },
   {
      text: 'How to use it4',
     id:4,
-    image: require('../Assets/Background_Images.jpg'),
+    image: require('../Assets/Services/Maintenance.png'),
   },
+  {
+     text: 'How to use it4',
+    id:4,
+    image: require('../Assets/Services/housekeeper.png'),
+
+  },
+  
 ];
 
 const Service=({navigation})=>{
@@ -35,10 +41,13 @@ const ServicePortion=({text,image})=>{
         style={styles.button}
         onPress={(props)=>navigation.navigate("Service Details")}
       >
+      <View style={styles.backgroundView}>
         <ImageBackground source={image}  style={styles.image}>
                 <Text style={styles.Maintext}>{text}</Text>    
         </ImageBackground>
+        </View>
       </TouchableOpacity>
+
             </View>
         )
     }
@@ -47,7 +56,7 @@ const ServicePortion=({text,image})=>{
   );
 
     return(
-        <View style={{flex:1,height:"100%",backgroundColor:"white"}}>
+        <View style={{flex:1,height:"100%"}}>
             <View style={styles.headerText}>
             <Text style={styles.headerText}>Services</Text>
             </View>
@@ -66,24 +75,33 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
         fontSize:20,
         color:'black',
-        paddingLeft:10
     },
     MainView:{
         height:200,
         margin:20,
         borderRadius:25,
-        overflow:'hidden'
+        overflow:'hidden',
+        backgroundColor:'white'
     },
     Maintext:{
         fontSize:20,
         color:'black',
         fontWeight:'bold',
         paddingTop:"30%",
-        margin:20
+        margin:20,
+        marginLeft:0,
+        marginTop:"auto"
     },
     image:{
-        height:200,
+    width: '100%',
+    height: '100%',
+    resizeMode: 'cover',
     },
+    backgroundView:{
+    alignSelf:"center",
+    width:'70%',
+    height:'100%',
+    }
 
 })
 export default Service;
