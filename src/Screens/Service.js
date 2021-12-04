@@ -12,7 +12,6 @@ const DATA = [
      text: 'How to use it2',
      id:2,
     image: require('../Assets/Services/Meal.png'),
-
   },
   {
     text: 'How to use it3',
@@ -41,14 +40,18 @@ const ServicePortion=({text,image})=>{
         style={styles.button}
         onPress={(props)=>navigation.navigate("Service Details")}
       >
-      <View style={styles.backgroundView}>
-        <ImageBackground source={image}  style={styles.image}>
-                <Text style={styles.Maintext}>{text}</Text>    
-        </ImageBackground>
-        </View>
-      </TouchableOpacity>
 
-            </View>
+        <View style={styles.container}>
+    <View style={styles.imageView}>
+      <Image source={image} style={styles.img} />
+      </View>
+      <View  style={styles.textView}>
+        <Text style={styles.text}>{text}</Text>
+      </View>
+    </View>
+
+      </TouchableOpacity>
+        </View>
         )
     }
    const renderItem = ({ item }) => (
@@ -92,16 +95,24 @@ const styles = StyleSheet.create({
         marginLeft:0,
         marginTop:"auto"
     },
-    image:{
+    
+    img: {
+    flex: 1,
     width: '100%',
     height: '100%',
-    resizeMode: 'cover',
-    },
-    backgroundView:{
-    alignSelf:"center",
-    width:'70%',
-    height:'100%',
-    }
+    resizeMode: 'contain',
+  },
+  imageView:{
+    width:'100%',
+    height:150,
+    marginTop:10,
+  },
+  text:{
+    color: 'black',
+     fontWeight: 'bold', 
+     fontSize:18,
+     textAlign:'center'
+  }
 
 })
 export default Service;

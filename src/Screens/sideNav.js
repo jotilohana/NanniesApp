@@ -10,8 +10,7 @@ const Drawer = createDrawerNavigator();
 
 const MyDrawer=()=> {
   return (
-    <Drawer.Navigator
-    >
+    <Drawer.Navigator initialRouteName={HomeScreen}>
       <Drawer.Screen name="Feed" component={FAQ} />
     </Drawer.Navigator>
   );

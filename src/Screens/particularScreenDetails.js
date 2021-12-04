@@ -2,7 +2,7 @@ import React from 'react';
 import VerticalIndicator from './VerticalIndicator';
 import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native';
 
-const ParticularScreenDetails=()=>{
+const ParticularScreenDetails=({navigation})=>{
     return(
         <View style={{margin:2, flex:1, backgroundColor:'#fffff'}}>
             <View style={{flexDirection:'row', height:300}}>
@@ -13,7 +13,7 @@ const ParticularScreenDetails=()=>{
                     <View style={{backgroundColor:"#03204c",borderRadius:50,height:100, width:100,marginTop:100,marginLeft:40}}>
                     <Image
                     style={styles.profile}
-                    source={require('../Assets/profile2.jpg')}
+                    source={require('../Assets/Services/Meal.png')}
                     />
                     <View style={{flexDirection:'row', alignSelf:'center', margin:10}}>
                     <Text style={{margin:5}}>Track</Text>
@@ -22,6 +22,7 @@ const ParticularScreenDetails=()=>{
                     </View>
                     <View style={{flexDirection:'row', alignSelf:'center', margin:10, marginTop:0}}>
                     <TouchableOpacity
+                    onPress={()=>{navigation.navigate("Map")}}
                         >
                        <Image
                     style={{margin:3, marginTop:0}}

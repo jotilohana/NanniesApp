@@ -29,7 +29,6 @@ import Attachment from '../src/Screens/Attachment';
 import Thankyou from '../src/Screens/thankyou';
 import Map from '../src/Screens/Map';
 import mainScreenSS from '../src/Screens/mainpage_selectedService';
-import {CurrentSelectedService, PastSelectedService} from '../src/Screens/SelectedServices';
 import MyDrawer from '../src/Screens/sideNav';
 
 const Stack = createStackNavigator();
@@ -86,6 +85,9 @@ let routeName;
           <Stack.Screen name="Home" component={HomeScreen} 
           options={{headerTitleAlign:'center'}} 
           />
+          <Stack.Screen 
+        options={{headerTitleAlign:'center', headerShown:"false"}} 
+          name="MyDrawer" component={MyDrawer} />
 
         <Stack.Screen
         options={{headerTitleAlign:'center'}} 
@@ -130,14 +132,6 @@ let routeName;
            <Stack.Screen 
         options={{headerTitleAlign:'center'}} 
           name="DropDown" component={DropDown} />
-
-          <Stack.Screen 
-        options={{headerTitleAlign:'center'}} 
-          name="CurrentSelectedService" component={CurrentSelectedService} />
-
-          <Stack.Screen 
-        options={{headerTitleAlign:'center'}} 
-          name="PastSelectedService" component={PastSelectedService} />
 
         <Stack.Screen 
         options={{headerTitleAlign:'center',  headerShadowVisible: false,}} 
@@ -188,9 +182,7 @@ let routeName;
         options={{headerTitleAlign:'center'}} 
         name="Map" component={Map} />
 
-        <Stack.Screen 
-        options={{headerTitleAlign:'center'}} 
-          name="MyDrawer" component={MyDrawer} />
+        
 
       </Stack.Navigator>
     );

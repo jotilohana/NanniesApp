@@ -82,20 +82,6 @@ const HomeScreen = ({navigation, route}) => {
       <Text style={styles.mainText}>Testimonial</Text>
       <TestimonialSection />
       </View>
-
-      <TouchableOpacity
-      onPress={()=>navigation.navigate("Map")}
-                        >
-      <Image
-       style={{margin:3, marginTop:0}}
-       source={require('../Assets/track.png')}
-      />
-       </TouchableOpacity>
-       
-       <TouchableOpacity
-      onPress={()=>navigation.navigate("Chat")}                        >
-      <Text>hello</Text>
-       </TouchableOpacity>
     </ScrollView>
   );
 };

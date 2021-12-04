@@ -3,12 +3,9 @@ import {Text,Image, View, StyleSheet, ImageBackground, TouchableOpacity} from 'r
 import Swiper from 'react-native-swiper';
 import { NavigationContainer, DrawerActions } from '@react-navigation/native';
 import {
-  createDrawerNavigator,
-  DrawerContentScrollView,
-  DrawerItemList,
-  DrawerItem,
-} from '@react-navigation/drawer';
-
+  widthPercentageToDP as wp,
+  heightPercentageToDP as hp,
+} from 'react-native-responsive-screen';
 
 const styles = StyleSheet.create({
   wrapper: {},
@@ -25,23 +22,32 @@ const styles = StyleSheet.create({
     flex:1,
   },
   Main_view:{
-   height:250,
    marginBottom:30,
-   backgroundColor:'red'
+    height:250,
+    width: '100%',
+    padding:0
+  },
+  imageView:{
+    flex:1,
+    width: wp('100%'),
+    height:250
   },
   image:{
       flex:1,
-      // width:'100%',
-      // height:'100%',
-      resizeMode:"stretch"
+      resizeMode:'contain',
+      height:'100%', 
+      width:'100%'
   },
   //header
   Nav:{
     margin:'5%',
+    position:'absolute',
+    top:'0%',
   },
   tinyLogo:{
-    width:'8%',
+    width:'70%',
     height:20,
+    
   },
   
 });
@@ -62,12 +68,15 @@ const Home_swiper=({navigation})=>{
       >
         <View style={styles.slide1}>
         <View style={styles.container}>
-    <ImageBackground source={require('../Assets/homeslider/Image1.jpg')}  
-    style={styles.image}> 
-
+        <View style={styles.imageView}>
+        <Image
+        source={require('../Assets/homeslider/Image2.jpg')}
+        style={styles.image}  
+      />
+        </View>  
       <TouchableOpacity
       style={styles.Nav}
-      onPress={() => navigation.toddleDrawer()}
+      // onPress={() => navigation.dispatch(DrawerActions.toggleDrawer());}
       >
         <Image
         style={styles.tinyLogo}
@@ -75,39 +84,40 @@ const Home_swiper=({navigation})=>{
       />
       </TouchableOpacity>
 
-    </ImageBackground>
         </View>
         </View>
 
         <View style={styles.slide1}>
         <View style={styles.container}>
-    <ImageBackground source={require('../Assets/homeslider/Image2.jpg')}  
-    style={styles.image}>                     
-      <TouchableOpacity
+        <Image
+        source={require('../Assets/homeslider/Image2.jpg')}
+        style={styles.image}    
+      />
+      {/* <TouchableOpacity
       style={styles.Nav}
       >
         <Image
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      </TouchableOpacity>
-    </ImageBackground>
+      </TouchableOpacity> */}
         </View>
         </View>
 
       <View style={styles.slide1}>
       <View style={styles.container}>
-    <ImageBackground source={require('../Assets/homeslider/Image3.jpg')}  
-    style={styles.image}>                     
-      <TouchableOpacity
+       <Image
+        source={require('../Assets/homeslider/Image2.jpg')}
+        style={styles.image}    
+      />         
+      {/* <TouchableOpacity
       style={styles.Nav}
       >
         <Image
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      </TouchableOpacity>
-    </ImageBackground>
+      </TouchableOpacity> */}
         </View>
         </View>
       </Swiper>

@@ -6,7 +6,6 @@ import MyDrawer from '../src/Screens/sideNav';
 const Routes=()=>{
     return (
         <NavigationContainer>
-            {/* <MyDrawer /> */}
             <AuthStack />
         </NavigationContainer>
       

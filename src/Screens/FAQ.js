@@ -43,10 +43,10 @@ const FAQ = () => {
 
   return (
     <View style={styles.container}>
-    <View>
+    <View style={styles.imageView}>
         <Image
         style={styles.headerImage}
-        source={require('../Assets/FQA.jpg')}
+        source={require('../Assets/FAQ/FAQ.jpg')}
       />
     </View>
     <Text style={styles.headerText}>FQA</Text>
@@ -77,10 +77,10 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   headerImage:{
-    width:'80%',
+    width: 300,
     height:200,
     alignSelf:'center',
-    margin:50
+    margin:50,
   },
   headerText:{
       color:'black',

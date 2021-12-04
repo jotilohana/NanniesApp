@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text,Image, TouchableOpacity,ScrollView, View, StyleSheet, TextInput, Button} from 'react-native';
-const Thankyou = ({navigation}) => {
+
+const Thankyou = ({navigation}, props) => {
   return (
     <View style={{backgroundColor:'white', flex:1, justifyContent:"center" }}>
                
