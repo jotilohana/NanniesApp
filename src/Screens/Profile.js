@@ -87,13 +87,20 @@ const Profile=({navigation})=>{
 
                 
             </View>
-            
+            <View style={{flexDirection:'row', alignSelf:'center'}}>
                 <TouchableOpacity
-                            style={styles.EditButton}
-                            onPress={()=>navigation.navigate("Edit Profile")}
-                        >
-                        <Text style={styles.EditText}>Edit Profile</Text>
-                        </TouchableOpacity>
+                    style={styles.EditButton}
+                    onPress={()=>navigation.navigate("Edit Profile")}
+                    >
+                    <Text style={styles.EditText}>Edit Profile</Text>
+                    </TouchableOpacity>
+                 <TouchableOpacity
+                    style={styles.EditButton}
+                    onPress={()=>navigation.navigate("Edit Profile")}
+                     >
+                <Text style={styles.EditText}>Change Address</Text>
+                </TouchableOpacity>
+                </View>
         </View>
     )
 };
@@ -164,14 +171,15 @@ const styles= StyleSheet.create({
         backgroundColor:'#03204c',
         borderRadius:20,
         marginTop:'auto',
-        width:'80%',
+        width:'38%',
         alignSelf:'center',
     },
     EditText:{
         color:'white',
         textAlign:'center',
-        margin:10,
-        fontWeight:'bold'
+        margin:8,
+        fontWeight:'bold',
+        fontSize:15
     }
 })
 export default Profile;

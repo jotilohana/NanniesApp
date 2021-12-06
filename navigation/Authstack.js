@@ -30,6 +30,7 @@ import Thankyou from '../src/Screens/thankyou';
 import Map from '../src/Screens/Map';
 import mainScreenSS from '../src/Screens/mainpage_selectedService';
 import MyDrawer from '../src/Screens/sideNav';
+import Review from '../src/Screens/review';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -181,6 +182,10 @@ let routeName;
         <Stack.Screen
         options={{headerTitleAlign:'center'}} 
         name="Map" component={Map} />
+
+        <Stack.Screen
+        options={{headerTitleAlign:'center',}} 
+        name="Review" component={Review} />
 
         
 

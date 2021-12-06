@@ -70,7 +70,7 @@ const Home_swiper=({navigation})=>{
         <View style={styles.container}>
         <View style={styles.imageView}>
         <Image
-        source={require('../Assets/homeslider/Image2.jpg')}
+        source={require('../Assets/homeslider/Image1.jpg')}
         style={styles.image}  
       />
         </View>  
@@ -90,7 +90,7 @@ const Home_swiper=({navigation})=>{
         <View style={styles.slide1}>
         <View style={styles.container}>
         <Image
-        source={require('../Assets/homeslider/Image2.jpg')}
+        source={require('../Assets/homeslider/Image1.jpg')}
         style={styles.image}    
       />
       {/* <TouchableOpacity
@@ -107,7 +107,7 @@ const Home_swiper=({navigation})=>{
       <View style={styles.slide1}>
       <View style={styles.container}>
        <Image
-        source={require('../Assets/homeslider/Image2.jpg')}
+        source={require('../Assets/homeslider/Image3.jpg')}
         style={styles.image}    
       />         
       {/* <TouchableOpacity

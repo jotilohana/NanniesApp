@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput} from 'react-native';
+import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import DropDown from './DropDown';
 
@@ -7,7 +7,7 @@ const BookingForm=({navigation})=>{
     const [textFN, onChangeTextFN] = useState();
     const [textLN, onChangeTextLN] = useState();
     const [textG, onChangeTextG] = useState();
-    const [textA, onChangeTextA] = useState();
+    const [textA, onChangeTextA] = useState("Filler text is text that shares some characteristics of a real written text");
     const [textC, onChangeTextC] = useState();
     const [textE, onChangeTextE] = useState();
     const [textT, onChangeTextT] = useState();
@@ -66,12 +66,25 @@ const BookingForm=({navigation})=>{
              
             <View style={styles.formView}>
             <DropDown />
+            <View style={styles.AddressView}>
+            <Text style={styles.addressText}>Home</Text>
+            <View style={{flexDirection:'row'}}>
             <TextInput
-            style={styles.input}
+            multiline
+            numberOfLines={2}
+            style={styles.inputAddress}
             onChangeText={onChangeTextA}
             value={textA}
             placeholder="Address"
             />
+            <TouchableOpacity
+            style={styles.EditButton}
+             onPress={()=>navigation.navigate("Edit Profile")}
+            >
+            <Text style={styles.EditText}>Change</Text>
+            </TouchableOpacity>
+            </View>
+            </View>
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextC}
@@ -188,6 +201,45 @@ const styles=StyleSheet.create({
         alignSelf:'center',
         borderRadius:5
     },
+    //Address
+    AddressView:{
+        borderWidth:1,
+        borderRadius:5,
+        paddingLeft:5,
+        paddingRight:5
+    },
+    addressText:{
+        backgroundColor:"#03204c",
+        color:'white',
+        height:25,
+        margin:10,
+        borderRadius:10,
+        padding:3,
+        marginRight:0,
+        marginBottom:0,
+        width:50,
+        textAlign:'center'
+    },
+    inputAddress:{
+        textAlignVertical: "top",
+        borderWidth:0,
+        marginRight:'20%'
+
+    },
+    EditButton:{
+        // margin:15,
+        // backgroundColor:'#03204c',
+        borderRadius:10,
+        alignSelf:'center',
+        marginTop:0,
+        marginLeft:'auto',
+        marginRight:0
+    },
+    EditText:{
+        color:'black',
+        textAlign:'center',
+        margin:4,
+    }
     })
 
 export default BookingForm;

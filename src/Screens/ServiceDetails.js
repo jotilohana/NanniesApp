@@ -4,9 +4,9 @@ import TestimonialSection from './testimonialSection';
 
 
 const ServiceDetails=({navigation},props)=>{
-    const [showAbout,setShowAbout]=useState(false);
+    const [showAbout,setShowAbout]=useState(true);
     const [showReview,setShowReview]=useState(false);
-    const [pressedAbout, setPressedAbout]=useState(false);
+    const [pressedAbout, setPressedAbout]=useState(true);
     const [pressedReview, setPressedReview]=useState(false);
 
     const renderAbout=()=>{
@@ -36,13 +36,13 @@ const ServiceDetails=({navigation},props)=>{
         <View style={styles.barView}>
              <TouchableOpacity
         style={styles.barButton}
-        onPress={()=>{setShowAbout(!showAbout); setShowReview(false); setPressedAbout(true); setPressedReview(false)}}
+        onPress={()=>{setShowAbout(true); setShowReview(false); setPressedAbout(true); setPressedReview(false)}}
       >
         <Text style={pressedAbout ? styles.barTextOnclick : styles.barText}>About</Text>
       </TouchableOpacity>
        <TouchableOpacity
         style={styles.barButton}
-        onPress={()=>{setShowReview(!showReview); setShowAbout(false); setPressedReview(true); setPressedAbout(false)}}
+        onPress={()=>{setShowReview(true); setShowAbout(false); setPressedReview(true); setPressedAbout(false)}}
       >
         <Text style={pressedReview ? styles.barTextOnclick : styles.barText}>Review</Text>
       </TouchableOpacity>
@@ -89,12 +89,12 @@ const styles=StyleSheet.create({
         marginRight:30
     },
     barText:{
-        color:"#03204c",
+        color:"grey",
         fontWeight:'bold',
         fontSize:16
     },
     barTextOnclick:{
-        color:"grey",
+        color:"#03204c",
         fontWeight:'bold',
         fontSize:16
     },

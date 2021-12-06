@@ -94,7 +94,7 @@ const EditProfile=({navigation})=>{
                 source={require('../Assets/Call.png')}
                 />
                 <View style={styles.inputTextView}>
-                <Text style={styles.inputText}>Phone Number</Text>
+                <Text style={styles.inputText}>Phone Number </Text>
                 <TextInput
                     style={styles.input}
                     onChangeText={onChangeTextP}
@@ -116,10 +116,16 @@ const EditProfile=({navigation})=>{
                     style={styles.input}
                     onChangeText={onChangeTextA}
                     value={textA}
-                    placeholder="Filler text is text that shares"
+                    placeholder="Filler text is text thats"
                     placeholderTextColor ="grey"
                 />   
                 </View>
+                <TouchableOpacity
+                 style={styles.changeAddress}
+                 onPress={()=>navigation.navigate("Update Password")}
+                >
+                <Text style={styles.Change}>Change</Text>
+                </TouchableOpacity>
                 </View>
 
                 <View style={styles.InputFieldView}>
@@ -235,6 +241,12 @@ const styles= StyleSheet.create({
         marginLeft:'auto',
         margin:10,
         marginTop:15,
+    },
+    changeAddress:{
+        marginLeft:'auto',
+        margin:10,
+        marginTop:8,
+        marginBottom:0
     },
     Change:{
         fontWeight:'bold',
