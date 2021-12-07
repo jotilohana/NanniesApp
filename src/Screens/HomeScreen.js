@@ -83,11 +83,21 @@ const HomeScreen = ({navigation, route}) => {
       <TestimonialSection />
       </View>
       <TouchableOpacity 
+      onPress={()=>navigation.navigate("FAQ")}
+      >
+      <Text>FAQ</Text>
+      </TouchableOpacity>
+      <TouchableOpacity 
       onPress={()=>navigation.navigate("Review")}
       >
-      <Text>Hello</Text>
+      <Text>Review</Text>
       </TouchableOpacity>
-    </ScrollView>
+      <TouchableOpacity 
+      onPress={()=>navigation.navigate("Profile")}
+      >
+      <Text>Profile</Text>
+      </TouchableOpacity>
+       </ScrollView>
   );
 };
 

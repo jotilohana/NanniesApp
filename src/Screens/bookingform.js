@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {View, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import {View, Image, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import DropDown from './DropDown';
 
@@ -21,7 +21,7 @@ const BookingForm=({navigation})=>{
                 <Text style={styles.HeaderText}>Book Services</Text>
                 <Text style={styles.subText}>Fill all form field to move on next step</Text>
             </View>
-            <View style={{height:630, borderRadius:25}}>
+            <View style={{height:650, borderRadius:25}}>
             <ProgressSteps 
             completedProgressBarColor='#03204c'
             activeStepIconBorderColor="#03204c"
@@ -67,16 +67,17 @@ const BookingForm=({navigation})=>{
             <View style={styles.formView}>
             <DropDown />
             <View style={styles.AddressView}>
-            <Text style={styles.addressText}>Home</Text>
             <View style={{flexDirection:'row'}}>
-            <TextInput
-            multiline
-            numberOfLines={2}
-            style={styles.inputAddress}
-            onChangeText={onChangeTextA}
-            value={textA}
-            placeholder="Address"
-            />
+            <Text style={styles.addressText}>Home</Text>
+            <View style={{marginLeft:"auto", flexDirection:'row'}}>
+            <TouchableOpacity
+            style={styles.CurrentLocation}
+             onPress={()=>navigation.navigate("Edit Profile")}
+            >
+            <Image
+               source={require('../Assets/Locationicon.png')}
+               />
+            </TouchableOpacity>
             <TouchableOpacity
             style={styles.EditButton}
              onPress={()=>navigation.navigate("Edit Profile")}
@@ -84,6 +85,14 @@ const BookingForm=({navigation})=>{
             <Text style={styles.EditText}>Change</Text>
             </TouchableOpacity>
             </View>
+            </View>
+            <TextInput
+            multiline
+            numberOfLines={2}
+            style={styles.inputAddress}
+            onChangeText={onChangeTextA}
+            value={textA}
+            />
             </View>
             <TextInput
             style={styles.input}
@@ -205,40 +214,32 @@ const styles=StyleSheet.create({
     AddressView:{
         borderWidth:1,
         borderRadius:5,
-        paddingLeft:5,
-        paddingRight:5
+        paddingLeft:10,
+        paddingRight:10,
+        paddingTop:10
     },
     addressText:{
         backgroundColor:"#03204c",
         color:'white',
-        height:25,
-        margin:10,
+        height:20,
         borderRadius:10,
-        padding:3,
-        marginRight:0,
-        marginBottom:0,
         width:50,
         textAlign:'center'
     },
     inputAddress:{
         textAlignVertical: "top",
         borderWidth:0,
-        marginRight:'20%'
-
+    },
+    CurrentLocation:{
+        marginTop:3
     },
     EditButton:{
-        // margin:15,
-        // backgroundColor:'#03204c',
         borderRadius:10,
         alignSelf:'center',
-        marginTop:0,
-        marginLeft:'auto',
-        marginRight:0
     },
     EditText:{
         color:'black',
         textAlign:'center',
-        margin:4,
     }
     })
 
