@@ -80,7 +80,7 @@ const BookingForm=({navigation})=>{
             </TouchableOpacity>
             <TouchableOpacity
             style={styles.EditButton}
-             onPress={()=>navigation.navigate("Edit Profile")}
+             onPress={()=>navigation.navigate("Change address")}
             >
             <Text style={styles.EditText}>Change</Text>
             </TouchableOpacity>

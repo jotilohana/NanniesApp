@@ -31,6 +31,8 @@ import Map from '../src/Screens/Map';
 import mainScreenSS from '../src/Screens/mainpage_selectedService';
 import MyDrawer from '../src/Screens/sideNav';
 import Review from '../src/Screens/review';
+import ChangeAddress from '../src/Screens/ChangeAddress';
+import AddAddress from '../src/Screens/AddAddress';
 
 const Stack = createStackNavigator();
 const AuthStack =()=> {
@@ -186,6 +188,14 @@ let routeName;
         <Stack.Screen
         options={{headerTitleAlign:'center',}} 
         name="Review" component={Review} />
+
+        <Stack.Screen
+        options={{headerTitleAlign:'center',}} 
+        name="Change address" component={ChangeAddress} />
+
+         <Stack.Screen
+        options={{headerTitleAlign:'center',}} 
+        name="AddAddress" component={AddAddress} />
 
         
 
