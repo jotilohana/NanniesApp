@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {View, Text, TextInput, StyleSheet, TouchableOpacity, Image} from 'react-native';
 import CheckBox from '@react-native-community/checkbox';
+import Map from './Map';
 
 const AddAddress=()=>{
     const [text, setText] =useState("Filler text is text that shares some characteristics of a real written text, but is random");
@@ -8,17 +9,11 @@ const AddAddress=()=>{
     const [toggleCheckBoxO, setToggleCheckBoxO] = useState(false)
     const [toggleCheckBoxOther, setToggleCheckBoxOther] = useState(false)
     return(
-        <View style={{backgroundColor:"white", margin:20, borderRadius:10,height:'60%', marginTop:'30%'}}>
-        <View style={{margin:20, marginTop:40}}>
-        <Text style={{fontWeight:'bold', color:'black', fontSize:20}}>Current Location</Text>
-        <View style={{flexDirection:'row'}}>
-        <Image
-            style={{marginTop:2, marginRight:5}}
-               source={require('../Assets/Locationicon.png')}
-               />
-        <Text>Filler text is text that shares some characteristics of a real written text, but is random</Text>
-        </View>
-        </View>
+        <View style={{backgroundColor:"white", borderRadius:10, flex:1}}>
+            <View style={{width:"100%", height:"55%", resizeMode: 'cover', }}>
+            <Map />
+            </View>
+        <View style={{margin:20}}>
         <TextInput
         multiline
         numberOfLines={4}
@@ -60,9 +55,9 @@ const AddAddress=()=>{
             style={styles.btn}
              onPress={()=>navigation.navigate("Change address")}
             >
-            <Text style={styles.btntext}>Save</Text>
+            <Text style={styles.btntext}>Save Address</Text>
             </TouchableOpacity>
-
+            </View>
         </View>
     )
 }
@@ -81,7 +76,7 @@ const styles=StyleSheet.create({
     },
     btn:{
         backgroundColor:"#03204c",
-        width:'30%',
+        width:'40%',
         alignSelf:"center",
         borderRadius:20,
         padding:6,

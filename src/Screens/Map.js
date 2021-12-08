@@ -21,8 +21,13 @@ const Map = () => {
         latitudeDelta: 0.0421,
         longitudeDelta: 0.0421,
       });
-    }).catch((err) => {
+
+      
+    })
+
+    .catch((err) => {
       console.log(err);
+      
     });
   }, []);
         return ( 
