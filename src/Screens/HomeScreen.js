@@ -82,6 +82,13 @@ const HomeScreen = ({navigation, route}) => {
       <Text style={styles.mainText}>Testimonial</Text>
       <TestimonialSection />
       </View>
+
+      <TouchableOpacity
+            style={styles.btn}
+             onPress={()=>navigation.navigate("Chat")}
+            >
+            <Text style={styles.btntext}>Chat</Text>
+            </TouchableOpacity>
        </ScrollView>
   );
 };

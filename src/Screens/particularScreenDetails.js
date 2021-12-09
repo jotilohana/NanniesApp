@@ -30,6 +30,8 @@ const ParticularScreenDetails=({navigation})=>{
                     />
                     </TouchableOpacity>
                     <TouchableOpacity
+                    // onPress={()=>{navigation.navigate("Map")}}
+
                         >
                     <Image
                     style={{margin:3,marginTop:0}}
@@ -37,6 +39,8 @@ const ParticularScreenDetails=({navigation})=>{
                     />
                     </TouchableOpacity>
                     <TouchableOpacity
+                    onPress={()=>{navigation.navigate("Chat")}}
+
                         >
                      <Image
                     style={{margin:3, marginTop:0}}

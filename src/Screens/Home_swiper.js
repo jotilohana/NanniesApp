@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     padding:0
   },
   imageView:{
-    flex:1,
+    // flex:1,
     width: wp('100%'),
     height:250
   },
@@ -70,7 +70,7 @@ const Home_swiper=({navigation})=>{
         <View style={styles.container}>
         <View style={styles.imageView}>
         <Image
-        source={require('../Assets/homeslider/Image1.jpg')}
+        source={require('../Assets/homeslider/Image1.png')}
         style={styles.image}  
       />
         </View>  
@@ -90,34 +90,34 @@ const Home_swiper=({navigation})=>{
         <View style={styles.slide1}>
         <View style={styles.container}>
         <Image
-        source={require('../Assets/homeslider/Image1.jpg')}
+        source={require('../Assets/homeslider/Image2.png')}
         style={styles.image}    
       />
-      {/* <TouchableOpacity
+      <TouchableOpacity
       style={styles.Nav}
       >
         <Image
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      </TouchableOpacity> */}
+      </TouchableOpacity>
         </View>
         </View>
 
       <View style={styles.slide1}>
       <View style={styles.container}>
        <Image
-        source={require('../Assets/homeslider/Image3.jpg')}
+        source={require('../Assets/homeslider/Image3.png')}
         style={styles.image}    
       />         
-      {/* <TouchableOpacity
+      <TouchableOpacity
       style={styles.Nav}
       >
         <Image
         style={styles.tinyLogo}
         source={require('../Assets/Menu_Icon.png')}
       />
-      </TouchableOpacity> */}
+      </TouchableOpacity>
         </View>
         </View>
       </Swiper>
