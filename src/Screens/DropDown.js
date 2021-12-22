@@ -20,7 +20,7 @@ const DropDown=()=> {
       containerStyle={{
       width:'100%',
       alignSelf:'center',
-      margin:5
+      marginTop:20
 }}
     />
   );

@@ -262,21 +262,20 @@ const styles= StyleSheet.create({
         borderBottomWidth:1,
         borderBottomColor:'grey',
         marginLeft:40,
-        marginRight:40,
+        marginRight:40,        
     },
     button:{
         padding:8,
         borderRadius:20,
         marginLeft:40,
         marginRight:40,
-
-
     },
     buttonText:{
         textAlign:'center',
         width:100,
         fontSize:18,
-        fontWeight:'bold'
+        fontWeight:'bold',
+        color:'black'
     },
 
     //PRESENT

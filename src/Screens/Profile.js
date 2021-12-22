@@ -163,7 +163,8 @@ const styles= StyleSheet.create({
     inputText:{
         margin:0,
         marginTop:5,
-        padding:0
+        padding:0,
+        color:"black"
     },
     
     EditButton:{

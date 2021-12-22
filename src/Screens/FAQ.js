@@ -76,11 +76,17 @@ const styles = StyleSheet.create({
     alignSelf:'center',
     flexDirection:'row'
   },
+  imageView:{
+    width:'100%',
+    height:350,
+    marginBottom:30
+  },
   headerImage:{
-    width: 300,
-    height:200,
-    alignSelf:'center',
-    margin:50,
+    // width: 3,
+    height:'100%',
+    // margin:50,
+    width:'100%',
+    resizeMode:'contain'
   },
   headerText:{
       color:'black',

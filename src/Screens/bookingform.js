@@ -21,7 +21,7 @@ const BookingForm=({navigation})=>{
                 <Text style={styles.HeaderText}>Book Services</Text>
                 <Text style={styles.subText}>Fill all form field to move on next step</Text>
             </View>
-            <View style={{height:650, borderRadius:25}}>
+            <View style={{height:640, width:'100%', borderRadius:25}}>
             <ProgressSteps 
             completedProgressBarColor='#03204c'
             activeStepIconBorderColor="#03204c"
@@ -41,18 +41,21 @@ const BookingForm=({navigation})=>{
             onChangeText={onChangeTextFN}
             value={textFN}
             placeholder="First Name"
+            placeholderTextColor='black'
             />
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextLN}
             value={textLN}
             placeholder="Last Name"
+            placeholderTextColor='black'
             />
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextG}
             value={textG}
             placeholder="Gender"
+            placeholderTextColor='black'
             />
             
             </View>
@@ -65,7 +68,6 @@ const BookingForm=({navigation})=>{
             >
              
             <View style={styles.formView}>
-            <DropDown />
             <View style={styles.AddressView}>
             <View style={{flexDirection:'row'}}>
             <Text style={styles.addressText}>Home</Text>
@@ -92,6 +94,7 @@ const BookingForm=({navigation})=>{
             style={styles.inputAddress}
             onChangeText={onChangeTextA}
             value={textA}
+            placeholderTextColor='black'
             />
             </View>
             <TextInput
@@ -99,18 +102,21 @@ const BookingForm=({navigation})=>{
             onChangeText={onChangeTextC}
             value={textC}
             placeholder="City"
+            placeholderTextColor='black'
             />
              <TextInput
             style={styles.input}
             onChangeText={onChangeTextE}
             value={textE}
             placeholder="Email"
+            placeholderTextColor='black'
             /> 
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextT}
             value={textT}
             placeholder="Telephone"
+            placeholderTextColor='black'
             /> 
                        
             </View>
@@ -124,24 +130,28 @@ const BookingForm=({navigation})=>{
              >
              
             <View style={styles.formView}>
-            <DropDown />
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextWD}
             value={textWD}
             placeholder="Working Days"
+            placeholderTextColor='black'
             />
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextWT}
             value={textWT}
             placeholder="Working Time"
+            placeholderTextColor='black'
+
             />
             <TextInput
             style={styles.input}
             onChangeText={onChangeTextBooking}
             value={textBooking}
             placeholder="Booking Note"
+            placeholderTextColor='black'
+
             /> 
             </View>
             </ProgressStep>
@@ -154,7 +164,8 @@ const BookingForm=({navigation})=>{
 const styles=StyleSheet.create({
     Main_view:{
         alignSelf:'center',
-        marginTop:20
+        marginTop:20,
+        margin:0
     },
     HeaderText:{
         color:"black",
@@ -168,13 +179,13 @@ const styles=StyleSheet.create({
         textAlign:"center",
     },
     formView:{
-        marginTop:30,
+        marginTop:0,
         backgroundColor:"white",
         padding:20,
-        width:'90%',
+        width:320,
         alignSelf:'center',
         borderRadius:25,
-        height:400,
+        height:390,
     },
     formHeaderText:{
         fontSize:28,
@@ -189,26 +200,29 @@ const styles=StyleSheet.create({
     buttonstylenext:{
         backgroundColor:"#03204c",
         borderRadius:20,
-        padding:5,
-        width:100,
-        marginBottom:80
+        padding:4,
+        width:90,
+        marginBottom:120
     },
     buttonstyleprev:{
         backgroundColor:"#03204c",
         borderRadius:20,
-        padding:5,
-        marginBottom:80,
-        width:100,
+        padding:4,
+        marginBottom:120,
+        width:90,
     },
     input:{
         width:"100%",
         height: 50,
-        margin: 5,
         borderWidth: 1,
         padding: 10,
         paddingLeft:20,
         alignSelf:'center',
-        borderRadius:5
+        borderRadius:5,
+        color:'black',
+        marginTop:20,
+        marginLeft:20,
+        marginRight:20
     },
     //Address
     AddressView:{
@@ -216,7 +230,10 @@ const styles=StyleSheet.create({
         borderRadius:5,
         paddingLeft:10,
         paddingRight:10,
-        paddingTop:10
+        paddingTop:10,
+        width:'100%',
+        alignSelf:'center',
+        marginTop:10
     },
     addressText:{
         backgroundColor:"#03204c",

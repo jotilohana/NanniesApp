@@ -8,10 +8,11 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   slide2: {
-    justifyContent: 'center',
+    flex: 1,
+
   },
   slide3: {
-    justifyContent: 'center',
+    flex: 1,
   },
  
   Main_view:{
@@ -25,7 +26,6 @@ const styles = StyleSheet.create({
     height:300,
     justifySelf:'center',
     marginTop:"35%",
-    backgroundColor:'black'
   },
   logo:{
         width:320,
@@ -49,12 +49,20 @@ const styles = StyleSheet.create({
     },
     donebutton:{
         borderRadius:15,
-        alignSelf:'flex-end',
-        position:'absolute',
-        top:600,
         textAlign:'center',
-        padding:10
+        padding:7,
+        backgroundColor:'#03204c',
+        marginTop:'auto',
+        width:'15%',
+        marginLeft:'auto',
+        margin:10,
+        marginBottom:20
+
     },
+    donebuttontext:{
+      color:'white',
+      textAlign:'center'
+    }
    });
 
 const OnBoardingScreen=({navigation})=>{
@@ -71,15 +79,7 @@ const OnBoardingScreen=({navigation})=>{
       activeDotStyle={{width:20,height:4,backgroundColor:'#03204c'}}
       showsButtons={true}
       nextButton={<Text style={styles.nextbutton}>Next</Text>}
-      prevButton={<Text style={styles.buttonText}></Text>}
-  //     onDone={<Text style={styles.donebutton}>Donw</Text>
-  //      <TouchableOpacity
-  //       style={styles.barButton}
-  //       onPress={()=>{navigation.navigate("Home")}}
-  //     >
-  //     <Text style={styles.nextbutton}>Done</Text>
-  //     </TouchableOpacity>
-  //  }
+      prevButton={<Text style={styles.buttonText}></Text>} 
       >
         <View style={styles.slide1}>
         <View style={styles.container}>  
@@ -88,18 +88,24 @@ const OnBoardingScreen=({navigation})=>{
         </View>
         </View>
 
-        <View style={styles.slide1}>
+        <View style={styles.slide2}>
         <View style={styles.container}>  
         <Image style={styles.logo}
        source={require('../Assets/image1.jpg')} />
         </View>
         </View>
 
-      <View style={styles.slide1}>
+      <View style={styles.slide3}>
       <View style={styles.container}>  
       <Image style={styles.logo}
        source={require('../Assets/image1.jpg')} />
         </View>
+        <TouchableOpacity
+            style={styles.donebutton}
+             onPress={()=>navigation.navigate("Home")}
+            >
+            <Text style={styles.donebuttontext}>Done</Text>
+            </TouchableOpacity>
         </View>
       </Swiper>
       </View>
