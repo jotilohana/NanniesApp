@@ -2,7 +2,68 @@ import React, { Component } from 'react'
 import { StyleSheet, Text, View, Image } from 'react-native'
  
 import Swiper from 'react-native-swiper';
+import baseurl from '../common/BaseUrl';
+import action from '../common/Api';
+
+// const API_URL = "https://evening-inlet-11817.herokuapp.com/about"; 
  
+
+const TestimonialSection=()=> {
+
+  const [post, setPost] = React.useState();
+
+  React.useEffect(() => {
+    action.get('/about').then((response) => {
+      setPost(response.data);
+
+      // console.warn(post.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+
+    return (
+    <View style={{padding:8,height:350,borderRadius:25}}>
+      <Swiper
+      showsButtons={false}
+      loop={false}
+      paginationStyle={{
+      margin:'3%'
+      }}
+      dotStyle={{width:15,height:4, backgroundColor:'grey', borderRadius:25}}
+      activeDotStyle={{width:15,height:4,backgroundColor:'white'}}
+      >
+
+    {
+      post.data.map((item)=>{
+
+        return (
+          <View style={styles.slide1}>
+        <View style={styles.imageView}>
+         <Image style={styles.Image} source={baseurl+item.image} />
+        </View>
+        <View style={{marginTop:50}}>
+         <Text style={styles.headerText}>{item.text}</Text>
+         <Text style={styles.apos}>❝</Text>
+         <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
+          generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
+        <Text style={styles.aposRight}>❝</Text>
+        </View>
+        </View>
+        )
+      }
+      
+      )
+    }
+   
+
+      </Swiper>
+      </View>
+    )
+  
+};
+
 const styles = StyleSheet.create({
   wrapper: {
   },
@@ -70,61 +131,6 @@ const styles = StyleSheet.create({
     color:'white',
   },
 })
-const TestimonialSection=()=> {
-    return (
-    <View style={{padding:8,height:350,borderRadius:25}}>
-      <Swiper
-      showsButtons={false}
-      loop={false}
-      paginationStyle={{
-      margin:'3%'
-      }}
-      dotStyle={{width:15,height:4, backgroundColor:'grey', borderRadius:25}}
-      activeDotStyle={{width:15,height:4,backgroundColor:'white'}}
-      >
-     <View style={styles.slide1}>
-        <View style={styles.imageView}>
-         <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
-        </View>
-        <View style={{marginTop:50}}>
-         <Text style={styles.headerText}>Hello World</Text>
-         <Text style={styles.apos}>❝</Text>
-         <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
-          generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-        <Text style={styles.aposRight}>❝</Text>
-        </View>
-        </View>
 
-
-        <View style={styles.slide2}>
-         <View style={styles.imageView}>
-         <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
-        </View>
-        <View style={{marginTop:50}}>
-         <Text style={styles.headerText}>Hello World2</Text>
-        <Text style={styles.apos}>❝</Text>
-         <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
-          generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-          <Text style={styles.aposRight}>❝</Text>
-        </View>
-        </View>
-
-        <View style={styles.slide3}>
-         <View style={styles.imageView}>
-         <Image style={styles.Image} source={require("../Assets/profile.jpg")} />
-        </View>
-        <View style={{marginTop:50}}>
-         <Text style={styles.headerText}>Hello World3</Text>
-         <Text style={styles.apos}>❝</Text>
-         <Text style={styles.text}>Filler text is text that shares some characteristics of a real written text, but is random or otherwise
-          generated. It may be used to display a sample of fonts, generate text for testing, or to spoof an e-mail spam filter</Text>
-        <Text style={styles.aposRight}>❝</Text>
-        </View>
-        </View>
-      </Swiper>
-      </View>
-    )
-  
-};
  
 export default TestimonialSection;
