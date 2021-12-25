@@ -1,10 +1,8 @@
 import React, {Component} from 'react';
 import {Text,Image, TouchableOpacity,ScrollView, View, StyleSheet, TextInput, Button, ToastAndroid} from 'react-native';
-
 import baseurl from '../common/BaseUrl';
 import action from '../common/Api';
-
-import { StackNavigator } from "react-navigation";
+// import { StackNavigator } from "react-navigation";
 
 const initialState = {
   email: '',
@@ -175,7 +173,7 @@ render(){
         <Text style={{color:'black'}}>Forgot Password?</Text>
       </TouchableOpacity></Text>
       <TouchableOpacity 
-        onPress={() => navigation.navigate('Home')}
+        onPress={() => navigate('Home')}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Log In</Text>

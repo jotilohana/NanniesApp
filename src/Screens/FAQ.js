@@ -1,46 +1,32 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import {Text, Image, View, FlatList,ScrollView, StyleSheet,SafeAreaView} from 'react-native';
+import axios from 'axios';
 
-
-const DATA = [
-  {
-     text: 'How to use it',
-     id:1,
-    image: require('../Assets/plus.png'),
-  },
-  {
-     text: 'How to use it',
-     id:2,
-    image: require('../Assets/plus.png'),
-
-  },
-  {
-     text: 'How to use it',
-    id:3,
-    image: require('../Assets/plus.png'),
-  },
-  {
-     text: 'How to use it',
-    id:4,
-    image: require('../Assets/plus.png'),
-  },
-];
-
-const Item = ({ text, image }) => (
-  <View style={styles.item}>
-    <Text style={styles.text}>{text}</Text>
-    <Image
-        style={styles.Image}
-        source={image}
-      />
-  </View>
-);
+const API_URL = "https://evening-inlet-11817.herokuapp.com/Faq"; 
 
 const FAQ = () => {
-  const renderItem = ({ item }) => (
-    <Item text={item.text}  image={item.image}/>
+  const [data, setData]= useState([]);
+  useEffect(()=>{
+    axios.get(API_URL).then((res)=>{
+      setData(res.data.data);
+    })
+    .catch((err)=>{
+      console.warn(err)
+    })
+  })
+  const Item = ({ text }) => (
+    <View style={styles.item}>
+      <Text style={styles.text}>{text}</Text>
+      <Image
+          style={styles.Image}
+          source={require('../Assets/plus.png')}
+        />
+    </View>
   );
-
+  const renderItem = ({ item }) => (
+    <Item text={item.question}  image={item.image}/>
+  );
+    
   return (
     <View style={styles.container}>
     <View style={styles.imageView}>
@@ -50,12 +36,13 @@ const FAQ = () => {
       />
     </View>
     <Text style={styles.headerText}>FQA</Text>
-      <FlatList
-        data={DATA}
+         <FlatList
+        data={data}
         renderItem={renderItem}
         keyExtractor={item => item.id}
         Vertical
-      />
+      /> 
+       
     </View>
   );
 }
@@ -105,8 +92,9 @@ const styles = StyleSheet.create({
   },
   text:{
     color:'black',
-    fontSize: 16,
-    fontWeight:'bold'
+    fontSize: 15,
+    fontWeight:'bold',
+    marginRight:10,
   }
 });
 

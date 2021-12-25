@@ -29,8 +29,8 @@ class App extends React.Component
             method: 'get',
             url: `${API_URL}about`,
           }).then((response) => {
-            // console.warn(response.data.data);
             this.setState({data:response.data.data});
+            // console.log({data})
           }).catch(err=>{
               console.warn(err);
           });

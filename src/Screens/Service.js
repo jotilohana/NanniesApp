@@ -1,6 +1,5 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, FlatList,ImageBackground, Image} from 'react-native';
-import ServiceDetails from './ServiceDetails';
 import axios from 'axios';
 
 const API_URL = "https://evening-inlet-11817.herokuapp.com/service"; 
@@ -8,36 +7,35 @@ const API_URL = "https://evening-inlet-11817.herokuapp.com/service";
 
 
 
+// const DATA = [
+//   {
+//      text: 'How to use it1 ',
+//      id:1,
+//      image: require('../Assets/Services/Eldercare.png'),
+//   },
+//   {
+//      text: 'How to use it2',
+//      id:2,
+//     image: require('../Assets/Services/Meal.png'),
+//   },
+//   {
+//     text: 'How to use it3',
+//     id:3,
+//     image: require('../Assets/Services/support.png'),
+//   },
+//   {
+//      text: 'How to use it4',
+//     id:4,
+//     image: require('../Assets/Services/Maintenance.png'),
+//   },
+//   {
+//      text: 'How to use it4',
+//     id:4,
+//     image: require('../Assets/Services/housekeeper.png'),
 
-const DATA = [
-  {
-     text: 'How to use it1 ',
-     id:1,
-     image: require('../Assets/Services/Eldercare.png'),
-  },
-  {
-     text: 'How to use it2',
-     id:2,
-    image: require('../Assets/Services/Meal.png'),
-  },
-  {
-    text: 'How to use it3',
-    id:3,
-    image: require('../Assets/Services/support.png'),
-  },
-  {
-     text: 'How to use it4',
-    id:4,
-    image: require('../Assets/Services/Maintenance.png'),
-  },
-  {
-     text: 'How to use it4',
-    id:4,
-    image: require('../Assets/Services/housekeeper.png'),
-
-  },
+//   },
   
-];
+// ];
 
 const Service=({navigation})=>{
 

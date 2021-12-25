@@ -1,17 +1,21 @@
-import React,{useState} from 'react';
+import React,{useState, useEffect} from 'react';
 import {View, Text, Image, StyleSheet, TouchableOpacity} from 'react-native';
 import TestimonialSection from './testimonialSection';
+import action from '../common/Api';
+import axios from 'axios';
 
+const API_URL = "https://evening-inlet-11817.herokuapp.com/about"; 
 
 const ServiceDetails=({navigation},props)=>{
     const [showAbout,setShowAbout]=useState(true);
     const [showReview,setShowReview]=useState(false);
     const [pressedAbout, setPressedAbout]=useState(true);
     const [pressedReview, setPressedReview]=useState(false);
+   
 
     const renderAbout=()=>{
             return(
-             <View style={styles.textView}>
+                <View style={styles.textView}>
                 <Text style={{color:'black'}}>Filler text is text that shares some characteristics
                  of a real written text, but is random or otherwise generated. It may be used to display a sample 
                  of fonts, enerate text for testing, or to spoof an e-mail spam filter. </Text>
@@ -105,8 +109,9 @@ const styles=StyleSheet.create({
         height:'40%'
     },
     ReviewView:{
-        marginTop:25,
-        margin:25,
+        marginTop:10,
+        margin:20,
+        marginBottom:40,
     },
     BottomView:{
         backgroundColor:'#03204c',

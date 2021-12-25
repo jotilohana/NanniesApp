@@ -2,6 +2,7 @@ import React , {useState} from 'react';
 import {View, Text, TouchableOpacity, Image, StyleSheet, FlatList} from 'react-native';
 
 
+
 const Messages = [
   {
     id: '1',
