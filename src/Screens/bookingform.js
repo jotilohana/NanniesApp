@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import {View, Image, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import DropDown from './DropDown';
 
@@ -16,6 +17,7 @@ const BookingForm=({navigation})=>{
     const [textBooking, onChangeTextBooking] = useState();
 
     return(
+        <ScrollView>
         <View style={styles.Main_view}>
             <View>
                 <Text style={styles.HeaderText}>Book Services</Text>
@@ -158,6 +160,7 @@ const BookingForm=({navigation})=>{
         </ProgressSteps>
         </View>
         </View>
+        </ScrollView>
     );
 };
 
@@ -185,7 +188,7 @@ const styles=StyleSheet.create({
         width:320,
         alignSelf:'center',
         borderRadius:25,
-        height:390,
+        height:400,
     },
     formHeaderText:{
         fontSize:28,
@@ -201,15 +204,13 @@ const styles=StyleSheet.create({
         backgroundColor:"#03204c",
         borderRadius:20,
         padding:4,
-        width:90,
-        marginBottom:120
+        width:95,
     },
     buttonstyleprev:{
         backgroundColor:"#03204c",
         borderRadius:20,
         padding:4,
-        marginBottom:120,
-        width:90,
+        width:95,
     },
     input:{
         width:"100%",

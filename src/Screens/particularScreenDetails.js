@@ -1,9 +1,10 @@
 import React from 'react'
 import VerticalIndicator from './VerticalIndicator'
-import {View, StyleSheet, Image, Text, TouchableOpacity} from 'react-native'
+import {View, ScrollView, StyleSheet, Image, Text, TouchableOpacity} from 'react-native'
 
 const ParticularScreenDetails = ({navigation}) => {
   return (
+    <ScrollView>
     <View style={{flex: 1, backgroundColor: '#fffff'}}>
       <View style={{flexDirection: 'row', height: 300}}>
         <View style={{height: 280, margin: 20, marginTop: 0}}>
@@ -193,6 +194,7 @@ const ParticularScreenDetails = ({navigation}) => {
         />
       </View>
     </View>
+    </ScrollView>
   )
 }
 
@@ -247,7 +249,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     marginTop: 'auto',
     margin: 10,
-    padding: 5,
+    padding: 2,
     borderRadius: 20,
     width: 230,
   },

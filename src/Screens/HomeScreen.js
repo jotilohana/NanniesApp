@@ -181,6 +181,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginTop: 20,
   },
+  
   //Homeswiper
   wrapper: {},
   slide1: {
@@ -202,7 +203,6 @@ const styles = StyleSheet.create({
     padding: 0,
   },
   imageView: {
-    // flex:1,
     width: wp('100%'),
     height: 250,
   },

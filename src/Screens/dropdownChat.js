@@ -56,6 +56,15 @@ const DropdownChat = () => {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
+          <TouchableOpacity
+          onPress={() => {
+            setModalVisible(!modalVisible)
+          }}>
+          <Image
+            style={{marginLeft: 'auto', marginTop:10}}
+            source={require('../Assets/close.png')}
+          />
+        </TouchableOpacity>
               <SearchBar />
             </View>
           </View>

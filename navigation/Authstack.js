@@ -60,9 +60,9 @@ const HomeStackStack = ({route, navigation}) => {
     })
   }, [])
 
-  if (setIsFirstLaunched === null) {
-    return null
-  } else if (setIsFirstLaunched === true) {
+  if (isFirstLaunched === null) {
+    return null;
+  } else if (isFirstLaunched === true) {
     routeName = 'Onboarding'
   } else {
     routeName = 'Home'
@@ -72,7 +72,8 @@ const HomeStackStack = ({route, navigation}) => {
       <HomeStack.Screen
         options={navData => {
           return {
-            headerShown:false,
+            headerTintColor:"white",
+            headerShadowVisible:false,
             tabBarStyle: {display: 'none'},
             headerRight: () => (
               <TouchableOpacity
@@ -80,7 +81,7 @@ const HomeStackStack = ({route, navigation}) => {
                 style={{
                   backgroundColor: '#03204c',
                   marginRight: 10,
-                  padding: 7,
+                  padding: 5,
                   borderRadius: 15,
                 }}>
                 <Text style={{color: '#fff'}}> Skip </Text>

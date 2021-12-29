@@ -15,6 +15,14 @@ const styles = StyleSheet.create({
     flex: 1,
   },
  
+  slide4: {
+    flex: 1,
+  },
+ 
+  slide5: {
+    flex: 1,
+  },
+ 
   Main_view:{
    flex:1,
    backgroundColor:'#fff'
@@ -23,9 +31,9 @@ const styles = StyleSheet.create({
   //Body
 
   container:{
-    height:300,
+    flex:1,
     justifySelf:'center',
-    marginTop:"35%",
+    marginTop:"15%",
   },
   logo:{
         width:320,
@@ -35,20 +43,17 @@ const styles = StyleSheet.create({
     },
     nextbutton:{
         backgroundColor:'#03204c',
-        margin:15, 
-        padding:7, 
+        margin:10, 
+        marginRight:10,
+        padding:5, 
         borderRadius:15,
         width:50,
-        flexDirection:'column',
-        alignSelf:'flex-end',
-        position:'absolute',
-        top:260,
+        marginTop:450,
         color:'#fff',
-        textAlign:'center'
-        
+        textAlign:'center',
     },
     donebutton:{
-        borderRadius:15,
+        borderRadius:20,
         textAlign:'center',
         padding:7,
         backgroundColor:'#03204c',
@@ -78,27 +83,42 @@ const OnBoardingScreen=({navigation})=>{
       dotStyle={{width:20,height:4, backgroundColor:'#F0F2ED'}}
       activeDotStyle={{width:20,height:4,backgroundColor:'#03204c'}}
       showsButtons={true}
-      nextButton={<Text style={styles.nextbutton}>Next</Text>}
+      nextButton={ <Text style={styles.nextbutton}>Next</Text>}
+     
       prevButton={<Text style={styles.buttonText}></Text>} 
       >
         <View style={styles.slide1}>
-        <View style={styles.container}>  
+        <View style={styles.container}>
       <Image style={styles.logo}
-       source={require('../Assets/image1.jpg')} />
+       source={require('../Assets/splash/Meal.jpg')}/>
         </View>
         </View>
 
         <View style={styles.slide2}>
         <View style={styles.container}>  
         <Image style={styles.logo}
-       source={require('../Assets/image1.jpg')} />
+       source={require('../Assets/splash/Housekeeper.png')} />
         </View>
         </View>
 
-      <View style={styles.slide3}>
+        <View style={styles.slide3}>
+        <View style={styles.container}>  
+        <Image style={styles.logo}
+       source={require('../Assets/splash/serviceAppElder.png')} />
+        </View>
+        </View>
+
+        <View style={styles.slide4}>
+        <View style={styles.container}>  
+        <Image style={styles.logo}
+       source={require('../Assets/splash/support.png')} />
+        </View>
+        </View>
+
+      <View style={styles.slide5}>
       <View style={styles.container}>  
       <Image style={styles.logo}
-       source={require('../Assets/image1.jpg')} />
+       source={require('../Assets/splash/Maintenance.png')} />
         </View>
         <TouchableOpacity
             style={styles.donebutton}

@@ -5,51 +5,49 @@ import axios from 'axios';
 const API_URL = "https://evening-inlet-11817.herokuapp.com/service"; 
 
 
+const DATA = [
+  {
+     text: 'Elder Care ',
+     id:1,
+     image: require('../Assets/Services/Eldercare.png'),
+  },
+  {
+     text: 'Meal',
+     id:2,
+    image: require('../Assets/Services/Meal.png'),
+  },
+  {
+    text: 'Support',
+    id:3,
+    image: require('../Assets/Services/support.png'),
+  },
+  {
+     text: 'Maintenance',
+    id:4,
+    image: require('../Assets/Services/Maintenance.png'),
+  },
+  {
+     text: 'HouseKeeper',
+    id:4,
+    image: require('../Assets/Services/housekeeper.png'),
 
-
-// const DATA = [
-//   {
-//      text: 'How to use it1 ',
-//      id:1,
-//      image: require('../Assets/Services/Eldercare.png'),
-//   },
-//   {
-//      text: 'How to use it2',
-//      id:2,
-//     image: require('../Assets/Services/Meal.png'),
-//   },
-//   {
-//     text: 'How to use it3',
-//     id:3,
-//     image: require('../Assets/Services/support.png'),
-//   },
-//   {
-//      text: 'How to use it4',
-//     id:4,
-//     image: require('../Assets/Services/Maintenance.png'),
-//   },
-//   {
-//      text: 'How to use it4',
-//     id:4,
-//     image: require('../Assets/Services/housekeeper.png'),
-
-//   },
+  },
   
-// ];
+];
 
 const Service=({navigation})=>{
 
-  const [DATA, setPost] = React.useState(null);
+  // const [DATA, setPost] = React.useState(null);
 
-  React.useEffect(() => {
-    axios.get(API_URL).then((response) => {
-      setPost(response.data.data);
+  // React.useEffect(() => {
+  //   axios.get(API_URL).then((response) => {
+  //     setPost(response.data.data);
 
-      console.warn(DATA.data);
-    });
-  }, []);
+  //     console.warn(DATA.data);
+  //   });
+  // }, []);
 
-  if (!DATA) return null;
+  // if (!DATA) return null;
 
 
 const ServicePortion=({text,image})=>{
