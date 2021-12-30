@@ -1,5 +1,8 @@
 import React, {Component} from 'react';
 import {Text,Image, TouchableOpacity,ScrollView, View, StyleSheet, TextInput, Button, ToastAndroid} from 'react-native';
+import AsyncStorage from '@react-native-community/async-storage';
+
+
 
 import baseurl from '../common/BaseUrl';
 import action from '../common/Api';
@@ -42,6 +45,10 @@ class Login extends Component {
         
           if(data.data.success == true)
           {
+              // console.log(data.data.data._id);
+              // return false;
+            // AsyncStorage.setItem('id', this.state.data.data.data._id);
+            // AsyncStorage.setItem('name', this.state.data.data.data.name);
              
             this.props.navigation.navigate('Home')
             this.setState({isLoading: false, isAuthorized: true});
@@ -175,7 +182,7 @@ render(){
         <Text style={{color:'black'}}>Forgot Password?</Text>
       </TouchableOpacity></Text>
       <TouchableOpacity 
-        onPress={() => navigation.navigate('Home')}
+        onPress={this.onPressLogin.bind(this)}
         style={styles.button}
       >
         <Text style={styles.buttonText}>Log In</Text>

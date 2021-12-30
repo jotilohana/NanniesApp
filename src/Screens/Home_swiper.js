@@ -8,42 +8,25 @@ import {
 } from 'react-native-responsive-screen';
 
 
+import baseurl from '../common/BaseUrl';
 import action from '../common/Api';
 
-// const API_URL = "https://evening-inlet-11817.herokuapp.com/";  
-
-class Home_swiper extends React.Component
-{
-  constructor()
-    {
-        super();
-        this.state={
-            data:[]
-        }
-    }
-
-    componentDidMount()
-    {
-        this.callApi();
-    }
-
-    async callApi()
-    {
-            
-      await action.get('/banner',{}).then((response)=>{
-        this.setState({data:response.data.data});
-        console.warn(response.data.data)
-      }).catch((err)=>{
-        console.warn(err);
-      })
-
-     
-
-      
-    }
 
 
-  render(){
+const Home_swiper=()=>{
+
+  const [post, setPost] = React.useState();
+
+  React.useEffect(() => {
+    action.get('/banner').then((response) => {
+      setPost(response.data);
+
+      // console.log(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
 
       return(
           <View style={styles.Main_view}>
@@ -59,19 +42,19 @@ class Home_swiper extends React.Component
         >
 
 
-          {/* {
-              this.state.data.map((item)=>{
-                console.warn(item)
-              })
-          } */}
-         
-          <View style={styles.slide1}>
+       {
+         post.data.map((item)=>{
+
+           {/* console.log(item); */}
+
+            return(
+               <View style={styles.slide1}>
           <View style={styles.container}>
           <View style={styles.imageView}>
           
           <Image
           // source={require('../Assets/homeslider/Image1.jpg')}
-          source={{uri: 'https://evening-inlet-11817.herokuapp.com/uploads/banner/file-1639304862165.PNG'}}  
+          source={{uri: `${baseurl+item.Bgimage}`}}  
           style={styles.image}  
         />
           </View>  
@@ -88,33 +71,20 @@ class Home_swiper extends React.Component
 
           </View>
           </View>
+            )
+         })
+       }
+         
+         
 
 
 
-          <View style={styles.slide1}>
-          <View style={styles.container}>
-          <Image
-          source={require('../Assets/homeslider/Image1.jpg')}
-          style={styles.image}    
-        />
-      
-          </View>
-          </View>
-
-        <View style={styles.slide1}>
-        <View style={styles.container}>
-        <Image
-          source={require('../Assets/homeslider/Image3.jpg')}
-          style={styles.image}    
-        />         
-      
-          </View>
-          </View>
+         
         </Swiper>
         </View>
       )
   }
-}
+
 
 const styles = StyleSheet.create({
   wrapper: {},
@@ -137,7 +107,7 @@ const styles = StyleSheet.create({
     padding:0
   },
   imageView:{
-    flex:1,
+    // flex:1,
     width: wp('100%'),
     height:250
   },

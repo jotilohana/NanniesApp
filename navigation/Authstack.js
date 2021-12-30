@@ -56,7 +56,7 @@ let routeName;
   else if(setIsFirstLaunched === true){
       routeName='Onboarding'}
       else{
-          routeName ='Home';      
+          routeName ='Login';      
         }
     return(
       <Stack.Navigator 
