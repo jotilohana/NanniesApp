@@ -87,7 +87,6 @@ const OnBoardingScreen=({navigation})=>{
         getSplash();
     }, []);
 
-
     return(
          <View style={styles.Main_view}>
       <Swiper style={styles.wrapper} 
@@ -103,42 +102,42 @@ const OnBoardingScreen=({navigation})=>{
      
       prevButton={<Text style={styles.buttonText}></Text>} 
       >
-        { splash.map((item)=>{
+        {splash.map((item)=>{
         <View style={styles.slide1}>
         <View style={styles.container}>
       <Image style={styles.logo}
-       source={baseURL+item.image}/>
+       source={baseURL+"uploads/splashscreen/"+item.image}/>
         </View>
         </View>
 
-        {/* <View style={styles.slide2}>
-        <View style={styles.container}>  
-        <Image style={styles.logo}
-       source={require('../Assets/splash/Housekeeper.png')} />
-        </View>
-        </View> */}
+      //    <View style={styles.slide2}>
+      //   <View style={styles.container}>  
+      //   <Image style={styles.logo}
+      //  source={require('../Assets/splash/Housekeeper.png')} />
+      //   </View>
+      //   </View> 
 
-        {/* <View style={styles.slide3}>
-        <View style={styles.container}>  
-        <Image style={styles.logo}
-       source={require('../Assets/splash/serviceAppElder.png')} />
-        </View>
-        </View> */}
+      //    <View style={styles.slide3}>
+      //   <View style={styles.container}>  
+      //   <Image style={styles.logo}
+      //  source={require('../Assets/splash/serviceAppElder.png')} />
+      //   </View>
+      //   </View> 
 
-        {/* <View style={styles.slide4}>
-        <View style={styles.container}>  
-        <Image style={styles.logo}
-       source={require('../Assets/splash/support.png')} />
-        </View>
-        </View> */}
-
+      //    <View style={styles.slide4}>
+      //   <View style={styles.container}>  
+      //   <Image style={styles.logo}
+      //  source={require('../Assets/splash/support.png')} />
+      //   </View>
+      //   </View> 
+    })}
         <TouchableOpacity
             style={styles.donebutton}
              onPress={()=>navigation.navigate("Home")}
             >
             <Text style={styles.donebuttontext}>Done</Text>
             </TouchableOpacity>
-            })}
+             
       </Swiper>
       </View>
     )
