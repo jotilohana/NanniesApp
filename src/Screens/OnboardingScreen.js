@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {Text,Image, View, StyleSheet, ImageBackground, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
-
+import API_URL from '../common/Api';
+import baseURL from '../common/BaseUrl';
 const styles = StyleSheet.create({
   wrapper: {},
   slide1: {
@@ -71,7 +72,22 @@ const styles = StyleSheet.create({
    });
 
 const OnBoardingScreen=({navigation})=>{
-    
+  const [splash, setSplash] = useState([]);
+
+    useEffect(() => {
+        const getSplash = async () => {
+            try {
+                const res = await API_URL.get('/splashscreen');
+                setSplash(res.data.data);
+            }
+            catch (err) {
+                console.log(err);
+            }
+        };
+        getSplash();
+    }, []);
+
+
     return(
          <View style={styles.Main_view}>
       <Swiper style={styles.wrapper} 
@@ -87,46 +103,42 @@ const OnBoardingScreen=({navigation})=>{
      
       prevButton={<Text style={styles.buttonText}></Text>} 
       >
+        { splash.map((item)=>{
         <View style={styles.slide1}>
         <View style={styles.container}>
       <Image style={styles.logo}
-       source={require('../Assets/splash/Meal.jpg')}/>
+       source={baseURL+item.image}/>
         </View>
         </View>
 
-        <View style={styles.slide2}>
+        {/* <View style={styles.slide2}>
         <View style={styles.container}>  
         <Image style={styles.logo}
        source={require('../Assets/splash/Housekeeper.png')} />
         </View>
-        </View>
+        </View> */}
 
-        <View style={styles.slide3}>
+        {/* <View style={styles.slide3}>
         <View style={styles.container}>  
         <Image style={styles.logo}
        source={require('../Assets/splash/serviceAppElder.png')} />
         </View>
-        </View>
+        </View> */}
 
-        <View style={styles.slide4}>
+        {/* <View style={styles.slide4}>
         <View style={styles.container}>  
         <Image style={styles.logo}
        source={require('../Assets/splash/support.png')} />
         </View>
-        </View>
+        </View> */}
 
-      <View style={styles.slide5}>
-      <View style={styles.container}>  
-      <Image style={styles.logo}
-       source={require('../Assets/splash/Maintenance.png')} />
-        </View>
         <TouchableOpacity
             style={styles.donebutton}
              onPress={()=>navigation.navigate("Home")}
             >
             <Text style={styles.donebuttontext}>Done</Text>
             </TouchableOpacity>
-        </View>
+            })}
       </Swiper>
       </View>
     )
