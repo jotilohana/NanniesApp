@@ -3,6 +3,7 @@ import {View, Image, Text, StyleSheet, TextInput, TouchableOpacity} from 'react-
 import { ScrollView } from 'react-native-gesture-handler';
 import { ProgressSteps, ProgressStep } from 'react-native-progress-steps';
 import DropDown from './DropDown';
+import Date from './date';
 
 const BookingForm=({navigation})=>{
     const [textFN, onChangeTextFN] = useState();
@@ -134,7 +135,7 @@ const BookingForm=({navigation})=>{
             <View style={styles.formView}>
             <TextInput
             style={styles.input}
-            onChangeText={onChangeTextWD}
+            onChangeText={Date}
             value={textWD}
             placeholder="Working Days"
             placeholderTextColor='black'

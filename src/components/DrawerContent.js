@@ -44,7 +44,7 @@ export default function DrawerContent({navigation}) {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.drawerItemStyle}
-          onPress={() => navigation.navigate('Home')}>
+          onPress={() => navigation.navigate('MainService')}>
             <Icon name='checkmark-done-circle' color='#03204c' size={24} />
           <Text style={{color: '#03204c', fontSize: 18,   marginLeft:10}}>
             Booking
