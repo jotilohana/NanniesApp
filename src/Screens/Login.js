@@ -6,8 +6,7 @@ import AsyncStorage from '@react-native-community/async-storage';
 
 import baseurl from '../common/BaseUrl';
 import action from '../common/Api';
-
-import { StackNavigator } from "react-navigation";
+// import { StackNavigator } from "react-navigation";
 
 const initialState = {
   email: '',

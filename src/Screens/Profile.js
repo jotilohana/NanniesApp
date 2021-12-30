@@ -1,9 +1,15 @@
 import React from 'react';
 import {View, StyleSheet, Image, Text, TextInput, TouchableOpacity} from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import {
+    widthPercentageToDP as wp,
+    heightPercentageToDP as hp,
+  } from 'react-native-responsive-screen';
 
 const Profile=({navigation})=>{
     const [text, onChangeText] = React.useState();
     return(
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{flex:1}}>
             <View style={styles.header}>
                 <View style={styles.ImageView}>
@@ -16,8 +22,6 @@ const Profile=({navigation})=>{
                 <Text style={styles.headerText}>Jklohana</Text>
                 </View>
             </View>
-
-
             <View style={styles.mainView}>
                 <View style={styles.InputFieldView}>
                 <Image
@@ -102,6 +106,7 @@ const Profile=({navigation})=>{
                 </TouchableOpacity>
                 </View>
         </View>
+        </ScrollView>
     )
 };
 
@@ -163,7 +168,8 @@ const styles= StyleSheet.create({
     inputText:{
         margin:0,
         marginTop:5,
-        padding:0
+        padding:0,
+        color:"black"
     },
     
     EditButton:{
@@ -171,7 +177,7 @@ const styles= StyleSheet.create({
         backgroundColor:'#03204c',
         borderRadius:20,
         marginTop:'auto',
-        width:'38%',
+        width:wp('40%'),
         alignSelf:'center',
     },
     EditText:{

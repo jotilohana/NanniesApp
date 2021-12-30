@@ -54,17 +54,10 @@ const Chat=({navigation})=>{
     const [text, onChangeText] = useState();
     const [clickedBtn, setClickedBtn] = useState(false);
 
-    const AttachmentContent=()=>{
-      return(
-        <View>
-        <Attachment />
-        </View>
-      )
-    }
     return(
         <View style={styles.mainView}>
         <View style={{marginBottom:80, marginTop:45}}>
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
            <FlatList
             data={Messages}
             keyExtractor={item=>item.id}
@@ -95,7 +88,6 @@ const Chat=({navigation})=>{
         </ScrollView>
         </View>
         {clickedBtn? <Attachment />: null }
-        {/* <Attachment /> */}
         <View style={styles.inputView}>
             <TouchableOpacity
             style={styles.attachment}

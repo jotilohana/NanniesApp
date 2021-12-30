@@ -19,7 +19,6 @@ const EditProfile=({navigation})=>{
                 <TouchableOpacity
                  style={styles.editIcon}
                 >
-
                 <Image
                 style={styles.edit}
                 source={require('../Assets/Edit.png')}
@@ -28,9 +27,9 @@ const EditProfile=({navigation})=>{
                 </View>
             </View>
 
+            <ScrollView>
 
             <View style={styles.mainView}>
-            <ScrollView>
                 <View style={styles.InputFieldView}>
                 <Image
                 style={styles.InputIcon}
@@ -161,13 +160,13 @@ const EditProfile=({navigation})=>{
                 />   
                 </View>
                 </View>
-                </ScrollView>
                  </View>
                 <TouchableOpacity
                  style={styles.EditButton}
-                >
+                 >
                 <Text style={styles.EditText}>Save Changes</Text>
                 </TouchableOpacity>
+                </ScrollView>
         </View>
     )
 };
@@ -176,7 +175,8 @@ const styles= StyleSheet.create({
         backgroundColor:"#b4cce4",
         height:100,
         padding:2,
-        flexDirection:'row'
+        flexDirection:'row',
+        marginBottom:60
     },
     ImageView:{
         height:70,
@@ -203,7 +203,6 @@ const styles= StyleSheet.create({
         marginTop:5
     },
     mainView:{
-    marginTop:60,
     marginBottom:40,
     height:420
     },
@@ -256,10 +255,9 @@ const styles= StyleSheet.create({
         backgroundColor:'#03204c',
         width:'80%',
         alignSelf:'center',
-        marginTop:'auto',
+        marginTop:50,
         margin:10,
         borderRadius:20,
-        width:"80%"
     },
     EditText:{
         color:'white',
