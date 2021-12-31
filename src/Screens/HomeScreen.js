@@ -16,6 +16,7 @@ import {
   widthPercentageToDP as wp,
   heightPercentageToDP as hp,
 } from 'react-native-responsive-screen';
+import Time from './Time';
 
 
 
@@ -166,6 +167,7 @@ const HomeScreen=({navigation})=> {
         <Text style={styles.mainText}>Testimonial</Text>
         <TestimonialSection />
       </View>
+      
     </ScrollView>
   )
 }

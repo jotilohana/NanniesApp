@@ -15,7 +15,6 @@ import TestimonialSection from '../src/Screens/testimonialSection'
 import ServiceDetails from '../src/Screens/ServiceDetails'
 import BookingForm from '../src/Screens/bookingform'
 import Time from '../src/Screens/Time';
-import Date from '../src/Screens/date';
 import DropDown from '../src/Screens/DropDown'
 import Details from '../src/Screens/particularScreenDetails'
 import Profile from '../src/Screens/Profile'
